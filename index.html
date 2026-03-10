@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+
+  <link rel="stylesheet" href="style/base.css">
+  <link rel="stylesheet" href="style/help.css">
+  <script src="script/i18n.js"></script>
+  <title>OnePreview Help Center</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .wrapper {
+      max-width: 960px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header-controls">
+      <select id="language-selector">
+        <option value="en">English</option>
+        <option value="zh-CN">简体中文</option>
+        <option value="zh-TW">繁體中文</option>
+      </select>
+    </div>
+
+    <div class="brand-header">
+      <div class="brand-icon"></div>
+      <h2 data-i18n="title">OnePreview Help Center</h2>
+      <p class="intro-text" data-i18n="intro_subtitle">All-in-one preview enhancement for the Apple ecosystem.</p>
+    </div>
+
+    <div class="cta-container">
+      <a href="help.html" class="cta-button" data-i18n="view_faq">View FAQ</a>
+    </div>
+
+    <br />
+    <div class="footer" data-i18n="footer">Have questions or need support? Contact us at cameoshell09@gmail.com</div>
+  </div>
+</body>
+
+</html>
