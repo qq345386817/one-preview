@@ -35,6 +35,8 @@ const translations = {
     a6: 'macOS Quick Look occasionally caches previews. You can close the preview window (press Spacebar again) and reopen it to force a refresh.',
     q7: 'My Markdown images aren\'t loading, why?',
     a7: 'Due to Apple\'s strict sandbox security policies, extensions sometimes face restrictions reading local files referenced inside documents. We employ techniques to bypass this for adjacent files when possible, but remote web URLs (`https://...`) are generally the most reliable for images.',
+    q8: 'Why doesn\'t OnePreview work for files in the Trash?',
+    a8: 'macOS has strict system-level security restrictions for the Trash directory. Third-party Quick Look extensions are entirely blocked by the operating system from accessing files located in the Trash. You must move the file out of the Trash to preview it.',
     footer: 'Have questions or need support? Contact us at cameoshell09@gmail.com'
   },
   "zh-CN": {
@@ -73,6 +75,8 @@ const translations = {
     a6: 'macOS 的 Quick Look 机制偶尔会进行底层缓存。您可以先关闭当前预览窗口（再次按下空格），然后重新按下空格键触发刷新。',
     q7: '为什么 Markdown 里的图片加载不出来？',
     a7: '受限于 Apple 严苛的沙盒安全策略，预览扩展在读取文档内部引用的其他本地文件时会受到限制。我们采用了相应技术尽可能绕过同级目录文件的读取限制，但在大多数情况下，使用网络链接 (`https://...`) 作为图片地址是更为可靠的选择。',
+    q8: '为什么不支持预览废纸篓（垃圾桶）里的文件？',
+    a8: 'macOS 具有极严苛的底层安全限制（系统完整性保护），它会彻底在系统级屏蔽所有第三方 Quick Look 扩展读取废纸篓内的文件。这是 Apple 的安全机制决定的，您必须将文件移出废纸篓后才能正常使用空格预览。',
     footer: '有任何疑问或需要反馈 Bug？请联系我们：cameoshell09@gmail.com'
   },
   "zh-TW": {
@@ -111,6 +115,8 @@ const translations = {
     a6: 'macOS 的 Quick Look 機制偶爾會進行底層快取。您可以先關閉當前預覽視窗（再次按下空白鍵），然後重新按下空白鍵觸發刷新。',
     q7: '為什麼 Markdown 裡的圖片加載不出來？',
     a7: '受限於 Apple 嚴苛的沙盒安全策略，預覽擴展在讀取文件內部引用的其他本地檔案時會受到限制。我們採用了相應技術盡可能繞過同級目錄檔案的讀取限制，但在大多數情況下，使用網路連結 (`https://...`) 作為圖片地址是更為可靠的選擇。',
+    q8: '為什麼不支援預覽「垃圾桶」裡的檔案？',
+    a8: 'macOS 具有極嚴苛的底層安全限制（系統完整性保護），它會徹底在系統級屏蔽所有第三方 Quick Look 擴展讀取垃圾桶內的檔案。這是 Apple 的安全機制決定的，您必須將檔案移出垃圾桶後才能正常使用空白鍵預覽。',
     footer: '有任何疑問或需要反饋 Bug？請聯繫我們：cameoshell09@gmail.com'
   }
 };
