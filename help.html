@@ -1,118 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="description" content="OnePreview extends Apple Quick Look with rich previews for Markdown, JSON, JSONL, CSV, source code, plain text, and folders on Mac, iPhone, and iPad.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://one-preview.luopeike.com/help.html">
+  <link rel="alternate" hreflang="en" href="https://one-preview.luopeike.com/help.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://one-preview.luopeike.com/zh-Hans/help.html">
+  <link rel="alternate" hreflang="zh-TW" href="https://one-preview.luopeike.com/zh-Hant/help.html">
+  <link rel="alternate" hreflang="hi" href="https://one-preview.luopeike.com/hi/help.html">
+  <link rel="alternate" hreflang="ja" href="https://one-preview.luopeike.com/ja/help.html">
+  <link rel="alternate" hreflang="ko" href="https://one-preview.luopeike.com/ko/help.html">
+  <link rel="alternate" hreflang="de" href="https://one-preview.luopeike.com/de/help.html">
+  <link rel="alternate" hreflang="fr" href="https://one-preview.luopeike.com/fr/help.html">
+  <link rel="alternate" hreflang="id" href="https://one-preview.luopeike.com/id/help.html">
+  <link rel="alternate" hreflang="ru" href="https://one-preview.luopeike.com/ru/help.html">
+  <link rel="alternate" hreflang="x-default" href="https://one-preview.luopeike.com/help.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="OnePreview Help - OnePreview">
+  <meta property="og:description" content="OnePreview extends Apple Quick Look with rich previews for Markdown, JSON, JSONL, CSV, source code, plain text, and folders on Mac, iPhone, and iPad.">
+  <meta property="og:url" content="https://one-preview.luopeike.com/help.html">
+  <meta property="og:site_name" content="OnePreview">
+  <meta property="og:image" content="https://one-preview.luopeike.com/images/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OnePreview Help - OnePreview">
+  <meta name="twitter:description" content="OnePreview extends Apple Quick Look with rich previews for Markdown, JSON, JSONL, CSV, source code, plain text, and folders on Mac, iPhone, and iPad.">
+  <meta name="twitter:image" content="https://one-preview.luopeike.com/images/social-preview.png">
+  <meta name="theme-color" content="#0a84ff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#10131a" media="(prefers-color-scheme: dark)">
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
   <link rel="manifest" href="favicon/site.webmanifest">
-
   <link rel="stylesheet" href="style/base.css">
-  <link rel="stylesheet" href="style/help.css">
-  <title>OnePreview Help Center</title>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "OnePreview", "operatingSystem": "macOS, iOS, iPadOS", "applicationCategory": "DeveloperApplication", "description": "OnePreview extends Apple Quick Look with rich previews for Markdown, JSON, JSONL, CSV, source code, plain text, and folders on Mac, iPhone, and iPad.", "url": "https://one-preview.luopeike.com/help.html", "downloadUrl": "https://apps.apple.com/app/id6760284919", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+  <title>OnePreview Help - OnePreview</title>
 </head>
-
 <body>
-  <div class="header-controls" style="text-align: right; padding: 10px 20px;">
-    <select id="language-selector">
-      <option value="en">English</option>
-      <option value="zh-CN">简体中文</option>
-      <option value="zh-TW">繁體中文</option>
-      <option value="hi">हिन्दी (Hindi)</option>
-    </select>
-  </div>
-  <div class="wrapper">
-    <div class="brand-header">
-      <div class="brand-icon"></div>
-      <h2 data-i18n="title">OnePreview FAQ</h2>
+  <main class="page">
+
+    <div class="topbar">
+      <a class="brand" href="index.html" aria-label="OnePreview home">
+        <img src="favicon/apple-touch-icon.png" alt="" width="32" height="32">
+        <span>OnePreview</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary"><a href="index.html">Home</a><a class="active" href="help.html">Help</a><a href="support.html">Support</a><a href="privacy-policy.html">Privacy</a></nav>
+      <select class="lang-select" aria-label="Language" onchange="if (this.value) window.location.href=this.value">
+        <option value="help.html" selected>English</option><option value="zh-Hans/help.html">简体中文</option><option value="zh-Hant/help.html">繁體中文</option><option value="hi/help.html">हिन्दी</option><option value="ja/help.html">日本語</option><option value="ko/help.html">한국어</option><option value="de/help.html">Deutsch</option><option value="fr/help.html">Français</option><option value="id/help.html">Bahasa Indonesia</option><option value="ru/help.html">Русский</option>
+      </select>
     </div>
 
-    <button class="accordion" data-i18n="q1">What is OnePreview?</button>
-    <div class="panel">
-      <p data-i18n="a1">OnePreview is a powerful Quick Look enhancement tool for the Apple ecosystem. It allows you to
-        instantly preview files that are not natively supported (like Markdown, Swift, JSON, CSV) simply by pressing the
-        spacebar, without opening any dedicated app.</p>
-    </div>
 
-    <button class="accordion" data-i18n="q2">How to use OnePreview on macOS?</button>
-    <div class="panel">
-      <p data-i18n="a2_1">1. Open the "OnePreview" app once to register the extension with macOS.</p>
-      <p data-i18n="a2_2">2. In Finder, select a supported file (e.g., a `.md` or `.swift` file) and simply press the
-        <b>Spacebar</b> to see the rich preview.
-      </p>
-    </div>
+    <article class="article">
+      <p class="eyebrow">OnePreview</p>
+      <h1>OnePreview Help</h1>
+      <p class="lead">Use this guide to enable the extension and understand the main preview behaviors.</p>
+      <div class="faq-list"><details open><summary>How do I enable OnePreview on macOS?</summary><p>Open OnePreview once after installation. On macOS Sequoia, go to System Settings &gt; General &gt; Login Items &amp; Extensions &gt; Quick Look and enable OnePreview. On macOS Sonoma, use System Settings &gt; Privacy &amp; Security &gt; Extensions &gt; Quick Look.</p></details>
+<details open><summary>How do I use it on iPhone or iPad?</summary><p>Install and open OnePreview once. Then open a supported file in Files or any app that uses system Quick Look.</p></details>
+<details open><summary>Why do some local Markdown images not appear?</summary><p>Apple sandbox rules limit what a Quick Look extension can read. Web image URLs are the most reliable. The separately distributed DMG build can allow broader local image access where permitted.</p></details>
+<details open><summary>Why does preview not work in Trash?</summary><p>macOS blocks third-party Quick Look extensions from reading items in Trash. Move the file out of Trash before previewing it.</p></details>
+<details open><summary>Does OnePreview edit my files?</summary><p>No. OnePreview is a viewer. It does not modify your files.</p></details></div>
+    </article>
 
-    <button class="accordion" data-i18n="q3">How to use OnePreview on iOS or iPadOS?</button>
-    <div class="panel">
-      <p data-i18n="a3_1">1. Make sure "OnePreview" is installed on your device.</p>
-      <p data-i18n="a3_2">2. Open the system "Files" app, long-press on a file, and select "Quick Look" (or just tap the
-        file) to view the beautifully rendered content.</p>
-    </div>
 
-    <button class="accordion" data-i18n="q4">Do I need to keep the OnePreview app open?</button>
-    <div class="panel">
-      <p data-i18n="a4">No. After you launch the app for the first time on macOS (which is required to register the
-        extension), you can close it. The preview extension operates seamlessly in the background.</p>
-    </div>
+    <footer class="footer-bar">
+      <span>© 2026 LUO PEIKE. OnePreview.</span>
+      <span><a href="mailto:cameoshell09@gmail.com">cameoshell09@gmail.com</a></span>
+    </footer>
 
-    <button class="accordion" data-i18n="q5">What file formats are supported?</button>
-    <div class="panel">
-      <p data-i18n="a5_1">• <b>Markdown:</b> Beautifully rendered HTML and source syntax highlighting.</p>
-      <p data-i18n="a5_2">• <b>Source Code:</b> Swift, Python, JS, C++, Shell, etc.</p>
-      <p data-i18n="a5_3">• <b>Structured Data:</b> JSON, YAML, XML with syntax colors, and CSV/TSV rendered as neat
-        tables.</p>
-      <p data-i18n="a5_4">• <b>Folders:</b> Preview the contents inside a directory, including file sizes and
-        modification dates.</p>
-    </div>
-
-    <button class="accordion" data-i18n="q6">Why doesn't the preview update immediately after I edit a Markdown
-      file?</button>
-    <div class="panel">
-      <p data-i18n="a6">macOS Quick Look occasionally caches previews. You can close the preview window (press Spacebar
-        again) and reopen it to force a refresh.</p>
-    </div>
-
-    <button class="accordion" data-i18n="q7">My Markdown images aren't loading, why?</button>
-    <div class="panel">
-      <p data-i18n="a7">Due to Apple's strict sandbox security policies, extensions sometimes face restrictions reading
-        local files referenced inside documents. We employ techniques to bypass this for adjacent files when possible,
-        but remote web URLs (`https://...`) are generally the most reliable for images.</p>
-    </div>
-
-    <button class="accordion" data-i18n="q8">Why doesn't OnePreview work for files in the Trash?</button>
-    <div class="panel">
-      <p data-i18n="a8">macOS has strict system-level security restrictions for the Trash directory. Third-party Quick 
-        Look extensions are entirely blocked by the operating system from accessing files located in the Trash. You 
-        must move the file out of the Trash to preview it.</p>
-    </div>
-
-    <br />
-    <div class="footer" data-i18n="footer">Have questions or need support? Contact us at cameoshell09@gmail.com</div>
-  </div>
-
-  <script src="script/i18n.js"></script>
-  <script>
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-          panel.style.maxHeight = null;
-        } else {
-          panel.style.maxHeight = panel.scrollHeight + "px";
-        }
-      });
-    }
-
-    acc[0].click();
-    acc[1].click();
-  </script>
+  </main>
 </body>
-
 </html>

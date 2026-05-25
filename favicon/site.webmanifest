@@ -1,5 +1,5 @@
 {
-  "name": "OnePreview Help Center",
+  "name": "OnePreview",
   "short_name": "OnePreview",
   "icons": [
     {
@@ -16,9 +16,16 @@
       "src": "./apple-touch-icon.png",
       "sizes": "256x256",
       "type": "image/png"
+    },
+    {
+      "src": "./android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
-  "theme_color": "#f5f5f7",
-  "background_color": "#f5f5f7",
-  "display": "standalone"
+  "theme_color": "#0a84ff",
+  "background_color": "#f3f7ff",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
 }
