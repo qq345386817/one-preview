@@ -3,115 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="OnePreview 擴展 Apple 系統快速查看能力，在 Mac、iPhone 和 iPad 上為 Markdown、JSON、JSONL、CSV、原始碼、純文字和資料夾提供更清晰的預覽。">
+  <meta name="description" content="OnePreview 擴展 Apple 快速查看能力，在 Mac、iPhone 和 iPad 上為 Markdown、JSON、JSONL、YAML、XML、CSV、TSV、TOML、ENV、SQLite 資料庫、原始碼、純文字、日誌、資料夾和 ZIP 壓縮檔提供本機預覽。">
   <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://one-preview.luopeike.com/zh-Hant/index.html">
-  <link rel="alternate" hreflang="en" href="https://one-preview.luopeike.com/index.html">
-  <link rel="alternate" hreflang="zh-CN" href="https://one-preview.luopeike.com/zh-Hans/index.html">
-  <link rel="alternate" hreflang="zh-TW" href="https://one-preview.luopeike.com/zh-Hant/index.html">
-  <link rel="alternate" hreflang="hi" href="https://one-preview.luopeike.com/hi/index.html">
-  <link rel="alternate" hreflang="ja" href="https://one-preview.luopeike.com/ja/index.html">
-  <link rel="alternate" hreflang="ko" href="https://one-preview.luopeike.com/ko/index.html">
-  <link rel="alternate" hreflang="de" href="https://one-preview.luopeike.com/de/index.html">
-  <link rel="alternate" hreflang="fr" href="https://one-preview.luopeike.com/fr/index.html">
-  <link rel="alternate" hreflang="id" href="https://one-preview.luopeike.com/id/index.html">
-  <link rel="alternate" hreflang="ru" href="https://one-preview.luopeike.com/ru/index.html">
-  <link rel="alternate" hreflang="x-default" href="https://one-preview.luopeike.com/index.html">
+  <meta property="og:title" content="OnePreview | Markdown、程式碼、資料和 ZIP 的系統快速查看">
+  <meta property="og:description" content="OnePreview 擴展 Apple 快速查看能力，在 Mac、iPhone 和 iPad 上為 Markdown、JSON、JSONL、YAML、XML、CSV、TSV、TOML、ENV、SQLite 資料庫、原始碼、純文字、日誌、資料夾和 ZIP 壓縮檔提供本機預覽。">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="OnePreview">
-  <meta property="og:description" content="OnePreview 擴展 Apple 系統快速查看能力，在 Mac、iPhone 和 iPad 上為 Markdown、JSON、JSONL、CSV、原始碼、純文字和資料夾提供更清晰的預覽。">
   <meta property="og:url" content="https://one-preview.luopeike.com/zh-Hant/index.html">
   <meta property="og:site_name" content="OnePreview">
   <meta property="og:image" content="https://one-preview.luopeike.com/images/social-preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="OnePreview">
-  <meta name="twitter:description" content="OnePreview 擴展 Apple 系統快速查看能力，在 Mac、iPhone 和 iPad 上為 Markdown、JSON、JSONL、CSV、原始碼、純文字和資料夾提供更清晰的預覽。">
   <meta name="twitter:image" content="https://one-preview.luopeike.com/images/social-preview.png">
-  <meta name="theme-color" content="#0a84ff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#10131a" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://one-preview.luopeike.com/zh-Hant/index.html">
+  <link rel="alternate" hreflang="en" href="https://one-preview.luopeike.com/index.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://one-preview.luopeike.com/zh-Hans/index.html">
+  <link rel="alternate" hreflang="zh-Hant" href="https://one-preview.luopeike.com/zh-Hant/index.html">
+  <link rel="alternate" hreflang="ja" href="https://one-preview.luopeike.com/ja/index.html">
+  <link rel="alternate" hreflang="ko" href="https://one-preview.luopeike.com/ko/index.html">
+  <link rel="alternate" hreflang="de" href="https://one-preview.luopeike.com/de/index.html">
+  <link rel="alternate" hreflang="fr" href="https://one-preview.luopeike.com/fr/index.html">
+  <link rel="alternate" hreflang="hi" href="https://one-preview.luopeike.com/hi/index.html">
+  <link rel="alternate" hreflang="id" href="https://one-preview.luopeike.com/id/index.html">
+  <link rel="alternate" hreflang="ru" href="https://one-preview.luopeike.com/ru/index.html">
+  <link rel="alternate" hreflang="x-default" href="https://one-preview.luopeike.com/index.html">
   <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
   <link rel="manifest" href="../favicon/site.webmanifest">
+  <meta name="theme-color" content="#0A84FF">
   <link rel="stylesheet" href="../style/base.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "OnePreview", "operatingSystem": "macOS, iOS, iPadOS", "applicationCategory": "DeveloperApplication", "description": "OnePreview 擴展 Apple 系統快速查看能力，在 Mac、iPhone 和 iPad 上為 Markdown、JSON、JSONL、CSV、原始碼、純文字和資料夾提供更清晰的預覽。", "url": "https://one-preview.luopeike.com/zh-Hant/index.html", "downloadUrl": "https://apps.apple.com/app/id6760284919", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-  <title>OnePreview</title>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "OnePreview", "applicationCategory": "DeveloperApplication", "operatingSystem": "macOS, iOS, iPadOS", "description": "OnePreview 擴展 Apple 快速查看能力，在 Mac、iPhone 和 iPad 上為 Markdown、JSON、JSONL、YAML、XML、CSV、TSV、TOML、ENV、SQLite 資料庫、原始碼、純文字、日誌、資料夾和 ZIP 壓縮檔提供本機預覽。", "url": "https://one-preview.luopeike.com/zh-Hant/index.html", "downloadUrl": "https://apps.apple.com/app/id6760284919", "image": "https://one-preview.luopeike.com/images/social-preview.png", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+  <title>OnePreview | Markdown、程式碼、資料和 ZIP 的系統快速查看</title>
 </head>
 <body>
-  <main class="page">
-
-    <div class="topbar">
-      <a class="brand" href="index.html" aria-label="OnePreview home">
-        <img src="../favicon/apple-touch-icon.png" alt="" width="32" height="32">
-        <span>OnePreview</span>
-      </a>
-      <nav class="site-nav" aria-label="Primary"><a class="active" href="index.html">首頁</a><a href="help.html">說明</a><a href="support.html">支援</a><a href="privacy-policy.html">隱私</a></nav>
-      <select class="lang-select" aria-label="Language" onchange="if (this.value) window.location.href=this.value">
-        <option value="../index.html">English</option><option value="../zh-Hans/index.html">简体中文</option><option value="../zh-Hant/index.html" selected>繁體中文</option><option value="../hi/index.html">हिन्दी</option><option value="../ja/index.html">日本語</option><option value="../ko/index.html">한국어</option><option value="../de/index.html">Deutsch</option><option value="../fr/index.html">Français</option><option value="../id/index.html">Bahasa Indonesia</option><option value="../ru/index.html">Русский</option>
-      </select>
+  <div class="page">
+    <div class="container">
+      <header class="topbar">
+      <a class="brand" href="../zh-Hant/index.html" aria-label="OnePreview home"><img src="../favicon/apple-touch-icon.png" alt="" width="38" height="38"><span>OnePreview</span></a>
+      <nav class="nav" aria-label="Primary"><a class="active" href="../zh-Hant/index.html">首頁</a><a href="../zh-Hant/help.html">說明</a><a href="../zh-Hant/support.html">支援</a><a href="../zh-Hant/privacy-policy.html">隱私</a><label class="language-switch"><span>語言</span><select aria-label="Language" onchange="if (this.value) window.location.href=this.value"><option value="../index.html" >English</option><option value="../zh-Hans/index.html" >简体中文</option><option value="../zh-Hant/index.html" selected>繁體中文</option><option value="../ja/index.html" >日本語</option><option value="../ko/index.html" >한국어</option><option value="../de/index.html" >Deutsch</option><option value="../fr/index.html" >Français</option><option value="../hi/index.html" >हिन्दी</option><option value="../id/index.html" >Bahasa Indonesia</option><option value="../ru/index.html" >Русский</option></select></label></nav>
+    </header>
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="kicker">面向開發者和檔案瀏覽情境的 Quick Look 擴充功能</p>
+            <h1>打開編輯器之前，先預覽 Markdown、程式碼、資料和 ZIP 壓縮檔。</h1>
+            <p class="lead">OnePreview 讓檔案檢查留在 Finder、檔案 App 和系統預覽流程裡。按一下空白鍵，就能閱讀文件、檢查結構化資料、瀏覽壓縮檔和查看原始碼。</p>
+            <div class="actions">
+      <a class="button primary" href="https://apps.apple.com/app/id6760284919"><img class="store-icon" src="../images/app-store-icon.svg" alt="">在 App Store 下載</a>
+      <a class="button" href="../downloads/OnePreview.dmg">下載 Mac DMG</a>
+      <a class="button ghost" href="../zh-Hant/help.html">查看啟用說明</a>
     </div>
+          </div>
+          <div class="product-panel" aria-label="預覽範例">
+            <div class="window-bar"><span></span><span></span><span></span></div>
+            <div class="file-tabs"><span>README.md</span><span>data.jsonl</span><span>archive.zip</span></div>
+            <pre><code># Release Notes
 
-
-    <section class="hero">
-      <div>
-        <p class="eyebrow">全能 Quick Look 預覽擴充功能</p>
-        <h1>OnePreview</h1>
-        <p class="subhead">為 Markdown、程式碼、資料和資料夾增強快速查看。</p>
-        <p class="lead">OnePreview 擴展 Apple 系統快速查看能力，在 Mac、iPhone 和 iPad 上為 Markdown、JSON、JSONL、CSV、原始碼、純文字和資料夾提供更清晰的預覽。</p>
-        <div class="actions">
-          <a class="button primary" href="https://apps.apple.com/app/id6760284919"><img class="store-icon" src="../images/app-store-icon.svg" alt="">前往 App Store</a>
-          <a class="button secondary" href="../downloads/OnePreview.dmg">下載 Mac DMG</a>
-          <a class="button secondary" href="help.html">查看說明</a>
-        </div>
-      </div>
-      <div class="preview-panel" aria-hidden="true">
-        <div class="window">
-          <div class="traffic"><span></span><span></span><span></span></div>
-          <pre><code># OnePreview
-
-```swift
-let file = QuickLook.preview("demo.jsonl")
+```mermaid
+flowchart LR
+  Finder --&gt; QuickLook
+  QuickLook --&gt; OnePreview
+  OnePreview --&gt; Rendered[Rendered Preview]
 ```
 
-| Format | Preview |
+| Format | View |
 | --- | --- |
-| Markdown | Rendered + Source |
-| JSONL | Formatted records |
-| CSV | Table |
-</code></pre>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>不用打開 App，先看懂檔案</h2>
-      <div class="grid"><article class="card"><h3>Markdown 直接排版</h3><p>支援 GitHub 風格 Markdown、程式碼高亮、表格、數學公式、Mermaid 圖表、提示框和原始碼模式。</p></article>
-<article class="card"><h3>結構化資料一眼讀懂</h3><p>JSON、JSONL、YAML、XML、CSV、TSV 都能以適合快速檢查的方式呈現。</p></article>
-<article class="card"><h3>原始碼高亮有脈絡</h3><p>支援 Swift、Python、JavaScript、C++、Rust、Go、Ruby、Java、Shell 等主流語言。</p></article>
-<article class="card"><h3>資料夾也能預覽</h3><p>直接查看資料夾內容、大小和修改時間，不必先進入目錄。</p></article></div>
-    </section>
-
-    <section class="split-section">
-      <article class="panel">
-        <h2>支援格式</h2>
-        <p>Markdown、JSON、JSONL、YAML、XML、CSV、TSV、Swift、Python、JavaScript、TypeScript、C、C++、Rust、Go、Ruby、Java、Shell、純文字、日誌和資料夾。</p>
-      </article>
-      <article class="panel">
-        <h2>為開發者瀏覽檔案的習慣而生</h2>
-        <ol><li>macOS 在 Finder 中按空白鍵；iPhone 和 iPad 在檔案 App 或支援快速查看的 App 中打開。</li>
-<li>Markdown、JSON、JSONL 可在渲染視圖和原始文字之間切換。</li>
-<li>不必為了確認一個檔案而打開完整編輯器，保持在系統預覽流程裡完成判斷。</li></ol>
-      </article>
-    </section>
-
-
-    <footer class="footer-bar">
-      <span>© 2026 LUO PEIKE. OnePreview.</span>
-      <span><a href="mailto:cameoshell09@gmail.com">cameoshell09@gmail.com</a></span>
-    </footer>
-
-  </main>
+| JSONL | Records |
+| ZIP | Contents |
+| SQLite | Tables |</code></pre>
+          </div>
+        </section>
+        <section class="section"><h2>覆蓋日常檢查的主要檔案類型</h2><div class="feature-grid"><article class="feature"><strong>Markdown 與文件</strong><p>GitHub 風格 Markdown、表格、程式碼區塊、數學公式、Mermaid 圖表、提示區塊、純文字、日誌和文件檔案。</p></article><article class="feature"><strong>結構化資料</strong><p>JSON、JSONL、YAML、XML、CSV、TSV、TOML、ENV、Apple plist 等文字資料格式。</p></article><article class="feature"><strong>原始碼檔案</strong><p>Swift、Python、JavaScript、TypeScript、C、C++、Objective-C、Rust、Go、Ruby、Java、Shell、Assembly 等。</p></article><article class="feature"><strong>壓縮檔與資料夾</strong><p>ZIP 壓縮檔內容、資料夾列表、檔案大小、修改時間和 SQLite 資料庫概覽。</p></article></div><p class="format-list"><strong>Technical formats:</strong> Markdown, JSON, JSONL, YAML, XML, CSV, TSV, TOML, ENV, SQLite, Swift, Python, JavaScript, TypeScript, C, C++, Objective-C, Rust, Go, Ruby, Java, Shell, Assembly, source code, plain text, logs, folders, ZIP archives, Apple property lists (plist).</p></section>
+        <section class="section split"><div><h2>為真實 Quick Look 工作流程設計</h2><div class="feature-grid compact-grid"><article class="feature"><strong>留在 Finder</strong><p>macOS 中按空白鍵即可檢查支援檔案。</p></article><article class="feature"><strong>支援 iPhone 和 iPad</strong><p>在檔案 App 或任何調用系統快速查看的 App 中使用。</p></article><article class="feature"><strong>渲染與原始碼視圖</strong><p>需要時在可讀渲染結果和原始文字之間切換。</p></article></div></div><a class="button compact" href="../zh-Hant/help.html">查看啟用說明</a></section>
+        <section class="section"><h2>設定與預覽指南</h2><div class="feature-grid two"><article class="feature"><strong><a href="../zh-Hant/help.html">啟用 Quick Look 擴充功能</a></strong><p>安裝後先打開 OnePreview，再到系統擴充功能設定中啟用。</p></article><article class="feature"><strong><a href="../zh-Hant/privacy-policy.html">了解隱私與檔案處理</a></strong><p>檔案透過 Apple 系統預覽機制在本機渲染。</p></article><article class="feature"><strong><a href="../zh-Hant/support.html">回報無法正確預覽的檔案</a></strong><p>請提供檔案類型、系統版本和簡短重現說明。</p></article></div></section>
+      </main>
+      <footer class="footer">OnePreview 為 Markdown、程式碼、資料、壓縮檔和資料夾增強 Apple 快速查看。</footer>
+    </div>
+  </div>
 </body>
 </html>

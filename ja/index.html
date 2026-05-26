@@ -3,115 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="OnePreview は Mac、iPhone、iPad の Apple Quick Look を拡張し、Markdown、JSON、JSONL、CSV、ソースコード、プレーンテキスト、フォルダを見やすくプレビューします。">
+  <meta name="description" content="Markdown、JSON、JSONL、YAML、XML、CSV、TSV、TOML、ENV、SQLite、source code、plain text、logs、ZIP アーカイブ、フォルダ、Apple plistを Mac、iPhone、iPad の Apple Quick Look でローカルプレビューできます。">
   <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://one-preview.luopeike.com/ja/index.html">
-  <link rel="alternate" hreflang="en" href="https://one-preview.luopeike.com/index.html">
-  <link rel="alternate" hreflang="zh-CN" href="https://one-preview.luopeike.com/zh-Hans/index.html">
-  <link rel="alternate" hreflang="zh-TW" href="https://one-preview.luopeike.com/zh-Hant/index.html">
-  <link rel="alternate" hreflang="hi" href="https://one-preview.luopeike.com/hi/index.html">
-  <link rel="alternate" hreflang="ja" href="https://one-preview.luopeike.com/ja/index.html">
-  <link rel="alternate" hreflang="ko" href="https://one-preview.luopeike.com/ko/index.html">
-  <link rel="alternate" hreflang="de" href="https://one-preview.luopeike.com/de/index.html">
-  <link rel="alternate" hreflang="fr" href="https://one-preview.luopeike.com/fr/index.html">
-  <link rel="alternate" hreflang="id" href="https://one-preview.luopeike.com/id/index.html">
-  <link rel="alternate" hreflang="ru" href="https://one-preview.luopeike.com/ru/index.html">
-  <link rel="alternate" hreflang="x-default" href="https://one-preview.luopeike.com/index.html">
+  <meta property="og:title" content="OnePreview | Markdown、コード、データ、ZIP を Quick Look でプレビュー">
+  <meta property="og:description" content="Markdown、JSON、JSONL、YAML、XML、CSV、TSV、TOML、ENV、SQLite、source code、plain text、logs、ZIP アーカイブ、フォルダ、Apple plistを Mac、iPhone、iPad の Apple Quick Look でローカルプレビューできます。">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="OnePreview">
-  <meta property="og:description" content="OnePreview は Mac、iPhone、iPad の Apple Quick Look を拡張し、Markdown、JSON、JSONL、CSV、ソースコード、プレーンテキスト、フォルダを見やすくプレビューします。">
   <meta property="og:url" content="https://one-preview.luopeike.com/ja/index.html">
   <meta property="og:site_name" content="OnePreview">
   <meta property="og:image" content="https://one-preview.luopeike.com/images/social-preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="OnePreview">
-  <meta name="twitter:description" content="OnePreview は Mac、iPhone、iPad の Apple Quick Look を拡張し、Markdown、JSON、JSONL、CSV、ソースコード、プレーンテキスト、フォルダを見やすくプレビューします。">
   <meta name="twitter:image" content="https://one-preview.luopeike.com/images/social-preview.png">
-  <meta name="theme-color" content="#0a84ff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#10131a" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://one-preview.luopeike.com/ja/index.html">
+  <link rel="alternate" hreflang="en" href="https://one-preview.luopeike.com/index.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://one-preview.luopeike.com/zh-Hans/index.html">
+  <link rel="alternate" hreflang="zh-Hant" href="https://one-preview.luopeike.com/zh-Hant/index.html">
+  <link rel="alternate" hreflang="ja" href="https://one-preview.luopeike.com/ja/index.html">
+  <link rel="alternate" hreflang="ko" href="https://one-preview.luopeike.com/ko/index.html">
+  <link rel="alternate" hreflang="de" href="https://one-preview.luopeike.com/de/index.html">
+  <link rel="alternate" hreflang="fr" href="https://one-preview.luopeike.com/fr/index.html">
+  <link rel="alternate" hreflang="hi" href="https://one-preview.luopeike.com/hi/index.html">
+  <link rel="alternate" hreflang="id" href="https://one-preview.luopeike.com/id/index.html">
+  <link rel="alternate" hreflang="ru" href="https://one-preview.luopeike.com/ru/index.html">
+  <link rel="alternate" hreflang="x-default" href="https://one-preview.luopeike.com/index.html">
   <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
   <link rel="manifest" href="../favicon/site.webmanifest">
+  <meta name="theme-color" content="#0A84FF">
   <link rel="stylesheet" href="../style/base.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "OnePreview", "operatingSystem": "macOS, iOS, iPadOS", "applicationCategory": "DeveloperApplication", "description": "OnePreview は Mac、iPhone、iPad の Apple Quick Look を拡張し、Markdown、JSON、JSONL、CSV、ソースコード、プレーンテキスト、フォルダを見やすくプレビューします。", "url": "https://one-preview.luopeike.com/ja/index.html", "downloadUrl": "https://apps.apple.com/app/id6760284919", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-  <title>OnePreview</title>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "OnePreview", "applicationCategory": "DeveloperApplication", "operatingSystem": "macOS, iOS, iPadOS", "description": "Markdown、JSON、JSONL、YAML、XML、CSV、TSV、TOML、ENV、SQLite、source code、plain text、logs、ZIP アーカイブ、フォルダ、Apple plistを Mac、iPhone、iPad の Apple Quick Look でローカルプレビューできます。", "url": "https://one-preview.luopeike.com/ja/index.html", "downloadUrl": "https://apps.apple.com/app/id6760284919", "image": "https://one-preview.luopeike.com/images/social-preview.png", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+  <title>OnePreview | Markdown、コード、データ、ZIP を Quick Look でプレビュー</title>
 </head>
 <body>
-  <main class="page">
-
-    <div class="topbar">
-      <a class="brand" href="index.html" aria-label="OnePreview home">
-        <img src="../favicon/apple-touch-icon.png" alt="" width="32" height="32">
-        <span>OnePreview</span>
-      </a>
-      <nav class="site-nav" aria-label="Primary"><a class="active" href="index.html">ホーム</a><a href="help.html">ヘルプ</a><a href="support.html">サポート</a><a href="privacy-policy.html">プライバシー</a></nav>
-      <select class="lang-select" aria-label="Language" onchange="if (this.value) window.location.href=this.value">
-        <option value="../index.html">English</option><option value="../zh-Hans/index.html">简体中文</option><option value="../zh-Hant/index.html">繁體中文</option><option value="../hi/index.html">हिन्दी</option><option value="../ja/index.html" selected>日本語</option><option value="../ko/index.html">한국어</option><option value="../de/index.html">Deutsch</option><option value="../fr/index.html">Français</option><option value="../id/index.html">Bahasa Indonesia</option><option value="../ru/index.html">Русский</option>
-      </select>
+  <div class="page">
+    <div class="container">
+      <header class="topbar">
+      <a class="brand" href="../ja/index.html" aria-label="OnePreview home"><img src="../favicon/apple-touch-icon.png" alt="" width="38" height="38"><span>OnePreview</span></a>
+      <nav class="nav" aria-label="Primary"><a class="active" href="../ja/index.html">Home</a><a href="../ja/help.html">Help</a><a href="../ja/support.html">Support</a><a href="../ja/privacy-policy.html">Privacy</a><label class="language-switch"><span>Language</span><select aria-label="Language" onchange="if (this.value) window.location.href=this.value"><option value="../index.html" >English</option><option value="../zh-Hans/index.html" >简体中文</option><option value="../zh-Hant/index.html" >繁體中文</option><option value="../ja/index.html" selected>日本語</option><option value="../ko/index.html" >한국어</option><option value="../de/index.html" >Deutsch</option><option value="../fr/index.html" >Français</option><option value="../hi/index.html" >हिन्दी</option><option value="../id/index.html" >Bahasa Indonesia</option><option value="../ru/index.html" >Русский</option></select></label></nav>
+    </header>
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="kicker">開発者向け Quick Look 拡張</p>
+            <h1>エディタを開く前に Markdown、コード、データ、ZIP を確認。</h1>
+            <p class="lead">OnePreview keeps file inspection inside Finder, Files and the system preview flow. Render documentation, inspect structured data, browse archives and check source files with one press of Spacebar.</p>
+            <div class="actions">
+      <a class="button primary" href="https://apps.apple.com/app/id6760284919"><img class="store-icon" src="../images/app-store-icon.svg" alt="">Download on the App Store</a>
+      <a class="button" href="../downloads/OnePreview.dmg">Download Mac DMG</a>
+      <a class="button ghost" href="../ja/help.html">Read setup help</a>
     </div>
+          </div>
+          <div class="product-panel" aria-label="Preview sample">
+            <div class="window-bar"><span></span><span></span><span></span></div>
+            <div class="file-tabs"><span>README.md</span><span>data.jsonl</span><span>archive.zip</span></div>
+            <pre><code># Release Notes
 
-
-    <section class="hero">
-      <div>
-        <p class="eyebrow">オールインワン Quick Look 拡張</p>
-        <h1>OnePreview</h1>
-        <p class="subhead">Markdown、コード、データ、フォルダのための Quick Look。</p>
-        <p class="lead">OnePreview は Mac、iPhone、iPad の Apple Quick Look を拡張し、Markdown、JSON、JSONL、CSV、ソースコード、プレーンテキスト、フォルダを見やすくプレビューします。</p>
-        <div class="actions">
-          <a class="button primary" href="https://apps.apple.com/app/id6760284919"><img class="store-icon" src="../images/app-store-icon.svg" alt="">App Store で見る</a>
-          <a class="button secondary" href="../downloads/OnePreview.dmg">Mac DMG をダウンロード</a>
-          <a class="button secondary" href="help.html">ヘルプを読む</a>
-        </div>
-      </div>
-      <div class="preview-panel" aria-hidden="true">
-        <div class="window">
-          <div class="traffic"><span></span><span></span><span></span></div>
-          <pre><code># OnePreview
-
-```swift
-let file = QuickLook.preview("demo.jsonl")
+```mermaid
+flowchart LR
+  Finder --&gt; QuickLook
+  QuickLook --&gt; OnePreview
+  OnePreview --&gt; Rendered[Rendered Preview]
 ```
 
-| Format | Preview |
+| Format | View |
 | --- | --- |
-| Markdown | Rendered + Source |
-| JSONL | Formatted records |
-| CSV | Table |
-</code></pre>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>アプリを開く前にファイルを把握</h2>
-      <div class="grid"><article class="card"><h3>読みやすい Markdown</h3><p>GitHub Flavored Markdown、コードハイライト、表、数式、Mermaid 図、アラート、ソース表示に対応。</p></article>
-<article class="card"><h3>構造化データをすばやく確認</h3><p>JSON、JSONL、YAML、XML、CSV、TSV を点検しやすい形で表示します。</p></article>
-<article class="card"><h3>文脈が見えるソースコード</h3><p>Swift、Python、JavaScript、C++、Rust、Go、Ruby、Java、シェルスクリプトなどをハイライト。</p></article>
-<article class="card"><h3>フォルダもプレビュー</h3><p>フォルダ内の項目、サイズ、更新日時を Quick Look から直接確認できます。</p></article></div>
-    </section>
-
-    <section class="split-section">
-      <article class="panel">
-        <h2>対応形式</h2>
-        <p>Markdown、JSON、JSONL、YAML、XML、CSV、TSV、Swift、Python、JavaScript、TypeScript、C、C++、Rust、Go、Ruby、Java、シェルスクリプト、プレーンテキスト、ログ、フォルダ。</p>
-      </article>
-      <article class="panel">
-        <h2>開発者のファイル確認に合わせた設計</h2>
-        <ol><li>macOS では Finder でスペースバー、iPhone と iPad ではファイル App などから Quick Look を開きます。</li>
-<li>Markdown、JSON、JSONL はレンダリング表示と生のソースを切り替えられます。</li>
-<li>ちょっとした確認のたびにフル機能のエディタを開く必要がありません。</li></ol>
-      </article>
-    </section>
-
-
-    <footer class="footer-bar">
-      <span>© 2026 LUO PEIKE. OnePreview.</span>
-      <span><a href="mailto:cameoshell09@gmail.com">cameoshell09@gmail.com</a></span>
-    </footer>
-
-  </main>
+| JSONL | Records |
+| ZIP | Contents |
+| SQLite | Tables |</code></pre>
+          </div>
+        </section>
+        <section class="section"><h2>One extension for the files you inspect every day</h2><div class="feature-grid"><article class="feature"><strong>Markdown and docs</strong><p>GitHub-flavored Markdown, tables, code blocks, math, Mermaid diagrams, alerts, plain text, logs, and documentation files.</p></article><article class="feature"><strong>Structured data</strong><p>JSON, JSONL, YAML, XML, CSV, TSV, TOML, ENV, Apple property lists, and other text-based data formats.</p></article><article class="feature"><strong>Source code</strong><p>Swift, Python, JavaScript, TypeScript, C, C++, Objective-C, Rust, Go, Ruby, Java, shell scripts, Assembly, and more.</p></article><article class="feature"><strong>Archives and folders</strong><p>ZIP archive contents, folder listings, file sizes, modification dates, and SQLite database overviews.</p></article></div><p class="format-list"><strong>Technical formats:</strong> Markdown, JSON, JSONL, YAML, XML, CSV, TSV, TOML, ENV, SQLite, Swift, Python, JavaScript, TypeScript, C, C++, Objective-C, Rust, Go, Ruby, Java, Shell, Assembly, source code, plain text, logs, folders, ZIP archives, Apple property lists (plist).</p></section>
+        <section class="section split"><div><h2>Designed for real Quick Look workflows</h2><div class="feature-grid compact-grid"><article class="feature"><strong>Stay in Finder</strong><p>Press Spacebar on macOS to inspect supported files without launching a full editor.</p></article><article class="feature"><strong>Works on iPhone and iPad</strong><p>Use the Files app or any app that opens system Quick Look previews.</p></article><article class="feature"><strong>Rendered and source views</strong><p>Switch between readable rendered output and raw source when that makes inspection faster.</p></article></div></div><a class="button compact" href="../ja/help.html">Read setup help</a></section>
+        <section class="section"><h2>Setup and file preview guides</h2><div class="feature-grid two"><article class="feature"><strong><a href="../ja/help.html">Enable the Quick Look extension</a></strong><p>Open OnePreview once after installation, then enable it in system extension settings.</p></article><article class="feature"><strong><a href="../ja/privacy-policy.html">Understand privacy and file handling</a></strong><p>Files are previewed locally through Apple system preview mechanisms.</p></article><article class="feature"><strong><a href="../ja/support.html">Report a file that does not preview correctly</a></strong><p>Send the file type, OS version and a short reproduction note.</p></article></div></section>
+      </main>
+      <footer class="footer">OnePreview extends Apple Quick Look for Markdown, code, data, archives and folders.</footer>
+    </div>
+  </div>
 </body>
 </html>
