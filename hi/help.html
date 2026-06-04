@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Enable the extension once, then use the same Quick Look gestures you already use in Finder and Files.">
+  <meta name="description" content="Extension को एक बार enable करें, फिर Finder और Files में वही Quick Look gestures इस्तेमाल करें।">
   <meta name="robots" content="index,follow">
-  <meta property="og:title" content="OnePreview Help | OnePreview">
-  <meta property="og:description" content="Enable the extension once, then use the same Quick Look gestures you already use in Finder and Files.">
+  <meta property="og:title" content="OnePreview सहायता | Quick Look">
+  <meta property="og:description" content="Extension को एक बार enable करें, फिर Finder और Files में वही Quick Look gestures इस्तेमाल करें।">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://one-preview.luopeike.com/hi/help.html">
   <meta property="og:site_name" content="OnePreview">
@@ -15,6 +15,18 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://one-preview.luopeike.com/images/social-preview.png">
+  <meta property="og:locale" content="hi_IN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:locale:alternate" content="zh_TW">
+  <meta property="og:locale:alternate" content="ja_JP">
+  <meta property="og:locale:alternate" content="ko_KR">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:locale:alternate" content="id_ID">
+  <meta property="og:locale:alternate" content="ru_RU">
+  <meta name="twitter:title" content="OnePreview सहायता | Quick Look">
+  <meta name="twitter:description" content="Extension को एक बार enable करें, फिर Finder और Files में वही Quick Look gestures इस्तेमाल करें।">
   <link rel="canonical" href="https://one-preview.luopeike.com/hi/help.html">
   <link rel="alternate" hreflang="en" href="https://one-preview.luopeike.com/help.html">
   <link rel="alternate" hreflang="zh-Hans" href="https://one-preview.luopeike.com/zh-Hans/help.html">
@@ -33,25 +45,26 @@
   <link rel="manifest" href="../favicon/site.webmanifest">
   <meta name="theme-color" content="#0A84FF">
   <link rel="stylesheet" href="../style/base.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "OnePreview", "applicationCategory": "DeveloperApplication", "operatingSystem": "macOS, iOS, iPadOS", "description": "Enable the extension once, then use the same Quick Look gestures you already use in Finder and Files.", "url": "https://one-preview.luopeike.com/hi/help.html", "downloadUrl": "https://apps.apple.com/app/id6760284919", "image": "https://one-preview.luopeike.com/images/social-preview.png", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-  <title>OnePreview Help | OnePreview</title>
+  <script type="application/ld+json" data-seo="seo-1">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OnePreview","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS, iOS, iPadOS","description":"Extension को एक बार enable करें, फिर Finder और Files में वही Quick Look gestures इस्तेमाल करें।","url":"https://one-preview.luopeike.com/hi/help.html","downloadUrl":"https://apps.apple.com/app/id6760284919","image":"https://one-preview.luopeike.com/images/social-preview.png","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","url":"https://apps.apple.com/app/id6760284919"},"featureList":["Markdown preview","MDX preview","TextBundle and TextPack preview","Source code preview","JSON, YAML, XML, CSV, TSV, TOML and ENV preview","ZIP archive preview","SQLite database preview","Apple Quick Look extension"]}</script>
+  <script type="application/ld+json" data-seo="seo-2">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"OnePreview","item":"https://one-preview.luopeike.com/hi/index.html"},{"@type":"ListItem","position":2,"name":"OnePreview सहायता","item":"https://one-preview.luopeike.com/hi/help.html"}]}</script>
+  <script type="application/ld+json" data-seo="seo-3">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"macOS पर OnePreview कैसे enable करें?","acceptedAnswer":{"@type":"Answer","text":"Installation के बाद OnePreview एक बार खोलें। macOS Sequoia में System Settings > General > Login Items & Extensions > Quick Look पर जाकर OnePreview enable करें। macOS Sonoma में System Settings > Privacy & Security > Extensions > Quick Look इस्तेमाल करें।"}},{"@type":"Question","name":"iPhone या iPad पर OnePreview कैसे इस्तेमाल करें?","acceptedAnswer":{"@type":"Answer","text":"OnePreview install करके एक बार खोलें। फिर Files app या Apple system Quick Look इस्तेमाल करने वाली किसी भी app में supported file खोलें।"}},{"@type":"Question","name":"कौन से file formats supported हैं?","acceptedAnswer":{"@type":"Answer","text":"Markdown, MDX, TextBundle, TextPack, JSON, JSONL, YAML, XML, CSV, TSV, TOML, ENV, SQLite databases, source code, plain text, logs, folders, ZIP archives और Apple property lists."}},{"@type":"Question","name":"Markdown preview कभी पुराना version क्यों दिखाता है?","acceptedAnswer":{"@type":"Answer","text":"macOS Quick Look preview snapshots cache कर सकता है। Preview बंद करें, Spacebar से दोबारा खोलें, और development के दौरान Finder पुराना content दिखाए तो qlmanage -r && qlmanage -r cache चलाएं।"}},{"@type":"Question","name":"कुछ local Markdown images क्यों नहीं दिखतीं?","acceptedAnswer":{"@type":"Answer","text":"Apple sandbox rules Quick Look extension को selected file के पास वाली local resources पढ़ने से रोक सकते हैं। Web image URLs सबसे reliable होते हैं।"}},{"@type":"Question","name":"क्या OnePreview files edit करता है?","acceptedAnswer":{"@type":"Answer","text":"नहीं। OnePreview viewer है और आपके documents modify नहीं करता।"}}]}</script>
+  <title>OnePreview सहायता | Quick Look</title>
 </head>
 <body>
   <div class="page">
     <div class="container">
       <header class="topbar">
       <a class="brand" href="../hi/index.html" aria-label="OnePreview home"><img src="../favicon/apple-touch-icon.png" alt="" width="38" height="38"><span>OnePreview</span></a>
-      <nav class="nav" aria-label="Primary"><a href="../hi/index.html">Home</a><a class="active" href="../hi/help.html">Help</a><a href="../hi/support.html">Support</a><a href="../hi/privacy-policy.html">Privacy</a><label class="language-switch"><span>Language</span><select aria-label="Language" onchange="if (this.value) window.location.href=this.value"><option value="../help.html" >English</option><option value="../zh-Hans/help.html" >简体中文</option><option value="../zh-Hant/help.html" >繁體中文</option><option value="../ja/help.html" >日本語</option><option value="../ko/help.html" >한국어</option><option value="../de/help.html" >Deutsch</option><option value="../fr/help.html" >Français</option><option value="../hi/help.html" selected>हिन्दी</option><option value="../id/help.html" >Bahasa Indonesia</option><option value="../ru/help.html" >Русский</option></select></label></nav>
+      <nav class="nav" aria-label="Primary"><a href="../hi/index.html">होम</a><a class="active" href="../hi/help.html">सहायता</a><a href="../hi/support.html">सपोर्ट</a><a href="../hi/privacy-policy.html">गोपनीयता</a><label class="language-switch"><span>भाषा</span><select aria-label="भाषा" onchange="if (this.value) window.location.href=this.value"><option value="../help.html" >English</option><option value="../zh-Hans/help.html" >简体中文</option><option value="../zh-Hant/help.html" >繁體中文</option><option value="../ja/help.html" >日本語</option><option value="../ko/help.html" >한국어</option><option value="../de/help.html" >Deutsch</option><option value="../fr/help.html" >Français</option><option value="../hi/help.html" selected>हिन्दी</option><option value="../id/help.html" >Bahasa Indonesia</option><option value="../ru/help.html" >Русский</option></select></label></nav>
     </header>
       <main class="article-page">
-        <section class="article-hero"><p class="kicker">OnePreview</p><h1>OnePreview Help</h1><p class="lead">Enable the extension once, then use the same Quick Look gestures you already use in Finder and Files.</p><div class="actions">
-      <a class="button primary" href="https://apps.apple.com/app/id6760284919"><img class="store-icon" src="../images/app-store-icon.svg" alt="">Download on the App Store</a>
-      <a class="button" href="../downloads/OnePreview.dmg">Download Mac DMG</a>
-      <a class="button ghost" href="../hi/help.html">Read setup help</a>
+        <section class="article-hero"><p class="kicker">OnePreview</p><h1>OnePreview सहायता</h1><p class="lead">Extension को एक बार enable करें, फिर Finder और Files में वही Quick Look gestures इस्तेमाल करें।</p><div class="actions">
+      <a class="button primary" href="https://apps.apple.com/app/id6760284919"><img class="store-icon" src="../images/app-store-icon.svg" alt="">App Store से डाउनलोड करें</a>
+      <a class="button ghost" href="../hi/help.html">सेटअप सहायता पढ़ें</a>
     </div></section>
-        <section class="faq-list"><article class="faq-item"><h2>How do I enable OnePreview on macOS?</h2><p>Open OnePreview once after installation. On macOS Sequoia, go to System Settings &gt; General &gt; Login Items &amp; Extensions &gt; Quick Look and enable OnePreview. On macOS Sonoma, use System Settings &gt; Privacy &amp; Security &gt; Extensions &gt; Quick Look.</p></article><article class="faq-item"><h2>How do I use OnePreview on iPhone or iPad?</h2><p>Install and open OnePreview once. Then open a supported file in Files or any app that uses Apple system Quick Look.</p></article><article class="faq-item"><h2>Which file formats are supported?</h2><p>Markdown, JSON, JSONL, YAML, XML, CSV, TSV, TOML, ENV, SQLite databases, source code, plain text, logs, folders, ZIP archives, and Apple property lists.</p></article><article class="faq-item"><h2>Why do some local Markdown images not appear?</h2><p>Apple sandbox rules limit what a Quick Look extension can read next to the selected file. Web image URLs are the most reliable option.</p></article><article class="faq-item"><h2>Does OnePreview edit files?</h2><p>No. OnePreview is a viewer and does not modify your documents.</p></article></section>
+        <section class="faq-list"><article class="faq-item"><h2>macOS पर OnePreview कैसे enable करें?</h2><p>Installation के बाद OnePreview एक बार खोलें। macOS Sequoia में System Settings > General > Login Items &amp; Extensions > Quick Look पर जाकर OnePreview enable करें। macOS Sonoma में System Settings > Privacy &amp; Security > Extensions > Quick Look इस्तेमाल करें।</p></article><article class="faq-item"><h2>iPhone या iPad पर OnePreview कैसे इस्तेमाल करें?</h2><p>OnePreview install करके एक बार खोलें। फिर Files app या Apple system Quick Look इस्तेमाल करने वाली किसी भी app में supported file खोलें।</p></article><article class="faq-item"><h2>कौन से file formats supported हैं?</h2><p>Markdown, MDX, TextBundle, TextPack, JSON, JSONL, YAML, XML, CSV, TSV, TOML, ENV, SQLite databases, source code, plain text, logs, folders, ZIP archives और Apple property lists.</p></article><article class="faq-item"><h2>Markdown preview कभी पुराना version क्यों दिखाता है?</h2><p>macOS Quick Look preview snapshots cache कर सकता है। Preview बंद करें, Spacebar से दोबारा खोलें, और development के दौरान Finder पुराना content दिखाए तो <code>qlmanage -r &amp;&amp; qlmanage -r cache</code> चलाएं।</p></article><article class="faq-item"><h2>कुछ local Markdown images क्यों नहीं दिखतीं?</h2><p>Apple sandbox rules Quick Look extension को selected file के पास वाली local resources पढ़ने से रोक सकते हैं। Web image URLs सबसे reliable होते हैं।</p></article><article class="faq-item"><h2>क्या OnePreview files edit करता है?</h2><p>नहीं। OnePreview viewer है और आपके documents modify नहीं करता।</p></article></section>
       </main>
-      <footer class="footer">OnePreview extends Apple Quick Look for Markdown, code, data, archives and folders.</footer>
+      <footer class="footer">OnePreview Markdown, code, data, archives और folders के लिए Apple Quick Look को बेहतर बनाता है।</footer>
     </div>
   </div>
 </body>
