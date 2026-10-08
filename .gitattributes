@@ -1,0 +1,2 @@
+# Keep pinned upstream bundles byte-for-byte; review authored code separately.
+script/markdown-report/vendor/** binary linguist-vendored

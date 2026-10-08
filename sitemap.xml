@@ -680,4 +680,22 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://one-preview.luopeike.com/ru/privacy-policy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://one-preview.luopeike.com/privacy-policy" />
   </url>
+<url>
+  <loc>https://one-preview.luopeike.com/tools/markdown-to-pdf/</loc>
+  <lastmod>2026-10-08</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://one-preview.luopeike.com/tools/markdown-to-pdf/" />
+  <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://one-preview.luopeike.com/zh-Hans/tools/markdown-to-pdf/" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://one-preview.luopeike.com/tools/markdown-to-pdf/" />
+</url>
+<url>
+  <loc>https://one-preview.luopeike.com/zh-Hans/tools/markdown-to-pdf/</loc>
+  <lastmod>2026-10-08</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://one-preview.luopeike.com/tools/markdown-to-pdf/" />
+  <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://one-preview.luopeike.com/zh-Hans/tools/markdown-to-pdf/" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://one-preview.luopeike.com/tools/markdown-to-pdf/" />
+</url>
 </urlset>

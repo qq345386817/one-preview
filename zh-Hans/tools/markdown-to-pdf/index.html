@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Markdown 在线转 PDF：A4 报告、表格与流程图 | OnePreview</title>
+  <meta name="description" content="在浏览器中把 Markdown 排成 A4 PDF 报告，支持表格分页、代码换行、Mermaid 流程图与数学公式。免费使用，无需账号或安装 App，文档在浏览器本地处理。">
+  <link rel="canonical" href="https://one-preview.luopeike.com/zh-Hans/tools/markdown-to-pdf/">
+  <link rel="alternate" hreflang="en" href="https://one-preview.luopeike.com/tools/markdown-to-pdf/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://one-preview.luopeike.com/zh-Hans/tools/markdown-to-pdf/">
+  <link rel="alternate" hreflang="x-default" href="https://one-preview.luopeike.com/tools/markdown-to-pdf/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Markdown 在线转 PDF | OnePreview">
+  <meta property="og:description" content="在浏览器本地生成清晰的 A4 报告，支持表格、代码和流程图。免费使用，无需账号。">
+  <meta property="og:url" content="https://one-preview.luopeike.com/zh-Hans/tools/markdown-to-pdf/">
+  <meta property="og:image" content="https://one-preview.luopeike.com/images/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0A84FF">
+  <link rel="icon" href="/favicon/favicon-32x32.png">
+  <link rel="stylesheet" href="/style/base.css">
+  <link rel="stylesheet" href="/style/markdown-report.css">
+  <script src="/script/markdown-report/tool.js" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"OnePreview Markdown 转 PDF","url":"https://one-preview.luopeike.com/zh-Hans/tools/markdown-to-pdf/","applicationCategory":"UtilitiesApplication","operatingSystem":"现代网页浏览器","inLanguage":"zh-Hans","browserRequirements":"启用 JavaScript 和浏览器打印","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"在浏览器本地把 Markdown 排成 A4 PDF 报告，支持表格、代码、Mermaid 流程图和数学公式。"}</script>
+</head>
+<body>
+  <div class="page"><div class="container">
+    <header class="topbar">
+      <a class="brand" href="/zh-Hans/"><img src="/favicon/apple-touch-icon.png" alt="" width="38" height="38"><span>OnePreview</span></a>
+      <nav class="nav" aria-label="主导航"><a href="/zh-Hans/">App</a><a class="active" href="/zh-Hans/tools/markdown-to-pdf/">Markdown 转 PDF</a><a href="/zh-Hans/help">帮助</a><a href="/tools/markdown-to-pdf/" lang="en">English</a></nav>
+    </header>
+    <main>
+      <section class="tool-heading">
+        <p class="kicker">免费使用 · 浏览器本地处理 · 无需账号</p>
+        <h1>把 Markdown 排成<br>可交付的 PDF。</h1>
+        <p class="lead">清晰的 A4 报告版式，带页码、表格续页表头和自动换行的代码。先检查每一页，再保存为 PDF。</p>
+      </section>
+      <div class="tool-layout">
+        <section class="tool-editor" aria-label="Markdown 输入">
+          <label for="markdown-source">Markdown 内容</label>
+          <textarea id="markdown-source" spellcheck="false" placeholder="# 我的报告"></textarea>
+          <div class="actions">
+            <label class="button ghost file-label" for="markdown-file">打开 Markdown</label><input class="visually-hidden" id="markdown-file" type="file" accept=".md,.markdown,text/markdown,text/plain">
+            <button class="button ghost" id="load-sample" data-sample="example.md" type="button">试用示例</button>
+          </div>
+          <div class="actions">
+            <label class="button ghost file-label" for="image-files">选择报告图片</label><input class="visually-hidden" id="image-files" type="file" multiple accept="image/png,image/jpeg,image/gif,image/webp,image/bmp">
+          </div>
+          <p class="hint">如果文档引用 <code>![图表](images/chart.png)</code>，请额外选择 <code>chart.png</code>。不会自动加载远程图片。最多 16 张，每张 5 MB。</p>
+          <span class="hint" id="asset-count"></span> <button class="text-button" id="clear-images" type="button">清除图片</button>
+          <div class="actions">
+            <button class="button primary" id="render-report" type="button">更新预览</button>
+            <button class="button" id="print-report" type="button" disabled>打印 / 保存为 PDF</button>
+          </div>
+          <p class="tool-status" id="report-status" role="status" aria-live="polite">正在准备示例…</p>
+          <ul id="report-notices" aria-label="报告提示"></ul>
+          <p class="hint" id="print-help">请选择 A4、100% 缩放，并关闭浏览器附加的页眉和页脚。报告已包含页码。</p>
+          <p class="hint">文档和所选图片仅保留在当前浏览器会话中，不会上传或保存到本网站。</p>
+        </section>
+        <section class="tool-preview" id="report-preview" aria-label="A4 报告预览">
+          <div class="preview-bar"><strong>报告预览</strong><span>A4 · 210 × 297 mm</span></div>
+          <div class="preview-scroll"><div id="report-viewport"><iframe id="report-frame" src="/script/markdown-report/report.html" title="分页报告" sandbox="allow-scripts allow-same-origin allow-modals"></iframe></div></div>
+        </section>
+      </div>
+      <section class="section tool-details">
+        <h2>清晰排版，文字仍可复制</h2>
+        <p>输出保留文档文字，而非把屏幕截图放入 PDF。支持标准 Markdown、GitHub 风格表格、代码块、Mermaid 流程图和 KaTeX 数学公式。长表格跨页时重复表头，长代码按页面宽度换行。</p>
+        <p><a href="example.md" download>下载示例 Markdown</a>，也可以在其他工具中使用同一份文档。</p>
+        <h3>如何保存 PDF？</h3>
+        <p>点击“打印 / 保存为 PDF”，在浏览器或系统打印界面选择 PDF 保存方式。iPhone 和 iPad 可从系统打印预览中分享或保存 PDF。这里的预览显示报告内容，附加页眉、页脚与纸张设置由打印界面控制。</p>
+        <h3>首期有哪些限制？</h3>
+        <p>一种 A4 版式，Markdown 不超过 500 KB，报告不超过 100 页。表格单行过高或元素无法安全拆分时会明确提示，避免生成截断的 PDF。缺失图片、无效流程图或公式也会提示。首期不支持 MDX 组件、自定义脚本以及 TextBundle、TextPack 包。</p>
+        <h3>还需要查看本地文件？</h3>
+        <p>OnePreview App 可在 Mac、iPhone 和 iPad 上预览 Markdown 和开发者文件。网页工具可独立使用，无需安装 App。</p>
+        <div class="actions"><a class="button ghost" href="https://apps.apple.com/app/id6760284919"><img class="store-icon" src="/images/app-store-icon.svg" alt="">从 App Store 下载 OnePreview</a></div>
+      </section>
+    </main>
+    <footer class="footer"><a href="/zh-Hans/privacy-policy">隐私</a> · <a href="/zh-Hans/support">支持</a></footer>
+  </div></div>
+</body>
+</html>

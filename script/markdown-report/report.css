@@ -1,0 +1,43 @@
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: white; }
+body { width: 210mm; color: #182332; font: 11pt/1.55 "Avenir Next", "PingFang SC", "Hiragino Sans", sans-serif; }
+/* WebKit and Chromium map Han glyphs differently when building selectable PDFs. */
+body.report-webkit { font-family: "Avenir Next", "Hiragino Sans GB", "Arial Unicode MS", "Hiragino Sans", sans-serif; }
+.report-page { width: 210mm; height: 297mm; padding: 18mm 20mm 16mm; display: grid; grid-template-rows: 8mm 247mm 8mm; break-after: page; page-break-after: always; background: white; }
+.report-page:last-child { break-after: auto; page-break-after: auto; }
+.report-header, .report-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: #59687a; font-size: 8pt; }
+.report-header { border-bottom: 1px solid #dce4ed; padding-bottom: 2mm; }
+.report-header span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.report-footer { border-top: 1px solid #dce4ed; padding-top: 2mm; }
+.report-body, .report-source { width: 170mm; min-width: 0; display: flow-root; overflow-wrap: anywhere; }
+.report-body { height: 247mm; padding-top: 4mm; padding-bottom: 3mm; }
+.report-source { position: absolute; left: 0; top: 0; visibility: hidden; pointer-events: none; }
+.report-body > :first-child { margin-top: 0; }
+.report-body h1, .report-source h1 { font-size: 25pt; color: #073f82; }
+.report-body h2, .report-source h2 { font-size: 17pt; }
+.report-body h3, .report-source h3 { font-size: 13pt; }
+h1, h2, h3, h4, h5, h6 { margin: 5mm 0 2mm; line-height: 1.25; overflow-wrap: anywhere; }
+p, ul, ol, blockquote, pre, table, .report-diagram { margin: 0 0 3.5mm; }
+ul, ol { padding-left: 6mm; }
+li { margin-bottom: 1mm; }
+a { color: #075bb5; text-decoration: underline; }
+blockquote { border-left: 3px solid #8cb9ec; margin-left: 0; padding-left: 4mm; color: #45596d; }
+pre { padding: 3mm; background: #f1f5fa; border: 1px solid #dce4ed; border-radius: 3px; white-space: pre-wrap; overflow-wrap: anywhere; font: 9pt/1.5 Menlo, Consolas, monospace; color: #182332; }
+code { font-family: Menlo, Consolas, monospace; font-size: 0.88em; }
+pre code { font-size: inherit; white-space: inherit; overflow-wrap: inherit; }
+pre .hljs { padding: 0; background: transparent; }
+table { border-collapse: collapse; table-layout: fixed; width: 100%; font-size: 9pt; }
+th, td { border: 1px solid #cbd6e3; padding: 2mm; vertical-align: top; overflow-wrap: anywhere; }
+th { background: #eaf2fc; text-align: left; font-weight: 700; }
+tr:nth-child(even) td { background: #f7f9fc; }
+thead { display: table-header-group; }
+img { max-width: 100%; max-height: 210mm; object-fit: contain; }
+.report-diagram { text-align: center; }
+.report-diagram svg { display: block; width: 100%; height: auto; max-height: 210mm; margin: 0 auto; }
+.katex-display { max-width: 100%; overflow: visible; }
+.report-warning { display: block; max-width: 100%; color: #754600; background: #fff5df; padding: 3mm; border: 1px solid #e9c97a; font-size: 9pt; }
+hr { border: 0; border-top: 1px solid #dce4ed; margin: 4mm 0; }
+input[type="checkbox"] { pointer-events: none; }
+@page { size: A4; margin: 0; }
+@media print { html, body { width: 210mm; background: white; } .report-source { display: none; } * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
