@@ -68,25 +68,19 @@
       <a class="button ghost" href="/ja/help">設定ヘルプを読む</a>
     </div>
           </div>
-          <div class="product-panel" aria-label="プレビュー例">
-            <div class="window-bar"><span></span><span></span><span></span></div>
-            <div class="file-tabs"><span>README.md</span><span>data.jsonl</span><span>archive.zip</span></div>
-            <pre><code># Release Notes
-
-```mermaid
-flowchart LR
-  Finder --&gt; QuickLook
-  QuickLook --&gt; OnePreview
-  OnePreview --&gt; Rendered[Rendered Preview]
-```
-
-| Format | View |
-| --- | --- |
-| JSONL | Records |
-| ZIP/TAR.GZ | Contents |
-| SQLite | Tables |</code></pre>
-          </div>
-        </section>
+  <div class="product-panel" aria-label="プレビュー例">
+    <div class="window-bar"><span></span><span></span><span></span><p class="window-file">README.md</p></div>
+    <div class="document-example">
+      <p class="example-label">プレビュー例</p>
+      <h3>プロジェクトノート</h3>
+      <div class="example-task"><span class="example-check done" aria-hidden="true">&#10003;</span>文書を確認</div>
+      <div class="example-task"><span class="example-check" aria-hidden="true"></span>レポートを共有</div>
+      <h4>作業の流れ &middot; Mermaid</h4>
+      <div class="example-flow"><span>Markdown</span><b aria-hidden="true">&rarr;</b><span>OnePreview</span><b aria-hidden="true">&rarr;</b><span>プレビュー</span></div>
+      <table class="example-table"><thead><tr><th>ファイル</th><th>プレビュー</th></tr></thead><tbody><tr><td>README.md</td><td>文書</td></tr><tr><td>data.jsonl</td><td>レコード</td></tr><tr><td>archive.zip</td><td>フォルダ階層</td></tr></tbody></table>
+    </div>
+  </div>
+</section>
         <section class="section focus-section"><p class="section-kicker">Markdown プレビュー</p><h2>MacのFinderとiPhone／iPadのファイルAppから読みやすいMarkdownを表示。</h2><div class="feature-grid"><article class="feature"><strong>GitHub 風レンダリング</strong><p>見出し、表、タスクリスト、コードブロック、アラート、ドキュメント向け Markdown をフルエディタなしでプレビュー。</p></article><article class="feature"><strong>MDX、TextBundle、TextPack</strong><p>一般的な Markdown パッケージ形式を、フォルダやアーカイブではなく読みやすい文書として開きます。</p></article><article class="feature"><strong>Mermaid と KaTeX を内蔵</strong><p>同梱アセットで図表、チャート、数式を表示し、一般的な Markdown 文書をオフラインでも扱えます。</p></article><article class="feature"><strong>表示とソースを切り替え</strong><p>正確な記法を確認したい時は、HTML プレビューと元の Markdown ソースを切り替えられます。</p></article></div></section>
         <section class="section"><p class="section-kicker">Markdown だけではありません</p><h2>毎日確認する開発者ファイルを 1 つの拡張機能で。</h2><div class="feature-grid"><article class="feature"><strong>ソースコード</strong><p>Swift、Python、JavaScript、TypeScript、C、C++、Objective-C、Rust、Go、Ruby、Java、Shell、Assembly など。</p></article><article class="feature"><strong>構造化データ</strong><p>JSON、JSONL、YAML、XML、CSV、TSV、TOML、ENV、Apple property list などのテキストデータ形式。</p></article><article class="feature"><strong>アーカイブとフォルダ</strong><p>ZIP/TAR.GZ の内容やフォルダ一覧を、サイズ、更新日、見やすい構造で表示。</p></article><article class="feature"><strong>SQLite データベース</strong><p>データベースツールを起動せずに、テーブル、ビュー、インデックス、列、サンプル行を確認。</p></article></div><p class="format-list"><strong>対応形式：</strong> Markdown、MDX、TextBundle、TextPack、JSON、JSONL、YAML、XML、CSV、TSV、TOML、ENV、SQLite、Swift、Python、JavaScript、TypeScript、C、C++、Objective-C、Rust、Go、Ruby、Java、Shell、Assembly、ソースコード、プレーンテキスト、ログ、フォルダ、ZIP/TAR.GZアーカイブ、Appleプロパティリスト（plist）。</p></section>
         <section class="section trust-strip" aria-label="OnePreview の特長"><div><strong>アカウント不要</strong><span>一度インストールすれば、ファイルをローカル表示できます。</span></div><div><strong>ローカルプレビュー</strong><span>ファイルは Apple のプレビュー機構内で扱われます。</span></div><div><strong>無料アプリ</strong><span>App Storeで利用できます。</span></div></section>

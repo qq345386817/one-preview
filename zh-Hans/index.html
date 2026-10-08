@@ -65,29 +65,22 @@
             <p class="lead">OnePreview 在系统预览流程里渲染 GitHub 风格 Markdown，支持语法高亮、Mermaid 图表和 KaTeX 数学公式。它还可以在打开编辑器前预览源码、结构化数据、ZIP/TAR.GZ 压缩包、文件夹和 SQLite 数据库。</p>
             <div class="actions">
       <a class="button primary" href="https://apps.apple.com/app/id6760284919"><img class="store-icon" src="../images/app-store-icon.svg" alt="">在 App Store 下载</a>
-      <a class="button ghost" href="/zh-Hans/help">查看启用帮助</a>
       <a class="button ghost" href="/zh-Hans/tools/markdown-to-pdf/">Markdown 在线转 PDF</a>
     </div>
           </div>
-          <div class="product-panel" aria-label="预览示例">
-            <div class="window-bar"><span></span><span></span><span></span></div>
-            <div class="file-tabs"><span>README.md</span><span>data.jsonl</span><span>archive.zip</span></div>
-            <pre><code># Release Notes
-
-```mermaid
-flowchart LR
-  Finder --&gt; QuickLook
-  QuickLook --&gt; OnePreview
-  OnePreview --&gt; Rendered[Rendered Preview]
-```
-
-| Format | View |
-| --- | --- |
-| JSONL | Records |
-| ZIP/TAR.GZ | Contents |
-| SQLite | Tables |</code></pre>
-          </div>
-        </section>
+  <div class="product-panel" aria-label="预览示例">
+    <div class="window-bar"><span></span><span></span><span></span><p class="window-file">README.md</p></div>
+    <div class="document-example">
+      <p class="example-label">预览示例</p>
+      <h3>项目笔记</h3>
+      <div class="example-task"><span class="example-check done" aria-hidden="true">&#10003;</span>检查文档内容</div>
+      <div class="example-task"><span class="example-check" aria-hidden="true"></span>分享报告</div>
+      <h4>交付流程 &middot; Mermaid</h4>
+      <div class="example-flow"><span>Markdown</span><b aria-hidden="true">&rarr;</b><span>OnePreview</span><b aria-hidden="true">&rarr;</b><span>预览</span></div>
+      <table class="example-table"><thead><tr><th>文件</th><th>预览</th></tr></thead><tbody><tr><td>README.md</td><td>文档</td></tr><tr><td>data.jsonl</td><td>数据记录</td></tr><tr><td>archive.zip</td><td>文件层级</td></tr></tbody></table>
+    </div>
+  </div>
+</section>
         <section class="section focus-section"><p class="section-kicker">Markdown Preview</p><h2>在 Mac Finder 中快速查看，或从 iPhone 与 iPad 的“文件”App 打开清晰的 Markdown。</h2><div class="feature-grid"><article class="feature"><strong>GitHub 风格渲染</strong><p>无需打开完整编辑器，即可预览标题、表格、任务列表、围栏代码块、提示块和文档型 Markdown。</p></article><article class="feature"><strong>MDX、TextBundle、TextPack</strong><p>把常见 Markdown 包格式作为可读文档打开，而不是只看到文件夹或压缩包列表。</p></article><article class="feature"><strong>内置 Mermaid 与 KaTeX</strong><p>使用随 App 打包的资源渲染图表、流程图和数学公式，常见 Markdown 文档可离线工作。</p></article><article class="feature"><strong>渲染与源码切换</strong><p>需要检查原始语法时，可在可读 HTML 预览和 Markdown 源码之间切换。</p></article></div></section>
         <section class="section"><p class="section-kicker">不止 Markdown</p><h2>覆盖日常检查的开发者文件。</h2><div class="feature-grid"><article class="feature"><strong>源码文件</strong><p>Swift、Python、JavaScript、TypeScript、C、C++、Objective-C、Rust、Go、Ruby、Java、Shell、Assembly 等。</p></article><article class="feature"><strong>结构化数据</strong><p>JSON、JSONL、YAML、XML、CSV、TSV、TOML、ENV、Apple plist 等文本数据格式。</p></article><article class="feature"><strong>压缩包与文件夹</strong><p>浏览 ZIP/TAR.GZ 压缩包内容和文件夹列表，查看文件大小、修改时间与层级结构。</p></article><article class="feature"><strong>SQLite 数据库</strong><p>在打开数据库工具前，先检查表、视图、索引、字段和少量样本行。</p></article></div><p class="format-list"><strong>技术格式：</strong> Markdown、MDX、TextBundle、TextPack、JSON、JSONL、YAML、XML、CSV、TSV、TOML、ENV、SQLite、Swift、Python、JavaScript、TypeScript、C、C++、Objective-C、Rust、Go、Ruby、Java、Shell、Assembly、源码、纯文本、日志、文件夹、ZIP/TAR.GZ 压缩包、Apple 属性列表（plist）。</p></section>
         <section class="section trust-strip" aria-label="OnePreview 亮点"><div><strong>无需账户</strong><span>安装一次，即可在本地查看文件。</span></div><div><strong>本机预览</strong><span>文件留在 Apple 系统预览机制内处理。</span></div><div><strong>免费使用</strong><span>提供 App Store 版本。</span></div></section>

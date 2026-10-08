@@ -31,50 +31,43 @@
     <main>
       <section class="tool-heading">
         <p class="kicker">Free · In your browser · No account needed</p>
-        <h1>Markdown to PDF,<br>ready to share.</h1>
+        <h1>Markdown to PDF, ready to share.</h1>
         <p class="lead">Give your report a clean A4 layout, with page numbers, continued table headers and readable code. Preview every page, then save it as a PDF.</p>
       </section>
-      <div class="tool-layout">
-        <section class="tool-editor" aria-label="Markdown input">
-          <label for="markdown-source">Your Markdown</label>
-          <textarea id="markdown-source" spellcheck="false" placeholder="# My report"></textarea>
-          <div class="actions">
-            <label class="button ghost file-label" for="markdown-file">Open Markdown</label><input class="visually-hidden" id="markdown-file" type="file" accept=".md,.markdown,text/markdown,text/plain">
-            <button class="button ghost" id="load-sample" data-sample="example.md" type="button">Try an example</button>
-          </div>
-          <div class="actions">
-            <label class="button ghost file-label" for="image-files">Choose report images</label><input class="visually-hidden" id="image-files" type="file" multiple accept="image/png,image/jpeg,image/gif,image/webp,image/bmp">
-          </div>
-          <p class="hint">For <code>![Chart](images/chart.png)</code>, also choose <code>chart.png</code>. Remote images are not fetched. Up to 16 images, 5 MB each.</p>
-          <span class="hint" id="asset-count"></span> <button class="text-button" id="clear-images" type="button">Clear images</button>
-          <div class="actions">
-            <button class="button primary" id="render-report" type="button">Update preview</button>
-            <button class="button" id="print-report" type="button" disabled>Print / Save as PDF</button>
-          </div>
-          <p class="tool-status" id="report-status" role="status" aria-live="polite">Preparing the example…</p>
-          <ul id="report-notices" aria-label="Report warnings"></ul>
-          <p class="hint" id="print-help">Choose A4 and 100% scale. Turn off browser headers and footers; the report includes its own page numbers.</p>
-          <p class="hint">Your document and chosen images stay in this browser session. Nothing is uploaded or saved to this website.</p>
-        </section>
+    <div class="tool-layout">
+      <div class="tool-actions" role="group" aria-label="Report actions">
+        <label class="button ghost file-label" for="markdown-file">Open Markdown</label><input class="visually-hidden" id="markdown-file" type="file" accept=".md,.markdown,text/markdown,text/plain">
+        <label class="button ghost file-label" for="image-files">Choose report images</label><input class="visually-hidden" id="image-files" type="file" multiple accept="image/png,image/jpeg,image/gif,image/webp,image/bmp">
+        <button class="button ghost" id="load-sample" data-sample="example.md" type="button">Try an example</button>
+        <span class="toolbar-spacer"></span>
+        <button class="button primary" id="render-report" type="button">Update preview</button>
+        <button class="button" id="print-report" type="button" disabled>Print / Save as PDF</button>
+      </div>
+      <section class="tool-editor" aria-label="Markdown input">
+        <label for="markdown-source">Your Markdown</label>
+        <textarea id="markdown-source" spellcheck="false" placeholder="# My report"></textarea>
+        <div class="source-footer"><p class="hint">For <code>![Chart](images/chart.png)</code>, also choose <code>chart.png</code>. Remote images are not fetched. Up to 16 images, 5 MB each.</p><span class="hint" id="asset-count"></span> <button class="text-button" id="clear-images" type="button">Clear images</button></div>
+      </section>
         <section class="tool-preview" id="report-preview" aria-label="A4 report preview">
           <div class="preview-bar"><strong>Report preview</strong><span>A4 · 210 × 297 mm</span></div>
           <div class="preview-scroll"><div id="report-viewport"><iframe id="report-frame" src="/script/markdown-report/report.html" title="Paginated report" sandbox="allow-scripts allow-same-origin allow-modals"></iframe></div></div>
         </section>
-      </div>
+    </div>
+    <div class="tool-feedback"><p class="tool-status" id="report-status" role="status" aria-live="polite">Preparing the example…</p><ul id="report-notices" aria-label="Report warnings"></ul><p class="hint" id="print-help">Choose A4 and 100% scale. Turn off browser headers and footers; the report includes its own page numbers.</p><p class="hint">Your document and chosen images stay in this browser session. Nothing is uploaded or saved to this website.</p></div>
       <section class="section tool-details">
         <h2>A report you can read and copy</h2>
         <p>The PDF uses text, not screenshots of the document. Standard Markdown, GitHub-style tables, code blocks, Mermaid diagrams and KaTeX math are supported. Long tables continue with their headers on each page; long code wraps to the available width.</p>
         <p><a href="example.md" download>Download the example Markdown</a> to try the same report in another workflow.</p>
-        <h3>How do I save the PDF?</h3>
-        <p>Use Print / Save as PDF, then choose your browser or system PDF destination. On iPhone and iPad, use the system print preview to share or save the PDF. The preview shows the report content; browser-added print headers and paper settings are controlled by the print dialog.</p>
-        <h3>What are the limits?</h3>
-        <p>One A4 layout, up to 500 KB of Markdown and 100 pages. Oversized table rows or elements that cannot be split safely produce a message instead of a clipped PDF. Missing images and invalid diagrams or formulas are reported. MDX components, custom scripts, TextBundle and TextPack are outside this tool's first release.</p>
-        <h3>Looking for local file previews?</h3>
-        <p>OnePreview for Mac, iPhone and iPad previews Markdown and developer files on your device. This web tool works independently of the app.</p>
-        <div class="actions"><a class="button ghost" href="https://apps.apple.com/app/id6760284919"><img class="store-icon" src="/images/app-store-icon.svg" alt="">Get OnePreview on the App Store</a></div>
+        <div class="tool-guides"><article class="tool-guide"><h3>How do I save the PDF?</h3>
+        <p>Use Print / Save as PDF, then choose your browser or system PDF destination. On iPhone and iPad, use the system print preview to share or save the PDF. The preview shows the report content; browser-added print headers and paper settings are controlled by the print dialog.</p></article><article class="tool-guide"><h3>What are the limits?</h3>
+        <p>One A4 layout, up to 500 KB of Markdown and 100 pages. Oversized table rows or elements that cannot be split safely produce a message instead of a clipped PDF. Missing images and invalid diagrams or formulas are reported. MDX components, custom scripts, TextBundle and TextPack are outside this tool's first release.</p></article></div>
+
+        <div class="tool-app"><div><h3>Looking for local file previews?</h3>
+        <p>OnePreview for Mac, iPhone and iPad previews Markdown and developer files on your device. This web tool works independently of the app.</p></div>
+          <div class="actions"><a class="button ghost" href="https://apps.apple.com/app/id6760284919"><img class="store-icon" src="/images/app-store-icon.svg" alt="">Get OnePreview on the App Store</a></div></div>
       </section>
     </main>
-    <footer class="footer"><a href="/privacy-policy">Privacy</a> · <a href="/support">Support</a></footer>
+    <footer class="footer"><span>OnePreview</span><nav aria-label="Footer"><a href="/privacy-policy">Privacy</a> · <a href="/support">Support</a></nav></footer>
   </div></div>
 </body>
 </html>

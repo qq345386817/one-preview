@@ -37,7 +37,9 @@
     const viewport = document.getElementById("report-viewport");
     const page = lastResult.pages[0];
     const last = lastResult.pages[lastResult.pages.length - 1];
-    const scale = Math.min(1, (viewport.parentElement.clientWidth - 32) / page.width);
+    const scrollStyle = getComputedStyle(viewport.parentElement);
+    const availableWidth = viewport.parentElement.clientWidth - parseFloat(scrollStyle.paddingLeft) - parseFloat(scrollStyle.paddingRight);
+    const scale = Math.min(1, availableWidth / page.width);
     frame.style.width = `${Math.ceil(page.width)}px`;
     frame.style.height = `${Math.ceil(last.y + last.height)}px`;
     frame.style.transform = `scale(${scale})`;
