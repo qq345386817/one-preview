@@ -19,3 +19,9 @@ math), localized status/errors/image counts/page footers, file input, print
 handoff, stale-preview protection and language-switch navigation. Screenshots
 are written to the same external QA directory. System print dialogs and physical
 iPhone/iPad PDF sharing are not automated by this suite.
+
+Run `node tests/seo-check.cjs` without extra dependencies to audit all 50 public
+pages, canonical and language alternates, sitemap coverage, App/WebApplication
+separation, localized tool capabilities and FAQ, internal links and the concise
+`llms.txt` guide. This checks source consistency, not search-engine indexing or
+guaranteed AI citations. The existing crawler access policy is unchanged.
