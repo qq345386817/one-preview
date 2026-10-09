@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Markdown 線上轉 PDF：A4 報告、表格與流程圖 | OnePreview</title>
+  <meta name="description" content="在瀏覽器中將 Markdown 排成 A4 PDF 報告，支援表格分頁、程式碼換行、Mermaid 流程圖與數學公式。免費使用，不需帳號或安裝 App，文件在瀏覽器本機處理。">
+  <link rel="canonical" href="https://one-preview.luopeike.com/zh-Hant/tools/markdown-to-pdf/">
+  <link rel="alternate" hreflang="en" href="https://one-preview.luopeike.com/tools/markdown-to-pdf/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://one-preview.luopeike.com/zh-Hans/tools/markdown-to-pdf/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://one-preview.luopeike.com/zh-Hant/tools/markdown-to-pdf/">
+  <link rel="alternate" hreflang="ja" href="https://one-preview.luopeike.com/ja/tools/markdown-to-pdf/">
+  <link rel="alternate" hreflang="ko" href="https://one-preview.luopeike.com/ko/tools/markdown-to-pdf/">
+  <link rel="alternate" hreflang="de" href="https://one-preview.luopeike.com/de/tools/markdown-to-pdf/">
+  <link rel="alternate" hreflang="fr" href="https://one-preview.luopeike.com/fr/tools/markdown-to-pdf/">
+  <link rel="alternate" hreflang="hi" href="https://one-preview.luopeike.com/hi/tools/markdown-to-pdf/">
+  <link rel="alternate" hreflang="id" href="https://one-preview.luopeike.com/id/tools/markdown-to-pdf/">
+  <link rel="alternate" hreflang="ru" href="https://one-preview.luopeike.com/ru/tools/markdown-to-pdf/">
+  <link rel="alternate" hreflang="x-default" href="https://one-preview.luopeike.com/tools/markdown-to-pdf/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Markdown 線上轉 PDF | OnePreview">
+  <meta property="og:description" content="在瀏覽器本機產生清晰的 A4 報告，支援表格、程式碼和流程圖。免費使用，不需帳號。">
+  <meta property="og:url" content="https://one-preview.luopeike.com/zh-Hant/tools/markdown-to-pdf/">
+  <meta property="og:image" content="https://one-preview.luopeike.com/images/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0A84FF">
+  <link rel="icon" href="/favicon/favicon-32x32.png">
+  <link rel="stylesheet" href="/style/base.css">
+  <link rel="stylesheet" href="/style/markdown-report.css">
+  <script type="application/json" id="tool-messages">{"ready":"排版完成 · A4 頁數：{count}","changed":"內容已變更，請更新預覽。","working":"正在呈現圖表、載入字型並分頁…","images":"已選圖片：{count}","duplicates":"圖片檔名重複，請選擇名稱不同的檔案。","imageSize":"最多選擇 16 張圖片，每張不超過 5 MB，總大小不超過 20 MB。","unsupported":"請選擇 .md 或 .markdown 文字檔（不超過 500 KB）。","read":"無法讀取檔案，請重新選擇。","encoding":"無法辨識文字編碼，請儲存為 UTF-8 後重試。","errors":{"empty":"Markdown 文件為空。","size":"文件超過 500 KB，請縮小後重試。","pages":"報告超過 100 頁，請拆分為較小的報告。","row":"表格中有一列高於一頁，請縮短或拆分該列。","block":"有一個元素無法在一頁內完整顯示，請拆分長清單項目、公式或圖片後重試。","width":"內容超過頁面寬度，請減少表格欄數或縮短公式後重試。","fonts":"報告字型未能載入，請重試。","resources":"排版元件未能載入，請重新整理頁面。"},"labels":{"image":"圖片無法使用","diagram":"流程圖未能呈現，已保留原文","math":"公式未能呈現，已保留原文","page":"第 %d 頁 / 共 %d 頁","title":"Markdown 報告"},"print":"請選擇 A4、100% 縮放，並關閉瀏覽器附加的頁首和頁尾。iPhone / iPad 可在系統列印預覽分享或儲存 PDF。"}</script>
+  <script src="/script/markdown-report/tool.js" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"OnePreview Markdown 轉 PDF","url":"https://one-preview.luopeike.com/zh-Hant/tools/markdown-to-pdf/","applicationCategory":"UtilitiesApplication","operatingSystem":"現代網頁瀏覽器","inLanguage":"zh-Hant","browserRequirements":"啟用 JavaScript 和瀏覽器列印","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"在瀏覽器中將 Markdown 排成 A4 PDF 報告，支援表格分頁、程式碼換行、Mermaid 流程圖與數學公式。免費使用，不需帳號或安裝 App，文件在瀏覽器本機處理。"}</script>
+</head>
+<body>
+  <div class="page"><div class="container">
+    <header class="topbar">
+      <a class="brand" href="/zh-Hant/"><img src="/favicon/apple-touch-icon.png" alt="" width="38" height="38"><span>OnePreview</span></a>
+      <nav class="nav" aria-label="主要導覽"><a href="/zh-Hant/">首頁</a><a class="active" href="/zh-Hant/tools/markdown-to-pdf/">Markdown 轉 PDF</a><a href="/zh-Hant/help">說明</a><label class="language-switch"><span>語言</span><select aria-label="語言" onchange="if (this.value) window.location.href=this.value"><option value="/tools/markdown-to-pdf/" >English</option><option value="/zh-Hans/tools/markdown-to-pdf/" >简体中文</option><option value="/zh-Hant/tools/markdown-to-pdf/" selected>繁體中文</option><option value="/ja/tools/markdown-to-pdf/" >日本語</option><option value="/ko/tools/markdown-to-pdf/" >한국어</option><option value="/de/tools/markdown-to-pdf/" >Deutsch</option><option value="/fr/tools/markdown-to-pdf/" >Français</option><option value="/hi/tools/markdown-to-pdf/" >हिन्दी</option><option value="/id/tools/markdown-to-pdf/" >Bahasa Indonesia</option><option value="/ru/tools/markdown-to-pdf/" >Русский</option></select></label></nav>
+    </header>
+    <main>
+      <section class="tool-heading">
+        <p class="kicker">免費使用 · 瀏覽器本機處理 · 不需帳號</p>
+        <h1>將 Markdown 排成可分享的 PDF。</h1>
+        <p class="lead">清晰的 A4 報告版面，附頁碼、跨頁表格標題和自動換行的程式碼。先檢查每一頁，再儲存為 PDF。</p>
+      </section>
+    <div class="tool-layout">
+      <div class="tool-actions" role="group" aria-label="報告操作">
+        <label class="button ghost file-label" for="markdown-file">開啟 Markdown</label><input class="visually-hidden" id="markdown-file" type="file" accept=".md,.markdown,text/markdown,text/plain">
+        <label class="button ghost file-label" for="image-files">選擇報告圖片</label><input class="visually-hidden" id="image-files" type="file" multiple accept="image/png,image/jpeg,image/gif,image/webp,image/bmp">
+        <button class="button ghost" id="load-sample" data-sample="example.md" type="button">試用範例</button>
+        <span class="toolbar-spacer"></span>
+        <button class="button primary" id="render-report" type="button">更新預覽</button>
+        <button class="button" id="print-report" type="button" disabled>列印 / 儲存為 PDF</button>
+      </div>
+      <section class="tool-editor" aria-label="Markdown 輸入">
+        <label for="markdown-source">Markdown 內容</label>
+        <textarea id="markdown-source" spellcheck="false" placeholder="# 我的報告"></textarea>
+        <div class="source-footer"><p class="hint">如果文件引用 <code>![圖表](images/chart.png)</code>，請另外選擇 <code>chart.png</code>。不會自動載入遠端圖片。最多 16 張，每張 5 MB。</p><span class="hint" id="asset-count"></span> <button class="text-button" id="clear-images" type="button">清除圖片</button></div>
+      </section>
+        <section class="tool-preview" id="report-preview" aria-label="A4 報告預覽">
+          <div class="preview-bar"><strong>報告預覽</strong><span>A4 · 210 × 297 mm</span></div>
+          <div class="preview-scroll"><div id="report-viewport"><iframe id="report-frame" src="/script/markdown-report/report.html" title="分頁報告" sandbox="allow-scripts allow-same-origin allow-modals"></iframe></div></div>
+        </section>
+    </div>
+    <div class="tool-feedback"><p class="tool-status" id="report-status" role="status" aria-live="polite">正在準備範例…</p><ul id="report-notices" aria-label="報告提示"></ul><p class="hint" id="print-help">請選擇 A4、100% 縮放，並關閉瀏覽器附加的頁首和頁尾。報告已包含頁碼。</p><p class="hint">文件和所選圖片僅保留在目前瀏覽器工作階段中，不會上傳或儲存至本網站。</p></div>
+      <section class="section tool-details">
+        <h2>清晰排版，文字仍可複製</h2>
+        <p>PDF 保留文件文字，而非文件的螢幕截圖。支援標準 Markdown、GitHub 風格表格、程式碼區塊、Mermaid 流程圖和 KaTeX 數學公式。長表格跨頁時重複標題列，長程式碼依頁面寬度換行。</p>
+        <p><a href="example.md" download>下載範例 Markdown</a>，也可在其他工具中使用同一份文件。</p>
+        <div class="tool-guides"><article class="tool-guide"><h3>如何儲存 PDF？</h3>
+        <p>點選「列印 / 儲存為 PDF」，在瀏覽器或系統列印介面選擇 PDF 儲存方式。iPhone 和 iPad 可從系統列印預覽分享或儲存 PDF。這裡的預覽顯示報告內容，附加頁首、頁尾與紙張設定由列印介面控制。</p></article><article class="tool-guide"><h3>有哪些限制？</h3>
+        <p>一種 A4 版面，Markdown 不超過 500 KB，報告不超過 100 頁。表格單列過高或元素無法安全分割時會明確提示，避免產生截斷的 PDF。缺少圖片、無效流程圖或公式也會提示。首期不支援 MDX 元件、自訂指令碼以及 TextBundle、TextPack 套件。</p></article></div>
+
+        <div class="tool-app"><div><h3>還需要預覽本機檔案？</h3>
+        <p>OnePreview App 可在 Mac、iPhone 和 iPad 上預覽 Markdown 和開發者檔案。網頁工具可獨立使用，不需安裝 App。</p></div>
+          <div class="actions"><a class="button ghost" href="https://apps.apple.com/app/id6760284919"><img class="store-icon" src="/images/app-store-icon.svg" alt="">從 App Store 下載 OnePreview</a></div></div>
+      </section>
+    </main>
+    <footer class="footer"><span>OnePreview</span><nav aria-label="頁尾"><a href="/zh-Hant/privacy-policy">隱私</a> · <a href="/zh-Hant/support">支援</a></nav></footer>
+  </div></div>
+</body>
+</html>

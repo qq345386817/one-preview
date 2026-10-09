@@ -11,3 +11,11 @@ and WebKit, desktop and mobile viewports, light and dark themes, image loading,
 headline hierarchy, overflow, language selection, navigation and the PDF tool entry.
 The PDF tool's document conversion regression remains in the native repository's
 `scripts/markdown_report_web_smoke.mjs`.
+
+Run `node tests/tool-localization-smoke.cjs` against the same server to check all
+10 tool routes in Chromium and WebKit, desktop/mobile/light/dark layouts, static
+SEO alternates and sitemap coverage, translated examples (including Mermaid and
+math), localized status/errors/image counts/page footers, file input, print
+handoff, stale-preview protection and language-switch navigation. Screenshots
+are written to the same external QA directory. System print dialogs and physical
+iPhone/iPad PDF sharing are not automated by this suite.

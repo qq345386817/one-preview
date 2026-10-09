@@ -1,8 +1,17 @@
 # Standalone Markdown to PDF
 
-Public tools: `/tools/markdown-to-pdf/` and `/zh-Hans/tools/markdown-to-pdf/`.
+Public tool: `/tools/markdown-to-pdf/` (English), plus the same path under
+`/zh-Hans/`, `/zh-Hant/`, `/ja/`, `/ko/`, `/de/`, `/fr/`, `/hi/`, `/id/` and `/ru/`.
 The HTML pages and this directory are sufficient to run the tool on a static host.
 No App, account, backend, document upload, or build step is required.
+
+Each language has its own indexable HTML page, metadata, language selector and
+Markdown example. Runtime messages are embedded in that page as `tool-messages`
+JSON, including validation errors and printed page labels. This is tool-specific
+configuration, not a client-side replacement for the site's static translations.
+Shared report error/label translations match the native app's string catalog;
+web-only messages explain browser actions rather than native panels. Keep every
+locale's message keys and `{count}` / `%d` placeholders in sync when editing.
 
 The document is rendered in a report iframe, sanitized with DOMPurify, and arranged
 into explicit A4 pages before browser printing. The print action opens the browser
@@ -24,3 +33,11 @@ input, Markdown selection, image selection, stale-preview detection, print actio
 long tables, long code, formulas and diagrams. Check actual PDF text and A4 page
 dimensions as well as screenshots. Chromium and WebKit have been exercised;
 system print-dialog choices still require device-level checks.
+
+Known print compatibility limit: in the macOS Chromium headless PDF smoke check,
+Hindi/Devanagari appears correctly but some extracted characters become nulls in
+both PDFKit and pypdf. Trials with Noto Sans Devanagari and tagged PDF output did
+not fix the extraction.
+The Hindi print instructions warn users to verify copied text before sharing.
+Do not treat visual preview or selectable text alone as proof of accurate Unicode
+copying. Other browsers and system print destinations need separate verification.
