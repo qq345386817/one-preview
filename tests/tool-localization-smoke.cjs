@@ -42,7 +42,7 @@ const statusIs = (page, text) => page.waitForFunction(text => document.querySele
           const alternates = await page.locator('link[hreflang]').evaluateAll(nodes => Object.fromEntries(nodes.map(n => [n.hreflang, n.href])));
           assert.deepEqual(alternates, expectedAlternates);
           assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), origin + route(locale));
-          const schema = await page.locator('script[type="application/ld+json"]').evaluate(e => JSON.parse(e.textContent));
+          const schema = await page.locator('script[type="application/ld+json"]:not([data-seo])').evaluate(e => JSON.parse(e.textContent));
           assert.equal(schema.inLanguage, locale);
           assert.equal(schema.url, origin + route(locale));
           assert.ok(schema.description.length > 30);

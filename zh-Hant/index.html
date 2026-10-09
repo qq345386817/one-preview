@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="在 Mac 上透過 Finder 快速查看預覽 Markdown、MDX、程式碼、JSON、ZIP/TAR.GZ 和 SQLite；在 iPhone 與 iPad 上從「檔案」App 開啟至 OnePreview。">
+  <meta name="description" content="在 Mac、iPhone 和 iPad 上預覽 Markdown、MDX、程式碼、JSON、ZIP/TAR.GZ 和 SQLite，或免費線上將 Markdown 轉為 PDF，支援流程圖、表格和數學公式。">
   <meta name="robots" content="index,follow">
-  <meta property="og:title" content="OnePreview | Markdown 與開發者檔案預覽">
-  <meta property="og:description" content="在 Mac 上透過 Finder 快速查看預覽 Markdown、MDX、程式碼、JSON、ZIP/TAR.GZ 和 SQLite；在 iPhone 與 iPad 上從「檔案」App 開啟至 OnePreview。">
+  <meta property="og:title" content="OnePreview | Markdown 檔案預覽與免費轉 PDF">
+  <meta property="og:description" content="在 Mac、iPhone 和 iPad 上預覽 Markdown、MDX、程式碼、JSON、ZIP/TAR.GZ 和 SQLite，或免費線上將 Markdown 轉為 PDF，支援流程圖、表格和數學公式。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://one-preview.luopeike.com/zh-Hant/">
   <meta property="og:site_name" content="OnePreview">
@@ -25,9 +25,10 @@
   <meta property="og:locale:alternate" content="hi_IN">
   <meta property="og:locale:alternate" content="id_ID">
   <meta property="og:locale:alternate" content="ru_RU">
-  <meta name="twitter:title" content="OnePreview | Markdown 與開發者檔案預覽">
-  <meta name="twitter:description" content="在 Mac 上透過 Finder 快速查看預覽 Markdown、MDX、程式碼、JSON、ZIP/TAR.GZ 和 SQLite；在 iPhone 與 iPad 上從「檔案」App 開啟至 OnePreview。">
+  <meta name="twitter:title" content="OnePreview | Markdown 檔案預覽與免費轉 PDF">
+  <meta name="twitter:description" content="在 Mac、iPhone 和 iPad 上預覽 Markdown、MDX、程式碼、JSON、ZIP/TAR.GZ 和 SQLite，或免費線上將 Markdown 轉為 PDF，支援流程圖、表格和數學公式。">
   <link rel="canonical" href="https://one-preview.luopeike.com/zh-Hant/">
+  <link rel="describedby" type="text/plain" href="/llms.txt">
   <link rel="alternate" hreflang="en" href="https://one-preview.luopeike.com/">
   <link rel="alternate" hreflang="zh-Hans" href="https://one-preview.luopeike.com/zh-Hans/">
   <link rel="alternate" hreflang="zh-Hant" href="https://one-preview.luopeike.com/zh-Hant/">
@@ -47,8 +48,8 @@
   <link rel="stylesheet" href="../style/base.css">
   <script type="application/ld+json" data-seo="seo-1">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OnePreview","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS, iOS, iPadOS","description":"在 Mac 上透過 Finder 快速查看預覽 Markdown、MDX、程式碼、JSON、ZIP/TAR.GZ 和 SQLite；在 iPhone 與 iPad 上從「檔案」App 開啟至 OnePreview。","url":"https://one-preview.luopeike.com/zh-Hant/","downloadUrl":"https://apps.apple.com/app/id6760284919","image":"https://one-preview.luopeike.com/images/social-preview.png","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","url":"https://apps.apple.com/app/id6760284919"},"featureList":["Markdown 預覽","MDX 預覽","TextBundle 與 TextPack 預覽","原始碼預覽","JSON、YAML、XML、CSV、TSV、TOML 與 ENV 預覽","ZIP/TAR.GZ 壓縮檔預覽","SQLite 資料庫預覽","macOS Finder 快速查看擴充功能"]}</script>
   <script type="application/ld+json" data-seo="seo-2">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"OnePreview","item":"https://one-preview.luopeike.com/zh-Hant/"}]}</script>
-  <script type="application/ld+json" data-seo="seo-3">{"@context":"https://schema.org","@type":"WebSite","name":"OnePreview","url":"https://one-preview.luopeike.com/","inLanguage":"zh-Hant","description":"在 Mac 上透過 Finder 快速查看預覽 Markdown、MDX、程式碼、JSON、ZIP/TAR.GZ 和 SQLite；在 iPhone 與 iPad 上從「檔案」App 開啟至 OnePreview。","publisher":{"@type":"Organization","name":"OnePreview"}}</script>
-  <title>OnePreview | Markdown 與開發者檔案預覽</title>
+  <script type="application/ld+json" data-seo="seo-3">{"@context":"https://schema.org","@type":"WebSite","name":"OnePreview","url":"https://one-preview.luopeike.com/","inLanguage":"zh-Hant","description":"在 Mac、iPhone 和 iPad 上預覽 Markdown、MDX、程式碼、JSON、ZIP/TAR.GZ 和 SQLite，或免費線上將 Markdown 轉為 PDF，支援流程圖、表格和數學公式。","publisher":{"@type":"Organization","name":"OnePreview"},"@id":"https://one-preview.luopeike.com/#website","hasPart":[{"@type":"WebApplication","@id":"https://one-preview.luopeike.com/zh-Hant/tools/markdown-to-pdf/#application","url":"https://one-preview.luopeike.com/zh-Hant/tools/markdown-to-pdf/","name":"OnePreview Markdown → PDF"}]}</script>
+  <title>OnePreview | Markdown 檔案預覽與免費轉 PDF</title>
 </head>
 <body>
   <div class="page">
@@ -87,6 +88,7 @@
         <section class="section trust-strip" aria-label="OnePreview 亮點"><div><strong>無需帳號</strong><span>安裝一次，即可在本機檢視檔案。</span></div><div><strong>本機預覽</strong><span>檔案留在 Apple 的預覽機制中處理。</span></div><div><strong>免費使用</strong><span>可從 App Store 取得。</span></div></section>
         <section class="section split"><div><p class="section-kicker">工作流程</p><h2>為真正的 Quick Look 習慣設計。</h2><div class="feature-grid compact-grid"><article class="feature"><strong>留在 Finder</strong><p>在 macOS 按空白鍵即可檢查支援檔案，不必啟動完整編輯器。</p></article><article class="feature"><strong>支援 iPhone 與 iPad</strong><p>在「檔案」App 中長按支援的檔案，選擇「開啟方式」，再選擇 OnePreview。一般點按可能會使用 Apple 內建預覽。</p></article><article class="feature"><strong>包含設定指引</strong><p>在 Mac 上啟用快速查看擴充功能；在 iPhone 與 iPad 上從「檔案」App 使用「開啟方式」> OnePreview。</p></article></div></div><a class="button compact" href="/zh-Hant/help">閱讀設定說明</a></section>
         <section class="section"><h2>設定與檔案預覽指南</h2><div class="feature-grid two"><article class="feature"><strong><a href="/zh-Hant/help">啟用 Quick Look 擴充功能</a></strong><p>安裝後打開一次 OnePreview，然後在系統擴充功能設定中啟用。</p></article><article class="feature"><strong><a href="/zh-Hant/privacy-policy">了解隱私與檔案處理</a></strong><p>檔案透過 Apple 系統預覽機制在本機預覽。</p></article><article class="feature"><strong><a href="/zh-Hant/support">回報無法正確預覽的檔案</a></strong><p>請提供檔案類型、作業系統版本與簡短重現步驟。</p></article></div></section>
+        <section class="section" id="markdown-pdf"><p class="section-kicker">Markdown → PDF</p><h2>免費線上 Markdown 轉 PDF，在瀏覽器中完成</h2><p>將專案週報、技術文件和交付說明排成 A4 PDF。網頁轉換工具可獨立使用，不需安裝 OnePreview App。</p><div class="feature-grid two"><article class="feature"><strong>不需安裝或上傳文件</strong><p>開啟 .md、.markdown 檔案，或直接貼上內容。文件與所選圖片在目前瀏覽器工作階段中處理，不需帳號或 App。</p></article><article class="feature"><strong>保留表格、流程圖與公式</strong><p>先檢查 A4 分頁、跨頁標題列、換行程式碼、Mermaid 流程圖與 KaTeX 公式，再透過「列印 / 儲存為 PDF」匯出。</p></article></div><div class="actions"><a class="button primary" href="/zh-Hant/tools/markdown-to-pdf/">免費將 Markdown 轉為 PDF</a></div></section>
       </main>
       <footer class="footer">OnePreview 為 macOS 提供 Finder 快速查看擴充功能，並為 iPhone 與 iPad 提供本機檔案檢視功能。</footer>
     </div>

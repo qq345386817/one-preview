@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>온라인 Markdown PDF 변환: A4 보고서, 표와 Mermaid | OnePreview</title>
-  <meta name="description" content="브라우저에서 Markdown을 읽기 쉬운 A4 PDF 보고서로 변환하세요. 페이지, 표, 코드, Mermaid 다이어그램과 수식을 미리 볼 수 있습니다. 무료, 계정이나 앱 불필요.">
+  <title>무료 온라인 Markdown PDF 변환: Mermaid와 표 | OnePreview</title>
+  <meta name="description" content="Markdown, MD 파일을 무료로 A4 PDF로 변환하세요. Mermaid, KaTeX 수식, 표 페이지 나누기와 코드 줄바꿈을 지원합니다. 계정, 앱 설치, 문서 업로드가 필요 없습니다.">
   <link rel="canonical" href="https://one-preview.luopeike.com/ko/tools/markdown-to-pdf/">
+  <link rel="describedby" type="text/plain" href="/llms.txt">
   <link rel="alternate" hreflang="en" href="https://one-preview.luopeike.com/tools/markdown-to-pdf/">
   <link rel="alternate" hreflang="zh-Hans" href="https://one-preview.luopeike.com/zh-Hans/tools/markdown-to-pdf/">
   <link rel="alternate" hreflang="zh-Hant" href="https://one-preview.luopeike.com/zh-Hant/tools/markdown-to-pdf/">
@@ -18,10 +19,15 @@
   <link rel="alternate" hreflang="ru" href="https://one-preview.luopeike.com/ru/tools/markdown-to-pdf/">
   <link rel="alternate" hreflang="x-default" href="https://one-preview.luopeike.com/tools/markdown-to-pdf/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="온라인 Markdown PDF 변환 | OnePreview">
-  <meta property="og:description" content="읽기 쉬운 표, 코드와 다이어그램을 포함한 A4 Markdown 보고서. 무료이며 브라우저에서 로컬로 처리합니다.">
+  <meta property="og:title" content="무료 온라인 Markdown PDF 변환: Mermaid와 표 | OnePreview">
+  <meta property="og:description" content="Markdown, MD 파일을 무료로 A4 PDF로 변환하세요. Mermaid, KaTeX 수식, 표 페이지 나누기와 코드 줄바꿈을 지원합니다. 계정, 앱 설치, 문서 업로드가 필요 없습니다.">
   <meta property="og:url" content="https://one-preview.luopeike.com/ko/tools/markdown-to-pdf/">
   <meta property="og:image" content="https://one-preview.luopeike.com/images/social-preview.png">
+  <meta property="og:site_name" content="OnePreview">
+  <meta property="og:locale" content="ko_KR">
+  <meta name="twitter:title" content="무료 온라인 Markdown PDF 변환: Mermaid와 표 | OnePreview">
+  <meta name="twitter:description" content="Markdown, MD 파일을 무료로 A4 PDF로 변환하세요. Mermaid, KaTeX 수식, 표 페이지 나누기와 코드 줄바꿈을 지원합니다. 계정, 앱 설치, 문서 업로드가 필요 없습니다.">
+  <meta name="twitter:image" content="https://one-preview.luopeike.com/images/social-preview.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0A84FF">
   <link rel="icon" href="/favicon/favicon-32x32.png">
@@ -29,7 +35,8 @@
   <link rel="stylesheet" href="/style/markdown-report.css">
   <script type="application/json" id="tool-messages">{"ready":"보고서 준비 완료 · A4 페이지 수: {count}","changed":"내용이 변경되었습니다. 인쇄 전에 미리보기를 업데이트하세요.","working":"다이어그램 렌더링, 글꼴 로딩 및 페이지 구성 중…","images":"선택한 이미지: {count}개","duplicates":"파일 이름이 같은 이미지가 있습니다. 이름이 다른 파일을 선택하세요.","imageSize":"최대 16개 이미지, 파일당 5 MB, 총 20 MB까지 선택하세요.","unsupported":"500 KB 이하의 .md 또는 .markdown 텍스트 파일을 선택하세요.","read":"파일을 읽을 수 없습니다. 다시 선택하세요.","encoding":"텍스트 인코딩을 인식하지 못했습니다. UTF-8로 저장한 뒤 다시 시도하세요.","errors":{"empty":"Markdown 문서가 비어 있습니다.","size":"문서가 500 KB를 초과합니다. 더 작은 보고서를 사용하세요.","pages":"보고서가 100페이지를 초과합니다. 여러 보고서로 나누세요.","row":"표의 한 행이 한 페이지보다 높습니다. 해당 행을 줄이거나 나누세요.","block":"한 페이지에 담을 수 없는 요소가 있습니다. 긴 목록 항목, 수식 또는 이미지를 나누세요.","width":"내용이 페이지 너비를 초과합니다. 표의 열 수를 줄이거나 수식을 짧게 하세요.","fonts":"보고서 글꼴을 불러오지 못했습니다. 다시 시도하세요.","resources":"보고서 구성 요소를 불러오지 못했습니다. 페이지를 새로고침하세요."},"labels":{"image":"이미지를 사용할 수 없음","diagram":"다이어그램을 렌더링할 수 없어 원문을 유지했습니다","math":"수식을 렌더링할 수 없어 원문을 유지했습니다","page":"%d / %d 페이지","title":"Markdown 보고서"},"print":"A4 용지와 100% 배율을 선택하고 브라우저 머리글과 바닥글을 끄세요. iPhone 또는 iPad에서는 시스템 인쇄 미리보기에서 PDF를 공유하거나 저장할 수 있습니다."}</script>
   <script src="/script/markdown-report/tool.js" defer></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"OnePreview Markdown PDF 변환","url":"https://one-preview.luopeike.com/ko/tools/markdown-to-pdf/","applicationCategory":"UtilitiesApplication","operatingSystem":"최신 웹 브라우저","inLanguage":"ko","browserRequirements":"JavaScript 및 브라우저 인쇄 기능 활성화","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"브라우저에서 Markdown을 읽기 쉬운 A4 PDF 보고서로 변환하세요. 페이지, 표, 코드, Mermaid 다이어그램과 수식을 미리 볼 수 있습니다. 무료, 계정이나 앱 불필요."}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"OnePreview Markdown PDF 변환","url":"https://one-preview.luopeike.com/ko/tools/markdown-to-pdf/","applicationCategory":"UtilitiesApplication","operatingSystem":"최신 웹 브라우저","inLanguage":"ko","browserRequirements":"JavaScript 및 브라우저 인쇄 기능 활성화","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Markdown, MD 파일을 무료로 A4 PDF로 변환하세요. Mermaid, KaTeX 수식, 표 페이지 나누기와 코드 줄바꿈을 지원합니다. 계정, 앱 설치, 문서 업로드가 필요 없습니다.","@id":"https://one-preview.luopeike.com/ko/tools/markdown-to-pdf/#application","isAccessibleForFree":true,"featureList":["무료, 계정 불필요","문서 업로드 없는 브라우저 로컬 처리","Mermaid 다이어그램과 KaTeX 수식","A4 페이지 나누기와 반복되는 표 머리글","코드 블록 줄바꿈"]}</script>
+  <script type="application/ld+json" data-seo="breadcrumbs">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://one-preview.luopeike.com/ko/"},{"@type":"ListItem","position":2,"name":"OnePreview Markdown PDF 변환","item":"https://one-preview.luopeike.com/ko/tools/markdown-to-pdf/"}]}</script>
 </head>
 <body>
   <div class="page"><div class="container">
@@ -67,9 +74,14 @@
         <h2>읽고 복사할 수 있는 보고서</h2>
         <p>PDF는 문서 스크린샷이 아닌 텍스트를 유지합니다. 표준 Markdown, GitHub 스타일 표, 코드 블록, Mermaid 다이어그램과 KaTeX 수식을 지원합니다. 긴 표는 각 페이지에 머리글을 반복하며 긴 코드는 너비에 맞춰 줄바꿈합니다.</p>
         <p><a href="example.md" download>Markdown 예제 다운로드</a>로 같은 보고서를 다른 작업 환경에서도 사용해 보세요.</p>
+        <h3>주간 보고서, 기술 문서와 인수인계 자료에 활용</h3><p>진행 상황 표가 있는 주간 보고서, 코드와 수식을 담은 기술 메모, Mermaid 흐름도로 절차를 설명하는 인수인계 문서에 활용할 수 있습니다. 다운로드 가능한 예제에서 이 기능들을 한 보고서로 확인하세요.</p>
         <div class="tool-guides"><article class="tool-guide"><h3>PDF는 어떻게 저장하나요?</h3>
         <p>‘인쇄 / PDF로 저장’을 누르고 브라우저나 시스템에서 PDF 저장 방식을 선택하세요. iPhone과 iPad에서는 시스템 인쇄 미리보기에서 PDF를 공유하거나 저장할 수 있습니다. 여기서는 보고서 내용을 미리 보여 주며, 추가 머리글과 용지 설정은 인쇄 대화상자에서 조절합니다.</p></article><article class="tool-guide"><h3>어떤 제한이 있나요?</h3>
-        <p>A4 레이아웃 한 종류, Markdown 최대 500 KB, 보고서 최대 100페이지입니다. 표의 행이 너무 높거나 요소를 안전하게 나눌 수 없으면 잘린 PDF 대신 안내를 표시합니다. 누락된 이미지와 유효하지 않은 다이어그램 또는 수식도 안내합니다. 첫 버전에서는 MDX 구성 요소, 사용자 지정 스크립트, TextBundle과 TextPack을 지원하지 않습니다.</p></article></div>
+        <p>A4 레이아웃 한 종류, Markdown 최대 500 KB, 보고서 최대 100페이지입니다. 표의 행이 너무 높거나 요소를 안전하게 나눌 수 없으면 잘린 PDF 대신 안내를 표시합니다. 누락된 이미지와 유효하지 않은 다이어그램 또는 수식도 안내합니다. 첫 버전에서는 MDX 구성 요소, 사용자 지정 스크립트, TextBundle과 TextPack을 지원하지 않습니다.</p></article>
+        <article class="tool-guide"><h3>이 Markdown PDF 변환 도구는 무료인가요?</h3><p>네. 현재 웹 도구는 무료이며 계정이나 OnePreview 앱이 필요 없습니다. 문서 내용과 선택한 이미지는 현재 브라우저 세션에만 남고 변환 서버에 업로드되지 않습니다.</p></article>
+        <article class="tool-guide"><h3>Mermaid 다이어그램과 수식도 PDF로 내보낼 수 있나요?</h3><p>네. mermaid 코드 블록에 다이어그램을 작성하고 KaTeX 호환 문법으로 수식을 입력하세요. 인쇄 전에 미리보기를 확인하세요. 다이어그램이나 수식을 렌더링할 수 없으면 조용히 생략하지 않고 경고와 원문을 표시합니다.</p></article>
+        <article class="tool-guide"><h3>Markdown 표는 페이지를 넘어갈 때 어떻게 표시되나요?</h3><p>GitHub 스타일 Markdown 표는 A4 페이지로 나뉘며 각 페이지에 머리글 행을 반복합니다. 코드는 너비에 맞춰 줄바꿈합니다. 표의 한 행이 너무 높거나 내용이 페이지 너비를 넘으면 안내를 표시합니다. 행을 줄이거나 열 수를 줄인 뒤 다시 시도하세요.</p></article>
+        <article class="tool-guide"><h3>PDF에서 이미지가 보이지 않는 이유는 무엇인가요?</h3><p>Markdown이 참조하는 로컬 이미지를 파일 이름이 일치하도록 선택하세요. 원격 이미지는 자동으로 불러오지 않습니다. 최대 16개, 파일당 5 MB, 총 20 MB까지 선택할 수 있습니다. 누락되거나 읽을 수 없는 이미지는 경고로 표시합니다.</p></article></div>
 
         <div class="tool-app"><div><h3>로컬 파일 미리보기도 필요하신가요?</h3>
         <p>Mac, iPhone, iPad용 OnePreview는 기기에서 Markdown과 개발자 파일을 미리 보여 줍니다. 이 웹 도구는 앱 없이도 독립적으로 사용할 수 있습니다.</p></div>

@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MarkdownをオンラインでPDFに変換：A4・表・Mermaid | OnePreview</title>
-  <meta name="description" content="ブラウザでMarkdownを読みやすいA4のPDFレポートに変換。ページ、表、コード、Mermaid図、数式をプレビューできます。無料、アカウントやアプリ不要。">
+  <title>無料オンラインMarkdown PDF変換：Mermaidと表 | OnePreview</title>
+  <meta name="description" content="Markdown・MDファイルを無料でA4のPDFに変換。Mermaid図、KaTeX数式、表のページ分割、コードの折り返しに対応。アカウント、アプリ、文書のアップロード不要。">
   <link rel="canonical" href="https://one-preview.luopeike.com/ja/tools/markdown-to-pdf/">
+  <link rel="describedby" type="text/plain" href="/llms.txt">
   <link rel="alternate" hreflang="en" href="https://one-preview.luopeike.com/tools/markdown-to-pdf/">
   <link rel="alternate" hreflang="zh-Hans" href="https://one-preview.luopeike.com/zh-Hans/tools/markdown-to-pdf/">
   <link rel="alternate" hreflang="zh-Hant" href="https://one-preview.luopeike.com/zh-Hant/tools/markdown-to-pdf/">
@@ -18,10 +19,15 @@
   <link rel="alternate" hreflang="ru" href="https://one-preview.luopeike.com/ru/tools/markdown-to-pdf/">
   <link rel="alternate" hreflang="x-default" href="https://one-preview.luopeike.com/tools/markdown-to-pdf/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="MarkdownをオンラインでPDFに変換 | OnePreview">
-  <meta property="og:description" content="表、コード、図が読みやすいA4のMarkdownレポート。無料でブラウザ内で処理します。">
+  <meta property="og:title" content="無料オンラインMarkdown PDF変換：Mermaidと表 | OnePreview">
+  <meta property="og:description" content="Markdown・MDファイルを無料でA4のPDFに変換。Mermaid図、KaTeX数式、表のページ分割、コードの折り返しに対応。アカウント、アプリ、文書のアップロード不要。">
   <meta property="og:url" content="https://one-preview.luopeike.com/ja/tools/markdown-to-pdf/">
   <meta property="og:image" content="https://one-preview.luopeike.com/images/social-preview.png">
+  <meta property="og:site_name" content="OnePreview">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:title" content="無料オンラインMarkdown PDF変換：Mermaidと表 | OnePreview">
+  <meta name="twitter:description" content="Markdown・MDファイルを無料でA4のPDFに変換。Mermaid図、KaTeX数式、表のページ分割、コードの折り返しに対応。アカウント、アプリ、文書のアップロード不要。">
+  <meta name="twitter:image" content="https://one-preview.luopeike.com/images/social-preview.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0A84FF">
   <link rel="icon" href="/favicon/favicon-32x32.png">
@@ -29,7 +35,8 @@
   <link rel="stylesheet" href="/style/markdown-report.css">
   <script type="application/json" id="tool-messages">{"ready":"レポート完成 · A4 {count}ページ","changed":"内容が変更されました。印刷前にプレビューを更新してください。","working":"図の描画、フォントの読み込み、ページ分割を実行中…","images":"選択した画像：{count}枚","duplicates":"同じファイル名の画像があります。異なる名前のファイルを選択してください。","imageSize":"画像は16枚まで、1枚5 MB、合計20 MBまで選択できます。","unsupported":"500 KBまでの.mdまたは.markdownテキストファイルを選択してください。","read":"ファイルを読み込めませんでした。もう一度選択してください。","encoding":"文字コードを認識できませんでした。UTF-8で保存して再度お試しください。","errors":{"empty":"Markdown文書が空です。","size":"文書が500 KBを超えています。小さいレポートでお試しください。","pages":"レポートが100ページを超えています。分割してください。","row":"表の1行が1ページより高くなっています。短くするか分割してください。","block":"1ページに収まらない要素があります。長いリスト項目、数式、画像を分割してください。","width":"内容がページ幅を超えています。表の列数を減らすか数式を短くしてください。","fonts":"レポートのフォントを読み込めませんでした。再度お試しください。","resources":"レポートの構成要素を読み込めませんでした。ページを再読み込みしてください。"},"labels":{"image":"画像を使用できません","diagram":"図を描画できませんでした。原文を表示しています","math":"数式を描画できませんでした。原文を表示しています","page":"%d / %d ページ","title":"Markdownレポート"},"print":"用紙はA4、倍率は100%に設定し、ブラウザのヘッダーとフッターをオフにしてください。iPhoneやiPadではシステムの印刷プレビューからPDFを共有・保存できます。"}</script>
   <script src="/script/markdown-report/tool.js" defer></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"OnePreview MarkdownをPDFに","url":"https://one-preview.luopeike.com/ja/tools/markdown-to-pdf/","applicationCategory":"UtilitiesApplication","operatingSystem":"最新のWebブラウザ","inLanguage":"ja","browserRequirements":"JavaScriptとブラウザの印刷機能を有効にする","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"ブラウザでMarkdownを読みやすいA4のPDFレポートに変換。ページ、表、コード、Mermaid図、数式をプレビューできます。無料、アカウントやアプリ不要。"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"OnePreview MarkdownをPDFに","url":"https://one-preview.luopeike.com/ja/tools/markdown-to-pdf/","applicationCategory":"UtilitiesApplication","operatingSystem":"最新のWebブラウザ","inLanguage":"ja","browserRequirements":"JavaScriptとブラウザの印刷機能を有効にする","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Markdown・MDファイルを無料でA4のPDFに変換。Mermaid図、KaTeX数式、表のページ分割、コードの折り返しに対応。アカウント、アプリ、文書のアップロード不要。","@id":"https://one-preview.luopeike.com/ja/tools/markdown-to-pdf/#application","isAccessibleForFree":true,"featureList":["無料、アカウント不要","文書をアップロードせずブラウザ内で処理","Mermaid図とKaTeX数式","A4ページ分割と表の見出しの繰り返し","コードブロックの折り返し"]}</script>
+  <script type="application/ld+json" data-seo="breadcrumbs">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://one-preview.luopeike.com/ja/"},{"@type":"ListItem","position":2,"name":"OnePreview MarkdownをPDFに","item":"https://one-preview.luopeike.com/ja/tools/markdown-to-pdf/"}]}</script>
 </head>
 <body>
   <div class="page"><div class="container">
@@ -67,9 +74,14 @@
         <h2>読みやすく、文字をコピーできるレポート</h2>
         <p>PDFには文書のスクリーンショットではなく文字を保持します。標準Markdown、GitHub形式の表、コードブロック、Mermaid図、KaTeX数式に対応。長い表は各ページで見出しを繰り返し、長いコードは幅に合わせて折り返します。</p>
         <p><a href="example.md" download>サンプルのMarkdownをダウンロード</a>して、ほかの作業環境でも同じレポートを試せます。</p>
+        <h3>週報、技術文書、引き継ぎ資料に</h3><p>進捗表付きの週報、コードや数式を含む技術メモ、Mermaidで手順を示す引き継ぎ資料に使えます。ダウンロードできるサンプルでは、これらの機能を1つのレポートで試せます。</p>
         <div class="tool-guides"><article class="tool-guide"><h3>PDFを保存するには？</h3>
         <p>「印刷 / PDFとして保存」を押し、ブラウザまたはシステムの印刷画面でPDFの保存先を選択します。iPhoneとiPadではシステムの印刷プレビューからPDFを共有・保存できます。このプレビューはレポートの内容を表示します。追加のヘッダーや用紙設定は印刷画面で調整してください。</p></article><article class="tool-guide"><h3>制限はありますか？</h3>
-        <p>A4レイアウトは1種類、Markdownは500 KBまで、レポートは100ページまでです。表の行が高すぎる場合や要素を安全に分割できない場合は、切れたPDFを作る代わりにメッセージを表示します。画像の欠落や無効な図・数式も通知します。初期版ではMDXコンポーネント、独自スクリプト、TextBundle、TextPackは対象外です。</p></article></div>
+        <p>A4レイアウトは1種類、Markdownは500 KBまで、レポートは100ページまでです。表の行が高すぎる場合や要素を安全に分割できない場合は、切れたPDFを作る代わりにメッセージを表示します。画像の欠落や無効な図・数式も通知します。初期版ではMDXコンポーネント、独自スクリプト、TextBundle、TextPackは対象外です。</p></article>
+        <article class="tool-guide"><h3>このMarkdown PDF変換ツールは無料ですか？</h3><p>はい。現在のWebツールは無料で、アカウントやOnePreviewアプリは不要です。文書と選択した画像は現在のブラウザセッション内に留まり、変換サーバーにアップロードされません。</p></article>
+        <article class="tool-guide"><h3>Mermaid図や数式もPDFに出力できますか？</h3><p>はい。mermaidのコードブロックに図を記述し、数式にはKaTeX互換の記法を使ってください。印刷前にプレビューを確認してください。図や数式を描画できない場合は、内容を省略せず、注意事項と原文を表示します。</p></article>
+        <article class="tool-guide"><h3>Markdownの表はどのようにページをまたぎますか？</h3><p>GitHub形式のMarkdown表はA4ページに分割され、各ページで見出し行を繰り返します。コードは幅に合わせて折り返します。表の行が高すぎる場合や内容が幅を超える場合はメッセージを表示します。行を短くするか列数を減らして再度お試しください。</p></article>
+        <article class="tool-guide"><h3>PDFに画像が表示されないのはなぜですか？</h3><p>Markdownから参照しているローカル画像を、同じファイル名で選択してください。外部の画像は自動で読み込みません。画像は16枚まで、1枚5 MB、合計20 MBまでです。画像の欠落や読み込み失敗は注意事項に表示します。</p></article></div>
 
         <div class="tool-app"><div><h3>ローカルファイルのプレビューも必要ですか？</h3>
         <p>Mac、iPhone、iPad向けのOnePreviewは、お使いのデバイスでMarkdownや開発用ファイルをプレビューできます。このWebツールはアプリなしでも単独で使えます。</p></div>

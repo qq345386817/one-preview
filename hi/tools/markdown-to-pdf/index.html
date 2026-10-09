@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Markdown से PDF ऑनलाइन: A4 रिपोर्ट, तालिकाएँ और Mermaid | OnePreview</title>
-  <meta name="description" content="ब्राउज़र में Markdown को पढ़ने योग्य A4 PDF रिपोर्ट में बदलें। पृष्ठ, तालिकाएँ, कोड, Mermaid आरेख और गणित देखें। मुफ़्त, बिना खाते या ऐप के।">
+  <title>मुफ़्त ऑनलाइन Markdown से PDF: Mermaid और तालिकाएँ | OnePreview</title>
+  <meta name="description" content="Markdown या MD को मुफ़्त A4 PDF में बदलें। Mermaid, KaTeX, तालिकाएँ और कोड समर्थित हैं। खाते, ऐप या दस्तावेज़ अपलोड की ज़रूरत नहीं।">
   <link rel="canonical" href="https://one-preview.luopeike.com/hi/tools/markdown-to-pdf/">
+  <link rel="describedby" type="text/plain" href="/llms.txt">
   <link rel="alternate" hreflang="en" href="https://one-preview.luopeike.com/tools/markdown-to-pdf/">
   <link rel="alternate" hreflang="zh-Hans" href="https://one-preview.luopeike.com/zh-Hans/tools/markdown-to-pdf/">
   <link rel="alternate" hreflang="zh-Hant" href="https://one-preview.luopeike.com/zh-Hant/tools/markdown-to-pdf/">
@@ -18,10 +19,15 @@
   <link rel="alternate" hreflang="ru" href="https://one-preview.luopeike.com/ru/tools/markdown-to-pdf/">
   <link rel="alternate" hreflang="x-default" href="https://one-preview.luopeike.com/tools/markdown-to-pdf/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Markdown से PDF ऑनलाइन | OnePreview">
-  <meta property="og:description" content="पढ़ने योग्य तालिकाओं, कोड और आरेखों वाली A4 Markdown रिपोर्ट। मुफ़्त और आपके ब्राउज़र में स्थानीय प्रोसेसिंग।">
+  <meta property="og:title" content="मुफ़्त ऑनलाइन Markdown से PDF: Mermaid और तालिकाएँ | OnePreview">
+  <meta property="og:description" content="Markdown या MD को मुफ़्त A4 PDF में बदलें। Mermaid, KaTeX, तालिकाएँ और कोड समर्थित हैं। खाते, ऐप या दस्तावेज़ अपलोड की ज़रूरत नहीं।">
   <meta property="og:url" content="https://one-preview.luopeike.com/hi/tools/markdown-to-pdf/">
   <meta property="og:image" content="https://one-preview.luopeike.com/images/social-preview.png">
+  <meta property="og:site_name" content="OnePreview">
+  <meta property="og:locale" content="hi_IN">
+  <meta name="twitter:title" content="मुफ़्त ऑनलाइन Markdown से PDF: Mermaid और तालिकाएँ | OnePreview">
+  <meta name="twitter:description" content="Markdown या MD को मुफ़्त A4 PDF में बदलें। Mermaid, KaTeX, तालिकाएँ और कोड समर्थित हैं। खाते, ऐप या दस्तावेज़ अपलोड की ज़रूरत नहीं।">
+  <meta name="twitter:image" content="https://one-preview.luopeike.com/images/social-preview.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0A84FF">
   <link rel="icon" href="/favicon/favicon-32x32.png">
@@ -29,7 +35,8 @@
   <link rel="stylesheet" href="/style/markdown-report.css">
   <script type="application/json" id="tool-messages">{"ready":"रिपोर्ट तैयार · A4 पृष्ठ: {count}","changed":"सामग्री बदली है। प्रिंट करने से पहले पूर्वावलोकन अपडेट करें।","working":"आरेख बन रहे हैं, फ़ॉन्ट लोड हो रहे हैं और पृष्ठ तैयार हो रहे हैं…","images":"चुने गए चित्र: {count}","duplicates":"दो चित्रों का फ़ाइल नाम एक है। अलग नाम वाली फ़ाइलें चुनें।","imageSize":"अधिकतम 16 चित्र चुनें, प्रत्येक 5 MB और कुल 20 MB तक।","unsupported":"500 KB तक की .md या .markdown टेक्स्ट फ़ाइल चुनें।","read":"फ़ाइल पढ़ी नहीं जा सकी। इसे फिर चुनें।","encoding":"टेक्स्ट एन्कोडिंग पहचानी नहीं गई। फ़ाइल UTF-8 में सहेजकर फिर प्रयास करें।","errors":{"empty":"यह Markdown दस्तावेज़ खाली है।","size":"दस्तावेज़ 500 KB से बड़ा है। छोटा दस्तावेज़ आज़माएँ।","pages":"रिपोर्ट 100 पृष्ठों से अधिक है। इसे छोटे भागों में बाँटें।","row":"तालिका की एक पंक्ति एक पृष्ठ से लंबी है। उसे छोटा करें या बाँटें।","block":"एक तत्व एक पृष्ठ में नहीं समा रहा। लंबी सूची, सूत्र या चित्र को बाँटकर फिर प्रयास करें।","width":"सामग्री पृष्ठ की चौड़ाई से अधिक है। तालिका के स्तंभ कम करें या सूत्र छोटा करें।","fonts":"रिपोर्ट के फ़ॉन्ट लोड नहीं हुए। फिर प्रयास करें।","resources":"रिपोर्ट का एक घटक लोड नहीं हुआ। यह पृष्ठ फिर लोड करें।"},"labels":{"image":"चित्र उपलब्ध नहीं","diagram":"आरेख रेंडर नहीं हुआ; मूल पाठ रखा गया है","math":"सूत्र रेंडर नहीं हुआ; मूल पाठ रखा गया है","page":"पृष्ठ %d / %d","title":"Markdown रिपोर्ट"},"print":"A4 और 100% स्केल चुनें और ब्राउज़र के हेडर व फ़ूटर बंद करें। iPhone या iPad पर सिस्टम के प्रिंट पूर्वावलोकन से PDF साझा या सहेजें। कुछ ब्राउज़र से बने देवनागरी PDF का टेक्स्ट कॉपी करने पर अक्षर बदल सकते हैं। साझा करने से पहले कॉपी किए गए टेक्स्ट की जाँच करें।"}</script>
   <script src="/script/markdown-report/tool.js" defer></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"OnePreview Markdown से PDF","url":"https://one-preview.luopeike.com/hi/tools/markdown-to-pdf/","applicationCategory":"UtilitiesApplication","operatingSystem":"आधुनिक वेब ब्राउज़र","inLanguage":"hi","browserRequirements":"JavaScript और ब्राउज़र प्रिंटिंग सक्षम हो","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"ब्राउज़र में Markdown को पढ़ने योग्य A4 PDF रिपोर्ट में बदलें। पृष्ठ, तालिकाएँ, कोड, Mermaid आरेख और गणित देखें। मुफ़्त, बिना खाते या ऐप के।"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"OnePreview Markdown से PDF","url":"https://one-preview.luopeike.com/hi/tools/markdown-to-pdf/","applicationCategory":"UtilitiesApplication","operatingSystem":"आधुनिक वेब ब्राउज़र","inLanguage":"hi","browserRequirements":"JavaScript और ब्राउज़र प्रिंटिंग सक्षम हो","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Markdown या MD को मुफ़्त A4 PDF में बदलें। Mermaid, KaTeX, तालिकाएँ और कोड समर्थित हैं। खाते, ऐप या दस्तावेज़ अपलोड की ज़रूरत नहीं।","@id":"https://one-preview.luopeike.com/hi/tools/markdown-to-pdf/#application","isAccessibleForFree":true,"featureList":["मुफ़्त, बिना खाते के","दस्तावेज़ अपलोड के बिना स्थानीय प्रोसेसिंग","Mermaid आरेख और KaTeX गणित","A4 पृष्ठ और दोहराए गए तालिका शीर्षक","कोड ब्लॉक का पंक्तियों में समायोजन"]}</script>
+  <script type="application/ld+json" data-seo="breadcrumbs">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"होम","item":"https://one-preview.luopeike.com/hi/"},{"@type":"ListItem","position":2,"name":"OnePreview Markdown से PDF","item":"https://one-preview.luopeike.com/hi/tools/markdown-to-pdf/"}]}</script>
 </head>
 <body>
   <div class="page"><div class="container">
@@ -67,9 +74,14 @@
         <h2>पढ़ने योग्य टेक्स्ट रिपोर्ट</h2>
         <p>PDF में दस्तावेज़ का टेक्स्ट रहता है, स्क्रीनशॉट नहीं। सामान्य Markdown, GitHub शैली की तालिकाएँ, कोड ब्लॉक, Mermaid आरेख और KaTeX गणित समर्थित हैं। लंबी तालिकाओं के शीर्षक हर पृष्ठ पर दोहराए जाते हैं; लंबा कोड उपलब्ध चौड़ाई के अनुसार अगली पंक्ति में जाता है।</p>
         <p><a href="example.md" download>Markdown उदाहरण डाउनलोड करें</a> और इसी रिपोर्ट को दूसरे तरीके से आज़माएँ।</p>
+        <h3>रिपोर्ट, दस्तावेज़ और काम सौंपने के नोट्स</h3><p>प्रगति तालिका वाली साप्ताहिक रिपोर्ट, कोड और सूत्रों वाले तकनीकी नोट्स, या Mermaid से प्रक्रिया दिखाने वाले दस्तावेज़ तैयार करें। डाउनलोड करने योग्य उदाहरण में ये सुविधाएँ एक ही रिपोर्ट में हैं।</p>
         <div class="tool-guides"><article class="tool-guide"><h3>PDF कैसे सहेजें?</h3>
         <p>‘प्रिंट / PDF सहेजें’ चुनें, फिर ब्राउज़र या सिस्टम में PDF सहेजने का विकल्प चुनें। iPhone और iPad पर सिस्टम के प्रिंट पूर्वावलोकन से PDF साझा या सहेजें। यहाँ रिपोर्ट की सामग्री दिखती है; अतिरिक्त हेडर, फ़ूटर और कागज़ की सेटिंग प्रिंट संवाद में नियंत्रित होती हैं।</p></article><article class="tool-guide"><h3>क्या सीमाएँ हैं?</h3>
-        <p>एक A4 लेआउट, अधिकतम 500 KB Markdown और 100 पृष्ठ। बहुत ऊँची तालिका पंक्ति या सुरक्षित रूप से न बँटने वाला तत्व होने पर कटा हुआ PDF बनाने के बजाय संदेश दिखता है। गायब चित्रों और अमान्य आरेखों या सूत्रों की चेतावनी मिलती है। पहले संस्करण में MDX घटक, कस्टम स्क्रिप्ट, TextBundle और TextPack शामिल नहीं हैं।</p></article></div>
+        <p>एक A4 लेआउट, अधिकतम 500 KB Markdown और 100 पृष्ठ। बहुत ऊँची तालिका पंक्ति या सुरक्षित रूप से न बँटने वाला तत्व होने पर कटा हुआ PDF बनाने के बजाय संदेश दिखता है। गायब चित्रों और अमान्य आरेखों या सूत्रों की चेतावनी मिलती है। पहले संस्करण में MDX घटक, कस्टम स्क्रिप्ट, TextBundle और TextPack शामिल नहीं हैं।</p></article>
+        <article class="tool-guide"><h3>क्या यह Markdown से PDF टूल मुफ़्त है?</h3><p>हाँ। वर्तमान वेब टूल मुफ़्त है और खाते या OnePreview ऐप की ज़रूरत नहीं है। टेक्स्ट और चुने हुए चित्र इसी ब्राउज़र सत्र में रहते हैं; वे रूपांतरण सर्वर पर अपलोड नहीं होते।</p></article>
+        <article class="tool-guide"><h3>क्या Mermaid आरेख और गणित के सूत्र PDF में जा सकते हैं?</h3><p>हाँ। आरेख mermaid कोड ब्लॉक में लिखें और सूत्रों के लिए KaTeX के अनुकूल संकेतों का उपयोग करें। प्रिंट करने से पहले पूर्वावलोकन जाँचें। आरेख या सूत्र रेंडर न होने पर टूल चेतावनी दिखाता है और मूल पाठ रखता है, सामग्री चुपचाप हटाता नहीं।</p></article>
+        <article class="tool-guide"><h3>Markdown तालिकाएँ अगले पृष्ठ पर कैसे जारी रहती हैं?</h3><p>GitHub शैली की Markdown तालिकाएँ A4 पृष्ठों में बँटती हैं और शीर्षक पंक्ति हर पृष्ठ पर दोहराई जाती है। कोड उपलब्ध चौड़ाई में अगली पंक्ति में जाता है। बहुत ऊँची पंक्ति या बहुत चौड़ी सामग्री पर संदेश मिलता है। पंक्ति छोटी करें या स्तंभ कम करके फिर प्रयास करें।</p></article>
+        <article class="tool-guide"><h3>मेरे PDF में चित्र क्यों नहीं दिखते?</h3><p>Markdown में संदर्भित स्थानीय चित्रों को मिलते हुए फ़ाइल नामों के साथ चुनें। दूरस्थ चित्र अपने आप लोड नहीं होते। अधिकतम 16 चित्र, प्रत्येक 5 MB और कुल 20 MB तक चुनें। गायब या न पढ़े जा सकने वाले चित्रों की चेतावनी मिलती है।</p></article></div>
 
         <div class="tool-app"><div><h3>स्थानीय फ़ाइलों का पूर्वावलोकन चाहिए?</h3>
         <p>Mac, iPhone और iPad के लिए OnePreview आपके डिवाइस पर Markdown और डेवलपर फ़ाइलें दिखाता है। यह वेब टूल ऐप के बिना भी स्वतंत्र रूप से काम करता है।</p></div>

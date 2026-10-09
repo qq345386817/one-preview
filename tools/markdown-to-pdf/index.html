@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Markdown to PDF Online: A4 Reports, Tables & Mermaid | OnePreview</title>
-  <meta name="description" content="Turn Markdown into a readable A4 PDF report in your browser. Preview page breaks, tables, code, Mermaid diagrams and math. Free, no account or app required.">
+  <title>Free Markdown to PDF Online: Mermaid &amp; Tables | OnePreview</title>
+  <meta name="description" content="Convert Markdown or MD to an A4 PDF online for free. Supports Mermaid, KaTeX math, tables and code. No account, app or document upload required.">
   <link rel="canonical" href="https://one-preview.luopeike.com/tools/markdown-to-pdf/">
+  <link rel="describedby" type="text/plain" href="/llms.txt">
   <link rel="alternate" hreflang="en" href="https://one-preview.luopeike.com/tools/markdown-to-pdf/">
   <link rel="alternate" hreflang="zh-Hans" href="https://one-preview.luopeike.com/zh-Hans/tools/markdown-to-pdf/">
   <link rel="alternate" hreflang="zh-Hant" href="https://one-preview.luopeike.com/zh-Hant/tools/markdown-to-pdf/">
@@ -18,10 +19,15 @@
   <link rel="alternate" hreflang="ru" href="https://one-preview.luopeike.com/ru/tools/markdown-to-pdf/">
   <link rel="alternate" hreflang="x-default" href="https://one-preview.luopeike.com/tools/markdown-to-pdf/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Markdown to PDF Online | OnePreview">
-  <meta property="og:description" content="A4 Markdown reports with readable tables, code and diagrams. Free and processed in your browser.">
+  <meta property="og:title" content="Free Markdown to PDF Online: Mermaid &amp; Tables | OnePreview">
+  <meta property="og:description" content="Convert Markdown or MD to an A4 PDF online for free. Supports Mermaid, KaTeX math, tables and code. No account, app or document upload required.">
   <meta property="og:url" content="https://one-preview.luopeike.com/tools/markdown-to-pdf/">
   <meta property="og:image" content="https://one-preview.luopeike.com/images/social-preview.png">
+  <meta property="og:site_name" content="OnePreview">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:title" content="Free Markdown to PDF Online: Mermaid &amp; Tables | OnePreview">
+  <meta name="twitter:description" content="Convert Markdown or MD to an A4 PDF online for free. Supports Mermaid, KaTeX math, tables and code. No account, app or document upload required.">
+  <meta name="twitter:image" content="https://one-preview.luopeike.com/images/social-preview.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0A84FF">
   <link rel="icon" href="/favicon/favicon-32x32.png">
@@ -29,7 +35,8 @@
   <link rel="stylesheet" href="/style/markdown-report.css">
   <script type="application/json" id="tool-messages">{"ready":"Report ready · A4 pages: {count}","changed":"Content changed. Update the preview before printing.","working":"Rendering diagrams, loading fonts and arranging pages…","images":"Selected images: {count}","duplicates":"Two images have the same file name. Choose uniquely named files.","imageSize":"Choose up to 16 images, at most 5 MB each and 20 MB in total.","unsupported":"Choose a .md or .markdown text file, up to 500 KB.","read":"Could not read the file. Please choose it again.","encoding":"Could not read the text encoding. Save the file as UTF-8 and try again.","errors":{"empty":"Enter some Markdown first.","size":"This document exceeds 500 KB. Try a smaller report.","pages":"This report exceeds 100 pages. Split it into smaller reports.","row":"A table row is taller than one page. Shorten or split that row.","block":"An element cannot fit safely on one page. Split long list items, formulas or images and try again.","width":"Content exceeds the page width. Reduce table columns or shorten the formula and try again.","fonts":"Fonts did not finish loading. Try updating the preview.","resources":"A report component could not load. Reload this page."},"labels":{"image":"Image unavailable","diagram":"Diagram could not be rendered; source retained","math":"Formula could not be rendered; source retained","page":"Page %d / %d","title":"Markdown report"},"print":"Choose A4 paper and 100% scale, and turn off browser headers and footers. On iPhone or iPad, share or save the PDF from the system print preview."}</script>
   <script src="/script/markdown-report/tool.js" defer></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"OnePreview Markdown to PDF","url":"https://one-preview.luopeike.com/tools/markdown-to-pdf/","applicationCategory":"UtilitiesApplication","operatingSystem":"Modern web browser","inLanguage":"en","browserRequirements":"JavaScript and browser printing enabled","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert Markdown into an A4 PDF report with tables, code, Mermaid diagrams and math, processed locally in your browser."}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"OnePreview Markdown to PDF","url":"https://one-preview.luopeike.com/tools/markdown-to-pdf/","applicationCategory":"UtilitiesApplication","operatingSystem":"Modern web browser","inLanguage":"en","browserRequirements":"JavaScript and browser printing enabled","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert Markdown or MD to an A4 PDF online for free. Supports Mermaid, KaTeX math, tables and code. No account, app or document upload required.","@id":"https://one-preview.luopeike.com/tools/markdown-to-pdf/#application","isAccessibleForFree":true,"featureList":["Free without an account","Local processing without document upload","Mermaid diagrams and KaTeX math","A4 pagination with repeated table headers","Wrapped code blocks"]}</script>
+  <script type="application/ld+json" data-seo="breadcrumbs">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://one-preview.luopeike.com/"},{"@type":"ListItem","position":2,"name":"OnePreview Markdown to PDF","item":"https://one-preview.luopeike.com/tools/markdown-to-pdf/"}]}</script>
 </head>
 <body>
   <div class="page"><div class="container">
@@ -67,9 +74,14 @@
         <h2>A report you can read and copy</h2>
         <p>The PDF uses text, not screenshots of the document. Standard Markdown, GitHub-style tables, code blocks, Mermaid diagrams and KaTeX math are supported. Long tables continue with their headers on each page; long code wraps to the available width.</p>
         <p><a href="example.md" download>Download the example Markdown</a> to try the same report in another workflow.</p>
+        <h3>Reports, documentation and handover notes</h3><p>Use this Markdown to PDF converter for a weekly report with a progress table, technical notes with code and formulas, or handover documentation with a Mermaid flowchart. The downloadable example shows these features together in one report.</p>
         <div class="tool-guides"><article class="tool-guide"><h3>How do I save the PDF?</h3>
         <p>Use Print / Save as PDF, then choose your browser or system PDF destination. On iPhone and iPad, use the system print preview to share or save the PDF. The preview shows the report content; browser-added print headers and paper settings are controlled by the print dialog.</p></article><article class="tool-guide"><h3>What are the limits?</h3>
-        <p>One A4 layout, up to 500 KB of Markdown and 100 pages. Oversized table rows or elements that cannot be split safely produce a message instead of a clipped PDF. Missing images and invalid diagrams or formulas are reported. MDX components, custom scripts, TextBundle and TextPack are outside this tool's first release.</p></article></div>
+        <p>One A4 layout, up to 500 KB of Markdown and 100 pages. Oversized table rows or elements that cannot be split safely produce a message instead of a clipped PDF. Missing images and invalid diagrams or formulas are reported. MDX components, custom scripts, TextBundle and TextPack are outside this tool's first release.</p></article>
+        <article class="tool-guide"><h3>Is this Markdown to PDF converter free?</h3><p>Yes. The current web tool is free and works without an account or the OnePreview app. Document text and selected images stay in the current browser session; they are not uploaded to a conversion server.</p></article>
+        <article class="tool-guide"><h3>Can I export Mermaid diagrams and math to PDF?</h3><p>Yes. Put a diagram in a fenced mermaid code block and use KaTeX-compatible math notation for formulas. Check the rendered preview before printing. If a diagram or formula cannot render, the tool shows a warning and retains its source instead of silently omitting it.</p></article>
+        <article class="tool-guide"><h3>How do Markdown tables continue across pages?</h3><p>GitHub-style Markdown tables are split across A4 pages with their header row repeated. Code wraps to the available width. If a row is taller than a page or content remains too wide, the tool reports the problem; shorten the row or reduce columns before trying again.</p></article>
+        <article class="tool-guide"><h3>Why are images missing from my PDF?</h3><p>Choose the local image files referenced by the Markdown, using matching file names. Remote images are not fetched automatically. Select up to 16 images, at most 5 MB each and 20 MB in total; missing or unreadable images produce a warning.</p></article></div>
 
         <div class="tool-app"><div><h3>Looking for local file previews?</h3>
         <p>OnePreview for Mac, iPhone and iPad previews Markdown and developer files on your device. This web tool works independently of the app.</p></div>

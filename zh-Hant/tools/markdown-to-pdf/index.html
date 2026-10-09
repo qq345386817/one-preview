@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Markdown 線上轉 PDF：A4 報告、表格與流程圖 | OnePreview</title>
-  <meta name="description" content="在瀏覽器中將 Markdown 排成 A4 PDF 報告，支援表格分頁、程式碼換行、Mermaid 流程圖與數學公式。免費使用，不需帳號或安裝 App，文件在瀏覽器本機處理。">
+  <title>免費線上 Markdown 轉 PDF：流程圖與表格 | OnePreview</title>
+  <meta name="description" content="免費線上將 Markdown、MD 檔案排成 A4 PDF，支援 Mermaid 流程圖、KaTeX 數學公式、表格分頁和程式碼換行。不需帳號、安裝 App 或上傳文件。">
   <link rel="canonical" href="https://one-preview.luopeike.com/zh-Hant/tools/markdown-to-pdf/">
+  <link rel="describedby" type="text/plain" href="/llms.txt">
   <link rel="alternate" hreflang="en" href="https://one-preview.luopeike.com/tools/markdown-to-pdf/">
   <link rel="alternate" hreflang="zh-Hans" href="https://one-preview.luopeike.com/zh-Hans/tools/markdown-to-pdf/">
   <link rel="alternate" hreflang="zh-Hant" href="https://one-preview.luopeike.com/zh-Hant/tools/markdown-to-pdf/">
@@ -18,10 +19,15 @@
   <link rel="alternate" hreflang="ru" href="https://one-preview.luopeike.com/ru/tools/markdown-to-pdf/">
   <link rel="alternate" hreflang="x-default" href="https://one-preview.luopeike.com/tools/markdown-to-pdf/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Markdown 線上轉 PDF | OnePreview">
-  <meta property="og:description" content="在瀏覽器本機產生清晰的 A4 報告，支援表格、程式碼和流程圖。免費使用，不需帳號。">
+  <meta property="og:title" content="免費線上 Markdown 轉 PDF：流程圖與表格 | OnePreview">
+  <meta property="og:description" content="免費線上將 Markdown、MD 檔案排成 A4 PDF，支援 Mermaid 流程圖、KaTeX 數學公式、表格分頁和程式碼換行。不需帳號、安裝 App 或上傳文件。">
   <meta property="og:url" content="https://one-preview.luopeike.com/zh-Hant/tools/markdown-to-pdf/">
   <meta property="og:image" content="https://one-preview.luopeike.com/images/social-preview.png">
+  <meta property="og:site_name" content="OnePreview">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:title" content="免費線上 Markdown 轉 PDF：流程圖與表格 | OnePreview">
+  <meta name="twitter:description" content="免費線上將 Markdown、MD 檔案排成 A4 PDF，支援 Mermaid 流程圖、KaTeX 數學公式、表格分頁和程式碼換行。不需帳號、安裝 App 或上傳文件。">
+  <meta name="twitter:image" content="https://one-preview.luopeike.com/images/social-preview.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0A84FF">
   <link rel="icon" href="/favicon/favicon-32x32.png">
@@ -29,7 +35,8 @@
   <link rel="stylesheet" href="/style/markdown-report.css">
   <script type="application/json" id="tool-messages">{"ready":"排版完成 · A4 頁數：{count}","changed":"內容已變更，請更新預覽。","working":"正在呈現圖表、載入字型並分頁…","images":"已選圖片：{count}","duplicates":"圖片檔名重複，請選擇名稱不同的檔案。","imageSize":"最多選擇 16 張圖片，每張不超過 5 MB，總大小不超過 20 MB。","unsupported":"請選擇 .md 或 .markdown 文字檔（不超過 500 KB）。","read":"無法讀取檔案，請重新選擇。","encoding":"無法辨識文字編碼，請儲存為 UTF-8 後重試。","errors":{"empty":"Markdown 文件為空。","size":"文件超過 500 KB，請縮小後重試。","pages":"報告超過 100 頁，請拆分為較小的報告。","row":"表格中有一列高於一頁，請縮短或拆分該列。","block":"有一個元素無法在一頁內完整顯示，請拆分長清單項目、公式或圖片後重試。","width":"內容超過頁面寬度，請減少表格欄數或縮短公式後重試。","fonts":"報告字型未能載入，請重試。","resources":"排版元件未能載入，請重新整理頁面。"},"labels":{"image":"圖片無法使用","diagram":"流程圖未能呈現，已保留原文","math":"公式未能呈現，已保留原文","page":"第 %d 頁 / 共 %d 頁","title":"Markdown 報告"},"print":"請選擇 A4、100% 縮放，並關閉瀏覽器附加的頁首和頁尾。iPhone / iPad 可在系統列印預覽分享或儲存 PDF。"}</script>
   <script src="/script/markdown-report/tool.js" defer></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"OnePreview Markdown 轉 PDF","url":"https://one-preview.luopeike.com/zh-Hant/tools/markdown-to-pdf/","applicationCategory":"UtilitiesApplication","operatingSystem":"現代網頁瀏覽器","inLanguage":"zh-Hant","browserRequirements":"啟用 JavaScript 和瀏覽器列印","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"在瀏覽器中將 Markdown 排成 A4 PDF 報告，支援表格分頁、程式碼換行、Mermaid 流程圖與數學公式。免費使用，不需帳號或安裝 App，文件在瀏覽器本機處理。"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"OnePreview Markdown 轉 PDF","url":"https://one-preview.luopeike.com/zh-Hant/tools/markdown-to-pdf/","applicationCategory":"UtilitiesApplication","operatingSystem":"現代網頁瀏覽器","inLanguage":"zh-Hant","browserRequirements":"啟用 JavaScript 和瀏覽器列印","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"免費線上將 Markdown、MD 檔案排成 A4 PDF，支援 Mermaid 流程圖、KaTeX 數學公式、表格分頁和程式碼換行。不需帳號、安裝 App 或上傳文件。","@id":"https://one-preview.luopeike.com/zh-Hant/tools/markdown-to-pdf/#application","isAccessibleForFree":true,"featureList":["免費使用，不需帳號","瀏覽器本機處理，不需上傳文件","Mermaid 流程圖與 KaTeX 數學公式","A4 分頁與跨頁重複標題列","程式碼區塊自動換行"]}</script>
+  <script type="application/ld+json" data-seo="breadcrumbs">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://one-preview.luopeike.com/zh-Hant/"},{"@type":"ListItem","position":2,"name":"OnePreview Markdown 轉 PDF","item":"https://one-preview.luopeike.com/zh-Hant/tools/markdown-to-pdf/"}]}</script>
 </head>
 <body>
   <div class="page"><div class="container">
@@ -67,9 +74,14 @@
         <h2>清晰排版，文字仍可複製</h2>
         <p>PDF 保留文件文字，而非文件的螢幕截圖。支援標準 Markdown、GitHub 風格表格、程式碼區塊、Mermaid 流程圖和 KaTeX 數學公式。長表格跨頁時重複標題列，長程式碼依頁面寬度換行。</p>
         <p><a href="example.md" download>下載範例 Markdown</a>，也可在其他工具中使用同一份文件。</p>
+        <h3>適合週報、技術文件與交付說明</h3><p>可用於附進度表格的專案週報、包含程式碼與公式的技術筆記，以及用 Mermaid 流程圖說明步驟的交付文件。下載範例即可在同一份報告中體驗這些功能。</p>
         <div class="tool-guides"><article class="tool-guide"><h3>如何儲存 PDF？</h3>
         <p>點選「列印 / 儲存為 PDF」，在瀏覽器或系統列印介面選擇 PDF 儲存方式。iPhone 和 iPad 可從系統列印預覽分享或儲存 PDF。這裡的預覽顯示報告內容，附加頁首、頁尾與紙張設定由列印介面控制。</p></article><article class="tool-guide"><h3>有哪些限制？</h3>
-        <p>一種 A4 版面，Markdown 不超過 500 KB，報告不超過 100 頁。表格單列過高或元素無法安全分割時會明確提示，避免產生截斷的 PDF。缺少圖片、無效流程圖或公式也會提示。首期不支援 MDX 元件、自訂指令碼以及 TextBundle、TextPack 套件。</p></article></div>
+        <p>一種 A4 版面，Markdown 不超過 500 KB，報告不超過 100 頁。表格單列過高或元素無法安全分割時會明確提示，避免產生截斷的 PDF。缺少圖片、無效流程圖或公式也會提示。首期不支援 MDX 元件、自訂指令碼以及 TextBundle、TextPack 套件。</p></article>
+        <article class="tool-guide"><h3>這個 Markdown 轉 PDF 工具免費嗎？</h3><p>是的，目前網頁工具免費使用，不需要帳號或 OnePreview App。文件內容和所選圖片僅保留在目前瀏覽器工作階段中，不會上傳至轉換伺服器。</p></article>
+        <article class="tool-guide"><h3>能將 Mermaid 流程圖和數學公式匯出至 PDF 嗎？</h3><p>可以。在 mermaid 圍欄程式碼區塊中編寫圖表，並使用相容 KaTeX 的語法輸入公式。列印前請檢查預覽。圖表或公式無法呈現時，工具會顯示提示並保留原文，不會直接省略內容。</p></article>
+        <article class="tool-guide"><h3>Markdown 表格如何跨頁顯示？</h3><p>GitHub 風格的 Markdown 表格會依 A4 頁面分頁，並在續頁重複標題列。程式碼會依可用寬度換行。若表格單列過高或內容仍超出頁寬，工具會明確提示，請縮短該列或減少欄數後重試。</p></article>
+        <article class="tool-guide"><h3>為什麼 PDF 中的圖片沒有顯示？</h3><p>請另外選擇 Markdown 引用的本機圖片，並確保檔名相符。工具不會自動載入遠端圖片。最多選擇 16 張，每張不超過 5 MB，總大小不超過 20 MB；缺少或無法讀取的圖片會顯示提示。</p></article></div>
 
         <div class="tool-app"><div><h3>還需要預覽本機檔案？</h3>
         <p>OnePreview App 可在 Mac、iPhone 和 iPad 上預覽 Markdown 和開發者檔案。網頁工具可獨立使用，不需安裝 App。</p></div>

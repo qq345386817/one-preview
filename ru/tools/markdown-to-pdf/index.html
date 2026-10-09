@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Markdown в PDF онлайн: отчёты A4, таблицы и Mermaid | OnePreview</title>
-  <meta name="description" content="Превратите Markdown в удобный PDF-отчёт A4 в браузере. Просматривайте страницы, таблицы, код, диаграммы Mermaid и формулы. Бесплатно, без аккаунта и приложения.">
+  <title>Markdown в PDF онлайн бесплатно: Mermaid и таблицы | OnePreview</title>
+  <meta name="description" content="Бесплатно конвертируйте Markdown или MD в PDF A4 с Mermaid, KaTeX, таблицами и кодом. Без аккаунта, приложения и загрузки документов на сервер.">
   <link rel="canonical" href="https://one-preview.luopeike.com/ru/tools/markdown-to-pdf/">
+  <link rel="describedby" type="text/plain" href="/llms.txt">
   <link rel="alternate" hreflang="en" href="https://one-preview.luopeike.com/tools/markdown-to-pdf/">
   <link rel="alternate" hreflang="zh-Hans" href="https://one-preview.luopeike.com/zh-Hans/tools/markdown-to-pdf/">
   <link rel="alternate" hreflang="zh-Hant" href="https://one-preview.luopeike.com/zh-Hant/tools/markdown-to-pdf/">
@@ -18,10 +19,15 @@
   <link rel="alternate" hreflang="ru" href="https://one-preview.luopeike.com/ru/tools/markdown-to-pdf/">
   <link rel="alternate" hreflang="x-default" href="https://one-preview.luopeike.com/tools/markdown-to-pdf/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Markdown в PDF онлайн | OnePreview">
-  <meta property="og:description" content="Отчёты Markdown A4 с удобными таблицами, кодом и диаграммами. Бесплатная локальная обработка в браузере.">
+  <meta property="og:title" content="Markdown в PDF онлайн бесплатно: Mermaid и таблицы | OnePreview">
+  <meta property="og:description" content="Бесплатно конвертируйте Markdown или MD в PDF A4 с Mermaid, KaTeX, таблицами и кодом. Без аккаунта, приложения и загрузки документов на сервер.">
   <meta property="og:url" content="https://one-preview.luopeike.com/ru/tools/markdown-to-pdf/">
   <meta property="og:image" content="https://one-preview.luopeike.com/images/social-preview.png">
+  <meta property="og:site_name" content="OnePreview">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:title" content="Markdown в PDF онлайн бесплатно: Mermaid и таблицы | OnePreview">
+  <meta name="twitter:description" content="Бесплатно конвертируйте Markdown или MD в PDF A4 с Mermaid, KaTeX, таблицами и кодом. Без аккаунта, приложения и загрузки документов на сервер.">
+  <meta name="twitter:image" content="https://one-preview.luopeike.com/images/social-preview.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0A84FF">
   <link rel="icon" href="/favicon/favicon-32x32.png">
@@ -29,7 +35,8 @@
   <link rel="stylesheet" href="/style/markdown-report.css">
   <script type="application/json" id="tool-messages">{"ready":"Отчёт готов · Страниц A4: {count}","changed":"Содержимое изменено. Обновите просмотр перед печатью.","working":"Построение диаграмм, загрузка шрифтов и разбивка на страницы…","images":"Выбрано изображений: {count}","duplicates":"У двух изображений одинаковое имя файла. Выберите файлы с разными именами.","imageSize":"Выберите до 16 изображений: до 5 МБ каждое и 20 МБ всего.","unsupported":"Выберите текстовый файл .md или .markdown размером до 500 КБ.","read":"Не удалось прочитать файл. Выберите его снова.","encoding":"Не удалось распознать кодировку. Сохраните файл в UTF-8 и повторите попытку.","errors":{"empty":"Документ Markdown пуст.","size":"Документ больше 500 КБ. Попробуйте меньший отчёт.","pages":"Отчёт больше 100 страниц. Разделите его на несколько частей.","row":"Строка таблицы выше одной страницы. Сократите или разделите её.","block":"Элемент не помещается на одной странице. Разделите длинные пункты списка, формулы или изображения.","width":"Содержимое шире страницы. Уменьшите число столбцов таблицы или сократите формулу.","fonts":"Не удалось загрузить шрифты отчёта. Повторите попытку.","resources":"Не удалось загрузить компонент отчёта. Обновите страницу."},"labels":{"image":"Изображение недоступно","diagram":"Диаграмма не отображена; исходный текст сохранён","math":"Формула не отображена; исходный текст сохранён","page":"Страница %d / %d","title":"Отчёт Markdown"},"print":"Выберите A4 и масштаб 100% и отключите колонтитулы браузера. На iPhone и iPad поделитесь PDF или сохраните его из системного просмотра печати."}</script>
   <script src="/script/markdown-report/tool.js" defer></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"OnePreview Markdown в PDF","url":"https://one-preview.luopeike.com/ru/tools/markdown-to-pdf/","applicationCategory":"UtilitiesApplication","operatingSystem":"Современный веб-браузер","inLanguage":"ru","browserRequirements":"Включены JavaScript и печать в браузере","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Превратите Markdown в удобный PDF-отчёт A4 в браузере. Просматривайте страницы, таблицы, код, диаграммы Mermaid и формулы. Бесплатно, без аккаунта и приложения."}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"OnePreview Markdown в PDF","url":"https://one-preview.luopeike.com/ru/tools/markdown-to-pdf/","applicationCategory":"UtilitiesApplication","operatingSystem":"Современный веб-браузер","inLanguage":"ru","browserRequirements":"Включены JavaScript и печать в браузере","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Бесплатно конвертируйте Markdown или MD в PDF A4 с Mermaid, KaTeX, таблицами и кодом. Без аккаунта, приложения и загрузки документов на сервер.","@id":"https://one-preview.luopeike.com/ru/tools/markdown-to-pdf/#application","isAccessibleForFree":true,"featureList":["Бесплатно без аккаунта","Локальная обработка без загрузки документов","Диаграммы Mermaid и формулы KaTeX","Страницы A4 с повторением заголовков таблиц","Перенос строк в блоках кода"]}</script>
+  <script type="application/ld+json" data-seo="breadcrumbs">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://one-preview.luopeike.com/ru/"},{"@type":"ListItem","position":2,"name":"OnePreview Markdown в PDF","item":"https://one-preview.luopeike.com/ru/tools/markdown-to-pdf/"}]}</script>
 </head>
 <body>
   <div class="page"><div class="container">
@@ -67,9 +74,14 @@
         <h2>Отчёт, который можно читать и копировать</h2>
         <p>PDF содержит текст, а не снимки экрана документа. Поддерживаются стандартный Markdown, таблицы GitHub, блоки кода, диаграммы Mermaid и формулы KaTeX. Длинные таблицы повторяют заголовки на каждой странице; длинные строки кода переносятся по ширине страницы.</p>
         <p><a href="example.md" download>Скачать пример Markdown</a>, чтобы проверить тот же отчёт в другом рабочем процессе.</p>
+        <h3>Отчёты, документация и заметки для передачи дел</h3><p>Используйте инструмент для еженедельного отчёта с таблицей прогресса, технических заметок с кодом и формулами или передачи дел со схемой Mermaid. Скачиваемый пример объединяет эти возможности в одном отчёте.</p>
         <div class="tool-guides"><article class="tool-guide"><h3>Как сохранить PDF?</h3>
         <p>Нажмите «Печать / Сохранить PDF» и выберите сохранение PDF в браузере или системе. На iPhone и iPad поделитесь PDF или сохраните его из системного просмотра печати. Здесь отображается содержимое отчёта; дополнительные колонтитулы и формат бумаги задаются в окне печати.</p></article><article class="tool-guide"><h3>Какие есть ограничения?</h3>
-        <p>Один макет A4, до 500 КБ Markdown и 100 страниц. Слишком высокая строка таблицы или элемент, который нельзя безопасно разделить, вызывает сообщение вместо обрезанного PDF. Отсутствующие изображения и некорректные диаграммы или формулы отмечаются предупреждениями. В первую версию не входят компоненты MDX, пользовательские скрипты, TextBundle и TextPack.</p></article></div>
+        <p>Один макет A4, до 500 КБ Markdown и 100 страниц. Слишком высокая строка таблицы или элемент, который нельзя безопасно разделить, вызывает сообщение вместо обрезанного PDF. Отсутствующие изображения и некорректные диаграммы или формулы отмечаются предупреждениями. В первую версию не входят компоненты MDX, пользовательские скрипты, TextBundle и TextPack.</p></article>
+        <article class="tool-guide"><h3>Конвертация Markdown в PDF бесплатна?</h3><p>Да. Текущий веб-инструмент бесплатен и не требует аккаунта или приложения OnePreview. Текст и выбранные изображения остаются в текущем сеансе браузера и не загружаются на сервер конвертации.</p></article>
+        <article class="tool-guide"><h3>Можно ли экспортировать диаграммы Mermaid и формулы в PDF?</h3><p>Да. Запишите диаграмму в блоке кода mermaid, а формулы — в нотации, совместимой с KaTeX. Проверьте просмотр перед печатью. Если диаграмму или формулу нельзя отобразить, инструмент показывает предупреждение и сохраняет исходный текст, не пропуская содержимое молча.</p></article>
+        <article class="tool-guide"><h3>Как таблицы Markdown переходят на следующую страницу?</h3><p>Таблицы Markdown в стиле GitHub распределяются по страницам A4 с повторением заголовка. Код переносится по доступной ширине. Слишком высокая строка или слишком широкое содержимое вызывает сообщение. Сократите строку или уменьшите число столбцов и повторите попытку.</p></article>
+        <article class="tool-guide"><h3>Почему в PDF не отображаются изображения?</h3><p>Выберите локальные изображения, на которые ссылается Markdown, с совпадающими именами файлов. Удалённые изображения не загружаются автоматически. До 16 изображений, каждое до 5 МБ, всего до 20 МБ. Отсутствующие или нечитаемые изображения вызывают предупреждение.</p></article></div>
 
         <div class="tool-app"><div><h3>Нужен просмотр локальных файлов?</h3>
         <p>OnePreview для Mac, iPhone и iPad показывает Markdown и файлы разработчика на вашем устройстве. Этот веб-инструмент работает независимо от приложения.</p></div>

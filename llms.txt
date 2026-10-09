@@ -1,0 +1,55 @@
+# OnePreview
+
+> OnePreview provides a native file-preview app for Mac, iPhone and iPad, and a separate free Markdown-to-PDF web tool. The web tool works without the app or an account.
+
+Product facts reviewed on 2026-10-09:
+
+- On macOS, the app extends Finder Quick Look for supported files; users can select a file and press Space after enabling the extension.
+- On iPhone and iPad, users open supported files in OnePreview from Files using Open With. The app does not replace the built-in Files Quick Look preview for every normal tap.
+- App preview formats include Markdown, MDX, TextBundle, TextPack, source code, plain text, logs, JSON, JSONL, YAML, XML, CSV, TSV, TOML, ENV, Apple property lists, ZIP/TAR.GZ archives, folders and SQLite databases. App preview support is not the web converter's input-format list.
+- The current web converter accepts .md and .markdown text files or pasted Markdown. It supports GitHub-style tables, code blocks, Mermaid diagrams and KaTeX-compatible math. It provides one A4 layout, page numbers, repeated table headers and code wrapping.
+- Conversion runs in the browser session. Document text and explicitly selected images are not uploaded to a conversion server. Remote images are not fetched automatically. Loading the website and bundled assets still requires network access; this is not a claim of guaranteed offline operation.
+- The web tool opens the browser or system Print / Save as PDF workflow. It does not directly download a PDF independently of that dialog. On iPhone and iPad, saving and sharing use the system print preview.
+- Limits: 500 KB of Markdown, 100 pages, up to 16 selected images, 5 MB per image and 20 MB total. Oversized rows or content that cannot fit safely generate an error. Missing images and invalid diagrams or formulas generate notices.
+- MDX components, custom scripts, TextBundle and TextPack are not supported by this first web export release.
+- The current basic web tool is free. It requires neither an account nor installation of the native app. Consult the live product pages for current availability and terms.
+- Known print compatibility limit: Hindi/Devanagari displays correctly in the tested preview, but macOS Chromium-generated PDF text can contain incorrect extracted characters. Verify copied text before sharing. Accurate text extraction is not guaranteed across all browsers or print destinations.
+
+## Primary pages
+
+- [App overview](https://one-preview.luopeike.com/): Native app capabilities and the separate web converter.
+- [Markdown to PDF](https://one-preview.luopeike.com/tools/markdown-to-pdf/): Working converter, localized example, usage instructions, limits and common questions.
+- [App setup and platform workflows](https://one-preview.luopeike.com/help): macOS extension setup and iPhone/iPad file-opening instructions.
+- [Support](https://one-preview.luopeike.com/support): Contact and issue-reporting guidance.
+- [Privacy](https://one-preview.luopeike.com/privacy-policy): Published privacy information; app diagnostics and web document processing should not be conflated.
+- [App Store](https://apps.apple.com/app/id6760284919): Native app download and current store information.
+
+## Localized app overviews
+
+- [English](https://one-preview.luopeike.com/): English homepage.
+- [Simplified Chinese](https://one-preview.luopeike.com/zh-Hans/): Simplified Chinese homepage.
+- [Traditional Chinese](https://one-preview.luopeike.com/zh-Hant/): Traditional Chinese homepage.
+- [Japanese](https://one-preview.luopeike.com/ja/): Japanese homepage.
+- [Korean](https://one-preview.luopeike.com/ko/): Korean homepage.
+- [German](https://one-preview.luopeike.com/de/): German homepage.
+- [French](https://one-preview.luopeike.com/fr/): French homepage.
+- [Hindi](https://one-preview.luopeike.com/hi/): Hindi homepage.
+- [Indonesian](https://one-preview.luopeike.com/id/): Indonesian homepage.
+- [Russian](https://one-preview.luopeike.com/ru/): Russian homepage.
+
+## Localized Markdown-to-PDF tools
+
+- [English converter](https://one-preview.luopeike.com/tools/markdown-to-pdf/): English interface and example.
+- [Simplified Chinese converter](https://one-preview.luopeike.com/zh-Hans/tools/markdown-to-pdf/): Simplified Chinese interface and example.
+- [Traditional Chinese converter](https://one-preview.luopeike.com/zh-Hant/tools/markdown-to-pdf/): Traditional Chinese interface and example.
+- [Japanese converter](https://one-preview.luopeike.com/ja/tools/markdown-to-pdf/): Japanese interface and example.
+- [Korean converter](https://one-preview.luopeike.com/ko/tools/markdown-to-pdf/): Korean interface and example.
+- [German converter](https://one-preview.luopeike.com/de/tools/markdown-to-pdf/): German interface and example.
+- [French converter](https://one-preview.luopeike.com/fr/tools/markdown-to-pdf/): French interface and example.
+- [Hindi converter](https://one-preview.luopeike.com/hi/tools/markdown-to-pdf/): Hindi interface and example, with a print text-copying caveat.
+- [Indonesian converter](https://one-preview.luopeike.com/id/tools/markdown-to-pdf/): Indonesian interface and example.
+- [Russian converter](https://one-preview.luopeike.com/ru/tools/markdown-to-pdf/): Russian interface and example.
+
+## Optional
+
+- [Sitemap](https://one-preview.luopeike.com/sitemap.xml): Canonical public pages and language alternates. llms.txt is an optional content guide, not a substitute for indexing, robots.txt or the sitemap.
