@@ -4,7 +4,7 @@ const path = require('node:path');
 
 const site = path.resolve(__dirname, '..');
 const origin = 'https://one-preview.luopeike.com';
-const locales = ['en', 'zh-Hans', 'zh-Hant', 'ja', 'ko', 'de', 'fr', 'hi', 'id', 'ru'];
+const locales = ['en', 'zh-Hans', 'zh-Hant', 'ja', 'ko', 'de', 'fr', 'hi', 'id', 'ru', 'es-MX'];
 const prefix = locale => locale === 'en' ? '/' : `/${locale}/`;
 const pageTypes = ['', 'help', 'support', 'privacy-policy', 'tools/markdown-to-pdf/'];
 const sitemap = fs.readFileSync(path.join(site, 'sitemap.xml'), 'utf8');
@@ -17,13 +17,16 @@ const localFile = route => {
 };
 const jsonScripts = html => [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/g)].map(match => JSON.parse(match[1]));
 
-assert.equal(urls.length, 50);
-assert.equal(new Set(urls).size, 50);
+assert.equal(urls.length, 55);
+assert.equal(new Set(urls).size, 55);
 assert.ok(llms.startsWith('# OnePreview\n\n> '));
 assert.ok(Buffer.byteLength(llms) < 10000, 'The content guide should remain concise');
 assert.ok(llms.includes('does not replace the built-in Files Quick Look'));
 assert.ok(llms.includes('MDX components, custom scripts, TextBundle and TextPack are not supported'));
 assert.ok(llms.includes('Hindi/Devanagari'));
+assert.ok(llms.includes('standard .md and .markdown documents can also be exported as A4 PDF reports'));
+assert.ok(llms.includes('not inside Finder Quick Look or the built-in Files preview'));
+assert.ok(llms.includes('do not claim every file is cached, a fixed speedup'));
 const guideLinks = [...llms.matchAll(/\[[^\]]+\]\((https:\/\/[^)]+)\)/g)].map(match => match[1]);
 for (const link of guideLinks.filter(link => link.startsWith(origin + '/'))) {
   assert.ok(fs.existsSync(localFile(new URL(link).pathname)), 'Missing llms.txt destination: ' + link);
@@ -49,7 +52,7 @@ for (const locale of locales) {
     assert.ok(!html.includes('name="keywords"'), 'Do not add ineffective meta keyword lists');
     assert.ok(!/<meta name="robots" content="[^"]*noindex/.test(html));
     const alternates = [...html.matchAll(/<link rel="alternate" hreflang="([^"]+)" href="([^"]+)"/g)];
-    assert.equal(alternates.length, 11);
+    assert.equal(alternates.length, 12);
     for (const target of [...locales, 'x-default']) {
       assert.ok(alternates.some(m => m[1] === target && m[2] === origin + prefix(target === 'x-default' ? 'en' : target) + type));
     }
@@ -94,4 +97,4 @@ for (const locale of locales) {
 }
 
 assert.equal(fs.readFileSync(path.join(site, 'robots.txt'), 'utf8'), 'User-agent: *\nAllow: /\nSitemap: https://one-preview.luopeike.com/sitemap.xml\n');
-console.log('SEO/GEO checks passed: 50 pages, 10 locale pairs, canonical/hreflang/sitemap, product entities, visible FAQ, local links and llms.txt.');
+console.log('SEO/GEO checks passed: 55 pages, 11 locale pairs, canonical/hreflang/sitemap, product entities, visible FAQ, local links and llms.txt.');

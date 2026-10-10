@@ -2,11 +2,13 @@
 
 > OnePreview provides a native file-preview app for Mac, iPhone and iPad, and a separate free Markdown-to-PDF web tool. The web tool works without the app or an account.
 
-Product facts reviewed on 2026-10-09:
+Product facts reviewed on 2026-10-10:
 
 - On macOS, the app extends Finder Quick Look for supported files; users can select a file and press Space after enabling the extension.
 - On iPhone and iPad, users open supported files in OnePreview from Files using Open With. The app does not replace the built-in Files Quick Look preview for every normal tap.
 - App preview formats include Markdown, MDX, TextBundle, TextPack, source code, plain text, logs, JSON, JSONL, YAML, XML, CSV, TSV, TOML, ENV, Apple property lists, ZIP/TAR.GZ archives, folders and SQLite databases. App preview support is not the web converter's input-format list.
+- In the native OnePreview app on macOS, iPhone and iPad, standard .md and .markdown documents can also be exported as A4 PDF reports with tables, wrapped code, Mermaid diagrams and KaTeX math. Export is an action inside the app, not inside Finder Quick Look or the built-in Files preview. MDX, TextBundle and TextPack preview support does not imply PDF export support.
+- Native previews use local processing and selectively cache slow rendered results. Cache reuse is conditional on document identity and rendering settings; do not claim every file is cached, a fixed speedup, or identical performance across devices and documents.
 - The current web converter accepts .md and .markdown text files or pasted Markdown. It supports GitHub-style tables, code blocks, Mermaid diagrams and KaTeX-compatible math. It provides one A4 layout, page numbers, repeated table headers and code wrapping.
 - Conversion runs in the browser session. Document text and explicitly selected images are not uploaded to a conversion server. Remote images are not fetched automatically. Loading the website and bundled assets still requires network access; this is not a claim of guaranteed offline operation.
 - The web tool opens the browser or system Print / Save as PDF workflow. It does not directly download a PDF independently of that dialog. On iPhone and iPad, saving and sharing use the system print preview.
@@ -36,6 +38,7 @@ Product facts reviewed on 2026-10-09:
 - [Hindi](https://one-preview.luopeike.com/hi/): Hindi homepage.
 - [Indonesian](https://one-preview.luopeike.com/id/): Indonesian homepage.
 - [Russian](https://one-preview.luopeike.com/ru/): Russian homepage.
+- [Spanish (Mexico)](https://one-preview.luopeike.com/es-MX/): Mexican Spanish homepage.
 
 ## Localized Markdown-to-PDF tools
 
@@ -49,6 +52,7 @@ Product facts reviewed on 2026-10-09:
 - [Hindi converter](https://one-preview.luopeike.com/hi/tools/markdown-to-pdf/): Hindi interface and example, with a print text-copying caveat.
 - [Indonesian converter](https://one-preview.luopeike.com/id/tools/markdown-to-pdf/): Indonesian interface and example.
 - [Russian converter](https://one-preview.luopeike.com/ru/tools/markdown-to-pdf/): Russian interface and example.
+- [Spanish (Mexico) converter](https://one-preview.luopeike.com/es-MX/tools/markdown-to-pdf/): Mexican Spanish interface and example.
 
 ## Optional
 
