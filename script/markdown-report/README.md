@@ -1,7 +1,7 @@
 # Standalone Markdown to PDF
 
 Public tool: `/tools/markdown-to-pdf/` (English), plus the same path under
-`/zh-Hans/`, `/zh-Hant/`, `/ja/`, `/ko/`, `/de/`, `/fr/`, `/hi/`, `/id/` and `/ru/`.
+`/zh-Hans/`, `/zh-Hant/`, `/ja/`, `/ko/`, `/de/`, `/fr/`, `/hi/`, `/id/` `/ru/` and `/es-MX/`.
 The HTML pages and this directory are sufficient to run the tool on a static host.
 No App, account, backend, document upload, or build step is required.
 

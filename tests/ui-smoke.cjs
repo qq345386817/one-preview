@@ -39,7 +39,7 @@ const locales = ['', 'zh-Hans', 'zh-Hant', 'de', 'fr', 'hi', 'id', 'ja', 'ko', '
             }
           }
         }
-        console.log(`${name} ${variant}: 40 localized pages, layout and navigation checks passed`);
+        console.log(`${name} ${variant}: 44 localized pages, layout and navigation checks passed`);
       }
       await page.goto(base + '/help');
       await page.locator('.language-switch select').selectOption('/zh-Hans/help');
