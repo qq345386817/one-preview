@@ -2,7 +2,7 @@
 
 > OnePreview provides a native file-preview app for Mac, iPhone and iPad, and a separate free Markdown-to-PDF web tool. The web tool works without the app or an account.
 
-Product facts reviewed on 2026-10-10:
+Product facts reviewed on 2026-10-20:
 
 - On macOS, the app extends Finder Quick Look for supported files; users can select a file and press Space after enabling the extension.
 - On iPhone and iPad, users open supported files in OnePreview from Files using Open With. The app does not replace the built-in Files Quick Look preview for every normal tap.
@@ -10,6 +10,7 @@ Product facts reviewed on 2026-10-10:
 - In the native OnePreview app on macOS, iPhone and iPad, standard .md and .markdown documents can also be exported as A4 PDF reports with tables, wrapped code, Mermaid diagrams and KaTeX math. Export is an action inside the app, not inside Finder Quick Look or the built-in Files preview. MDX, TextBundle and TextPack preview support does not imply PDF export support.
 - Native previews use local processing and selectively cache slow rendered results. Cache reuse is conditional on document identity and rendering settings; do not claim every file is cached, a fixed speedup, or identical performance across devices and documents.
 - The current web converter accepts .md and .markdown text files or pasted Markdown. It supports GitHub-style tables, code blocks, Mermaid diagrams and KaTeX-compatible math. It provides one A4 layout, page numbers, repeated table headers and code wrapping.
+- Use Import Markdown file to select a local UTF-8 or BOM-marked UTF-16 document. The tool shows the imported file name and generates a preview; it does not upload the file. Both the file and its decoded UTF-8 text must fit the 500 KB limit. Invalid or unreadable imports do not replace the existing text. Referenced images must be selected separately.
 - Conversion runs in the browser session. Document text and explicitly selected images are not uploaded to a conversion server. Remote images are not fetched automatically. Loading the website and bundled assets still requires network access; this is not a claim of guaranteed offline operation.
 - The web tool opens the browser or system Print / Save as PDF workflow. It does not directly download a PDF independently of that dialog. On iPhone and iPad, saving and sharing use the system print preview.
 - Limits: 500 KB of Markdown, 100 pages, up to 16 selected images, 5 MB per image and 20 MB total. Oversized rows or content that cannot fit safely generate an error. Missing images and invalid diagrams or formulas generate notices.
