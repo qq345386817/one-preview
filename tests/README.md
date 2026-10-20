@@ -20,6 +20,16 @@ handoff, stale-preview protection and language-switch navigation. Screenshots
 are written to the same external QA directory. System print dialogs and physical
 iPhone/iPad PDF sharing are not automated by this suite.
 
+Markdown import is exposed by a keyboard-accessible button in every locale.
+The tool shows the imported file name, accepts UTF-8 and BOM-marked UTF-16
+`.md`/`.markdown` files up to 500 KB, and keeps the existing text when import fails.
+The suite exercises the actual file chooser, oversized/binary input, filename
+feedback and resetting that feedback when loading the example.
+Use `ONEPREVIEW_SITE_BROWSERS=chromium` to explicitly run just Chromium when the
+WebKit runtime is unavailable; this is not a Safari pass. Run
+`node tests/markdown-import-smoke.cjs` for reimport, cancellation, stale reads,
+import-during-render and localized read-error regression checks.
+
 Run `node tests/seo-check.cjs` without extra dependencies to audit all 55 public
 pages, canonical and language alternates, sitemap coverage, App/WebApplication
 separation, localized tool capabilities and FAQ, internal links and the concise

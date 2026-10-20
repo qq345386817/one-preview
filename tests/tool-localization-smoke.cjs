@@ -9,12 +9,15 @@ const root = locale => locale === 'en' ? '/' : `/${locale}/`;
 const route = locale => root(locale) + 'tools/markdown-to-pdf/';
 const origin = 'https://one-preview.luopeike.com';
 const expectedAlternates = Object.fromEntries([...locales.map(l => [l, origin + route(l)]), ['x-default', origin + route('en')]]);
+const selectedBrowsers = (process.env.ONEPREVIEW_SITE_BROWSERS || 'chromium,webkit').split(',');
+assert.ok(selectedBrowsers.every(name => ['chromium', 'webkit'].includes(name)), 'Unsupported browser');
 const ready = page => page.waitForFunction(() => !document.querySelector('#print-report').disabled);
 const statusIs = (page, text) => page.waitForFunction(text => document.querySelector('#report-status').textContent === text, text);
 
 (async () => {
   await fs.mkdir(output, { recursive: true });
   for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) {
+    if (!selectedBrowsers.includes(name)) continue;
     const browser = await engine.launch({ headless: true });
     try {
       const errors = [];
@@ -34,7 +37,11 @@ const statusIs = (page, text) => page.waitForFunction(text => document.querySele
           assert.equal(await page.locator('html').getAttribute('lang'), locale);
           assert.equal(await page.locator('h1').count(), 1);
           const words = await page.locator('#tool-messages').evaluate(e => JSON.parse(e.textContent));
-          assert.deepEqual(Object.keys(words).sort(), ['ready', 'changed', 'working', 'images', 'duplicates', 'imageSize', 'unsupported', 'read', 'encoding', 'errors', 'labels', 'print'].sort());
+          assert.deepEqual(Object.keys(words).sort(), ['ready', 'changed', 'working', 'images', 'duplicates', 'imageSize', 'unsupported', 'read', 'encoding', 'errors', 'labels', 'print', 'importing', 'selectedFile'].sort());
+          assert.ok(words.selectedFile.includes('{name}') && words.importing.length > 5);
+          assert.equal(await page.locator('#import-markdown').getAttribute('type'), 'button');
+          assert.equal(await page.locator('#import-markdown').innerText(), await page.locator('#markdown-file').getAttribute('aria-label'));
+          assert.equal(await page.locator('#markdown-file-name').isVisible(), false);
           assert.deepEqual(Object.keys(words.errors).sort(), ['empty', 'size', 'pages', 'row', 'block', 'width', 'fonts', 'resources'].sort());
           assert.equal((words.labels.page.match(/%d/g) || []).length, 2);
           assert.ok(words.ready.includes('{count}') && words.images.includes('{count}'));
@@ -79,8 +86,19 @@ const statusIs = (page, text) => page.waitForFunction(text => document.querySele
             await statusIs(page, words.encoding);
             await page.locator('#markdown-file').setInputFiles({ name: 'unsupported.txt', mimeType: 'text/plain', buffer: Buffer.from('test') });
             await statusIs(page, words.unsupported);
-            await page.locator('#markdown-file').setInputFiles({ name: 'utf16.md', mimeType: 'text/markdown', buffer: Buffer.from(`\ufeff# ${title}\n\n![image](chart.png)`, 'utf16le') });
+            const beforeImport = await page.locator('#markdown-source').inputValue();
+            await page.locator('#markdown-file').setInputFiles({ name: 'too-large.md', mimeType: 'text/markdown', buffer: Buffer.alloc(500001, 'a') });
+            await statusIs(page, words.unsupported);
+            assert.equal(await page.locator('#markdown-source').inputValue(), beforeImport);
+            await page.locator('#markdown-file').setInputFiles({ name: 'binary.md', mimeType: 'text/markdown', buffer: Buffer.from([0, 1, 2]) });
+            await statusIs(page, words.encoding);
+            assert.equal(await page.locator('#markdown-source').inputValue(), beforeImport);
+            const chooser = page.waitForEvent('filechooser');
+            await page.locator('#import-markdown').focus();
+            await page.locator('#import-markdown').press('Enter');
+            await (await chooser).setFiles({ name: 'utf16.md', mimeType: 'text/markdown', buffer: Buffer.from(`\ufeff# ${title}\n\n![image](chart.png)`, 'utf16le') });
             await ready(page);
+            assert.equal(await page.locator('#markdown-file-name').innerText(), words.selectedFile.replace('{name}', 'utf16.md'));
             assert.ok((await page.locator('#report-notices').innerText()).includes(words.labels.image));
             await page.locator('#image-files').setInputFiles({ name: 'chart.png', mimeType: 'image/png', buffer: Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=', 'base64') });
             await ready(page);
@@ -104,6 +122,7 @@ const statusIs = (page, text) => page.waitForFunction(text => document.querySele
             await page.locator('#load-sample').click();
             await ready(page);
             assert.equal(await page.locator('#markdown-source').inputValue(), source);
+            assert.equal(await page.locator('#markdown-file-name').isVisible(), false);
           }
         }
         console.log(`${name} ${variant}: all 11 tool languages passed`);
