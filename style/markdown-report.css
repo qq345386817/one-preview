@@ -10,6 +10,9 @@
 .tool-editor, .tool-preview { min-width: 0; background: var(--surface); }
 .tool-editor { display: flex; flex-direction: column; border-right: 1px solid var(--border); padding: 0; }
 .tool-editor > label { display: block; margin: 0; padding: 12px 18px; border-bottom: 1px solid var(--border); font-size: 13px; line-height: 1.5; font-weight: 600; }
+.source-file-info { padding: 8px 18px; border-bottom: 1px solid var(--border); }
+.source-file-info p { margin: 0; overflow-wrap: anywhere; }
+.source-file-info #markdown-file-name { margin-top: 4px; color: var(--text); }
 .tool-editor textarea { display: block; width: 100%; height: clamp(380px, 55vh, 600px); flex: 1; min-height: 300px; margin: 0; padding: 20px; resize: vertical; border-radius: 0; border: 0; background: var(--surface); color: var(--text); font: 13px/1.8 Menlo, Consolas, monospace; }
 .tool-editor textarea:focus-visible { outline: 2px solid var(--primary); outline-offset: -2px; }
 .tool-actions .file-label:has(+ input:focus-visible) { outline: 3px solid var(--primary); outline-offset: 3px; }

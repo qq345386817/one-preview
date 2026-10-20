@@ -35,7 +35,7 @@
   <link rel="icon" href="/favicon/favicon-32x32.png">
   <link rel="stylesheet" href="/style/base.css">
   <link rel="stylesheet" href="/style/markdown-report.css">
-  <script type="application/json" id="tool-messages">{"ready":"排版完成 · A4 页数：{count}","changed":"内容已更改，请更新预览。","working":"正在渲染图表、字体并分页…","images":"已选图片：{count}","duplicates":"图片文件名重复，请选择名称不同的文件。","imageSize":"最多选择 16 张图片，每张不超过 5 MB，总大小不超过 20 MB。","unsupported":"请选择 .md 或 .markdown 文本文件（不超过 500 KB）。","read":"无法读取文件，请重新选择。","encoding":"无法识别文件的文本编码，请保存为 UTF-8 后重试。","errors":{"empty":"请输入 Markdown 内容。","size":"文档超过 500 KB，请缩小后重试。","pages":"文档超过 100 页，请分成较小的报告。","row":"表格中有一行高于一页，请缩短或拆分该行。","block":"有一个元素无法在一页内安全显示，请拆分长列表项、公式或图片后重试。","width":"内容超过页面宽度，请减少表格列数或缩短公式后重试。","fonts":"字体未能加载，请重新生成预览。","resources":"排版组件未能加载，请刷新页面。"},"labels":{"image":"图片不可用","diagram":"流程图未能渲染，已保留原文","math":"公式未能渲染，已保留原文","page":"第 %d 页 / 共 %d 页","title":"Markdown 报告"},"print":"请选择 A4、100% 缩放，并关闭浏览器附加的页眉和页脚。iPhone / iPad 可在系统打印预览中分享或保存 PDF。"}</script>
+  <script type="application/json" id="tool-messages">{"ready":"排版完成 · A4 页数：{count}","changed":"内容已更改，请更新预览。","working":"正在渲染图表、字体并分页…","images":"已选图片：{count}","duplicates":"图片文件名重复，请选择名称不同的文件。","imageSize":"最多选择 16 张图片，每张不超过 5 MB，总大小不超过 20 MB。","unsupported":"请选择 .md 或 .markdown 文本文件（不超过 500 KB）。","read":"无法读取文件，请重新选择。","encoding":"无法识别文件的文本编码，请保存为 UTF-8 后重试。","errors":{"empty":"请输入 Markdown 内容。","size":"文档超过 500 KB，请缩小后重试。","pages":"文档超过 100 页，请分成较小的报告。","row":"表格中有一行高于一页，请缩短或拆分该行。","block":"有一个元素无法在一页内安全显示，请拆分长列表项、公式或图片后重试。","width":"内容超过页面宽度，请减少表格列数或缩短公式后重试。","fonts":"字体未能加载，请重新生成预览。","resources":"排版组件未能加载，请刷新页面。"},"labels":{"image":"图片不可用","diagram":"流程图未能渲染，已保留原文","math":"公式未能渲染，已保留原文","page":"第 %d 页 / 共 %d 页","title":"Markdown 报告"},"print":"请选择 A4、100% 缩放，并关闭浏览器附加的页眉和页脚。iPhone / iPad 可在系统打印预览中分享或保存 PDF。","importing":"正在导入 Markdown…","selectedFile":"已导入文件：{name}"}</script>
   <script src="/script/markdown-report/tool.js" defer></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"OnePreview Markdown 转 PDF","url":"https://one-preview.luopeike.com/zh-Hans/tools/markdown-to-pdf/","applicationCategory":"UtilitiesApplication","operatingSystem":"现代网页浏览器","inLanguage":"zh-Hans","browserRequirements":"启用 JavaScript 和浏览器打印","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"免费在线将 Markdown、MD 文件排成 A4 PDF，支持 Mermaid 流程图、KaTeX 数学公式、表格分页和代码换行。无需账号、安装 App 或上传文档。","@id":"https://one-preview.luopeike.com/zh-Hans/tools/markdown-to-pdf/#application","isAccessibleForFree":true,"featureList":["免费使用，无需账号","浏览器本地处理，无需上传文档","Mermaid 流程图与 KaTeX 数学公式","A4 分页与跨页重复表头","代码块自动换行"]}</script>
   <script type="application/ld+json" data-seo="breadcrumbs">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://one-preview.luopeike.com/zh-Hans/"},{"@type":"ListItem","position":2,"name":"OnePreview Markdown 转 PDF","item":"https://one-preview.luopeike.com/zh-Hans/tools/markdown-to-pdf/"}]}</script>
@@ -54,7 +54,7 @@
       </section>
     <div class="tool-layout">
       <div class="tool-actions" role="group" aria-label="报告操作">
-        <label class="button ghost file-label" for="markdown-file">打开 Markdown</label><input class="visually-hidden" id="markdown-file" type="file" accept=".md,.markdown,text/markdown,text/plain">
+        <button class="button ghost" id="import-markdown" type="button" aria-controls="markdown-file">导入 Markdown 文件</button><input class="visually-hidden" id="markdown-file" type="file" aria-label="导入 Markdown 文件" accept=".md,.markdown,text/markdown,text/plain">
         <label class="button ghost file-label" for="image-files">选择报告图片</label><input class="visually-hidden" id="image-files" type="file" multiple accept="image/png,image/jpeg,image/gif,image/webp,image/bmp">
         <button class="button ghost" id="load-sample" data-sample="example.md" type="button">试用示例</button>
         <span class="toolbar-spacer"></span>
@@ -63,6 +63,7 @@
       </div>
       <section class="tool-editor" aria-label="Markdown 输入">
         <label for="markdown-source">Markdown 内容</label>
+        <div class="source-file-info"><p class="hint">请选择不超过 500 KB 的 .md 或 .markdown 文件，支持 UTF-8 和 UTF-16 编码。引用的图片需要另行选择。</p><p class="hint" id="markdown-file-name" role="status" aria-live="polite" hidden></p></div>
         <textarea id="markdown-source" spellcheck="false" placeholder="# 我的报告"></textarea>
         <div class="source-footer"><p class="hint">如果文档引用 <code>![图表](images/chart.png)</code>，请额外选择 <code>chart.png</code>。不会自动加载远程图片。最多 16 张，每张 5 MB。</p><span class="hint" id="asset-count"></span> <button class="text-button" id="clear-images" type="button">清除图片</button></div>
       </section>

@@ -7,7 +7,10 @@
   const notices = document.getElementById("report-notices");
   const renderButton = document.getElementById("render-report");
   const printButton = document.getElementById("print-report");
+  const importButton = document.getElementById("import-markdown");
+  const fileName = document.getElementById("markdown-file-name");
   let assets = {}, revision = 0, renderedRevision = -1, busy = false, lastResult;
+  let readingFile = false, importID = 0, renderQueued = false, documentTitle;
   function invalidate() {
     revision++; printButton.disabled = true;
     status.textContent = words.changed;
@@ -30,7 +33,7 @@
     viewport.style.height = `${(last.y + last.height) * scale}px`;
   }
   async function render() {
-    if (busy) return;
+    if (busy || readingFile) { renderQueued = true; return; }
     busy = true; renderButton.disabled = true; printButton.disabled = true;
     const version = revision;
     status.textContent = words.working; notices.replaceChildren();
@@ -39,7 +42,7 @@
       if (!frame.contentWindow.OnePreviewReport) throw { code: "resources" };
       frame.contentDocument.documentElement.lang = document.documentElement.lang;
       frame.contentDocument.title = words.labels.title;
-      lastResult = await frame.contentWindow.OnePreviewReport.render(source.value, { assets, labels: words.labels });
+      lastResult = await frame.contentWindow.OnePreviewReport.render(source.value, { assets, labels: words.labels, title: documentTitle });
       frame.contentDocument.title = lastResult.title;
       renderedRevision = version;
       for (const message of lastResult.warnings) {
@@ -47,36 +50,58 @@
       }
       fit();
       status.textContent = version === revision ? words.ready.replace("{count}", lastResult.pages.length) : words.changed;
-      printButton.disabled = version !== revision;
+      printButton.disabled = readingFile || version !== revision;
     } catch (error) {
       lastResult = null; document.getElementById("report-viewport").style.height = "160px";
       status.textContent = words.errors[error.code] || words.errors.resources;
-    } finally { busy = false; renderButton.disabled = false; }
+    } finally {
+      busy = false; renderButton.disabled = readingFile;
+      if (renderQueued && !readingFile) { renderQueued = false; render(); }
+    }
   }
   source.addEventListener("input", invalidate);
   renderButton.addEventListener("click", render);
   printButton.addEventListener("click", () => {
-    if (busy || renderedRevision !== revision || !lastResult) return;
+    if (busy || readingFile || renderedRevision !== revision || !lastResult) return;
     document.getElementById("print-help").textContent = words.print;
     frame.contentWindow.focus(); frame.contentWindow.print();
   });
+  importButton.addEventListener("click", () => document.getElementById("markdown-file").click());
   document.getElementById("markdown-file").addEventListener("change", async event => {
     const file = event.target.files[0]; if (!file) return;
     invalidate();
     const request = revision;
+    const id = ++importID;
+    readingFile = true; importButton.disabled = true; renderButton.disabled = true;
+    status.textContent = words.importing;
     try {
       if (!/\.(md|markdown)$/i.test(file.name) || file.size > 500000) throw new Error(words.unsupported);
       const bytes = new Uint8Array(await file.arrayBuffer());
       const encoding = bytes[0] === 0xff && bytes[1] === 0xfe ? "utf-16le" : bytes[0] === 0xfe && bytes[1] === 0xff ? "utf-16be" : "utf-8";
       let text;
       try { text = new TextDecoder(encoding, { fatal: true }).decode(bytes); } catch (_) { throw new Error(words.encoding); }
-      if (request !== revision) return;
-      source.value = text; assets = {};
+      if (/[\x00-\x08\x0b\x0c\x0e-\x1f]/.test(text)) throw new Error(words.encoding);
+      if (new TextEncoder().encode(text).length > 500000) throw new Error(words.unsupported);
+      if (!text.trim()) throw new Error(words.errors.empty);
+      if (id !== importID || request !== revision) return;
+      source.value = text; assets = {}; documentTitle = file.name.replace(/\.(md|markdown)$/i, "");
+      fileName.textContent = words.selectedFile.replace("{name}", file.name); fileName.hidden = false;
       document.getElementById("asset-count").textContent = "";
       document.getElementById("image-files").value = "";
+      readingFile = false;
       invalidate(); await render();
-    } catch (error) { if (request === revision) status.textContent = error.message || words.read; }
-    finally { event.target.value = ""; }
+    } catch (error) {
+      if (id === importID && request === revision) {
+        status.textContent = [words.unsupported, words.encoding, words.errors.empty].includes(error.message) ? error.message : words.read;
+      }
+    }
+    finally {
+      if (id === importID) {
+        readingFile = false; importButton.disabled = false; renderButton.disabled = busy;
+        event.target.value = "";
+        if (renderQueued && !busy) { renderQueued = false; render(); }
+      }
+    }
   });
   document.getElementById("image-files").addEventListener("change", async event => {
     const files = [...event.target.files]; if (!files.length) return;
@@ -109,7 +134,8 @@
       const response = await fetch(document.getElementById("load-sample").dataset.sample);
       if (!response.ok) throw new Error(words.read);
       const text = await response.text(); if (request !== revision) return;
-      source.value = text; assets = {};
+      source.value = text; assets = {}; documentTitle = undefined;
+      fileName.textContent = ""; fileName.hidden = true;
       document.getElementById("asset-count").textContent = "";
       invalidate(); await render();
     } catch (error) { if (request === revision) status.textContent = error.message || words.read; }
