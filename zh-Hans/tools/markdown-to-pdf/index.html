@@ -33,20 +33,21 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0A84FF">
   <link rel="icon" href="/favicon/favicon-32x32.png">
-  <link rel="stylesheet" href="/style/base.css">
-  <link rel="stylesheet" href="/style/markdown-report.css">
+  <link rel="stylesheet" href="/style/base.css?v=20261024">
+  <link rel="stylesheet" href="/style/markdown-report.css?v=20261024">
   <script type="application/json" id="tool-messages">{"ready":"排版完成 · A4 页数：{count}","changed":"内容已更改，请更新预览。","working":"正在渲染图表、字体并分页…","images":"已选图片：{count}","duplicates":"图片文件名重复，请选择名称不同的文件。","imageSize":"最多选择 16 张图片，每张不超过 5 MB，总大小不超过 20 MB。","unsupported":"请选择 .md 或 .markdown 文本文件（不超过 500 KB）。","read":"无法读取文件，请重新选择。","encoding":"无法识别文件的文本编码，请保存为 UTF-8 后重试。","errors":{"empty":"请输入 Markdown 内容。","size":"文档超过 500 KB，请缩小后重试。","pages":"文档超过 100 页，请分成较小的报告。","row":"表格中有一行高于一页，请缩短或拆分该行。","block":"有一个元素无法在一页内安全显示，请拆分长列表项、公式或图片后重试。","width":"内容超过页面宽度，请减少表格列数或缩短公式后重试。","fonts":"字体未能加载，请重新生成预览。","resources":"排版组件未能加载，请刷新页面。"},"labels":{"image":"图片不可用","diagram":"流程图未能渲染，已保留原文","math":"公式未能渲染，已保留原文","page":"第 %d 页 / 共 %d 页","title":"Markdown 报告"},"print":"请选择 A4、100% 缩放，并关闭浏览器附加的页眉和页脚。iPhone / iPad 可在系统打印预览中分享或保存 PDF。","importing":"正在导入 Markdown…","selectedFile":"已导入文件：{name}"}</script>
   <script src="/script/markdown-report/tool.js" defer></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"OnePreview Markdown 转 PDF","url":"https://one-preview.luopeike.com/zh-Hans/tools/markdown-to-pdf/","applicationCategory":"UtilitiesApplication","operatingSystem":"现代网页浏览器","inLanguage":"zh-Hans","browserRequirements":"启用 JavaScript 和浏览器打印","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"免费在线将 Markdown、MD 文件排成 A4 PDF，支持 Mermaid 流程图、KaTeX 数学公式、表格分页和代码换行。无需账号、安装 App 或上传文档。","@id":"https://one-preview.luopeike.com/zh-Hans/tools/markdown-to-pdf/#application","isAccessibleForFree":true,"featureList":["免费使用，无需账号","浏览器本地处理，无需上传文档","Mermaid 流程图与 KaTeX 数学公式","A4 分页与跨页重复表头","代码块自动换行"]}</script>
   <script type="application/ld+json" data-seo="breadcrumbs">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://one-preview.luopeike.com/zh-Hans/"},{"@type":"ListItem","position":2,"name":"OnePreview Markdown 转 PDF","item":"https://one-preview.luopeike.com/zh-Hans/tools/markdown-to-pdf/"}]}</script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
   <div class="page"><div class="container">
     <header class="topbar">
       <a class="brand" href="/zh-Hans/"><img src="/favicon/apple-touch-icon.png" alt="" width="38" height="38"><span>OnePreview</span></a>
       <nav class="nav" aria-label="主导航"><a href="/zh-Hans/">首页</a><a class="active" href="/zh-Hans/tools/markdown-to-pdf/">Markdown 转 PDF</a><a href="/zh-Hans/help">帮助</a><label class="language-switch"><span>语言</span><select aria-label="语言" onchange="if (this.value) window.location.href=this.value"><option value="/tools/markdown-to-pdf/" >English</option><option value="/zh-Hans/tools/markdown-to-pdf/" selected>简体中文</option><option value="/zh-Hant/tools/markdown-to-pdf/" >繁體中文</option><option value="/ja/tools/markdown-to-pdf/" >日本語</option><option value="/ko/tools/markdown-to-pdf/" >한국어</option><option value="/de/tools/markdown-to-pdf/" >Deutsch</option><option value="/fr/tools/markdown-to-pdf/" >Français</option><option value="/hi/tools/markdown-to-pdf/" >हिन्दी</option><option value="/id/tools/markdown-to-pdf/" >Bahasa Indonesia</option><option value="/ru/tools/markdown-to-pdf/" >Русский</option><option value="/es-MX/tools/markdown-to-pdf/">Español (México)</option></select></label></nav>
     </header>
-    <main>
+    <main id="main-content" tabindex="-1">
       <section class="tool-heading">
         <p class="kicker">免费使用 · 浏览器本地处理 · 无需账号</p>
         <h1>把 Markdown 排成可交付的 PDF。</h1>
@@ -58,8 +59,8 @@
         <label class="button ghost file-label" for="image-files">选择报告图片</label><input class="visually-hidden" id="image-files" type="file" multiple accept="image/png,image/jpeg,image/gif,image/webp,image/bmp">
         <button class="button ghost" id="load-sample" data-sample="example.md" type="button">试用示例</button>
         <span class="toolbar-spacer"></span>
-        <button class="button primary" id="render-report" type="button">更新预览</button>
-        <button class="button" id="print-report" type="button" disabled>打印 / 保存为 PDF</button>
+        <button class="button" id="render-report" type="button">更新预览</button>
+        <button class="button primary" id="print-report" type="button" disabled>打印 / 保存为 PDF</button>
       </div>
       <section class="tool-editor" aria-label="Markdown 输入">
         <label for="markdown-source">Markdown 内容</label>

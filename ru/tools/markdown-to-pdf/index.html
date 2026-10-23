@@ -33,20 +33,21 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0A84FF">
   <link rel="icon" href="/favicon/favicon-32x32.png">
-  <link rel="stylesheet" href="/style/base.css">
-  <link rel="stylesheet" href="/style/markdown-report.css">
+  <link rel="stylesheet" href="/style/base.css?v=20261024">
+  <link rel="stylesheet" href="/style/markdown-report.css?v=20261024">
   <script type="application/json" id="tool-messages">{"ready":"Отчёт готов · Страниц A4: {count}","changed":"Содержимое изменено. Обновите просмотр перед печатью.","working":"Построение диаграмм, загрузка шрифтов и разбивка на страницы…","images":"Выбрано изображений: {count}","duplicates":"У двух изображений одинаковое имя файла. Выберите файлы с разными именами.","imageSize":"Выберите до 16 изображений: до 5 МБ каждое и 20 МБ всего.","unsupported":"Выберите текстовый файл .md или .markdown размером до 500 КБ.","read":"Не удалось прочитать файл. Выберите его снова.","encoding":"Не удалось распознать кодировку. Сохраните файл в UTF-8 и повторите попытку.","errors":{"empty":"Документ Markdown пуст.","size":"Документ больше 500 КБ. Попробуйте меньший отчёт.","pages":"Отчёт больше 100 страниц. Разделите его на несколько частей.","row":"Строка таблицы выше одной страницы. Сократите или разделите её.","block":"Элемент не помещается на одной странице. Разделите длинные пункты списка, формулы или изображения.","width":"Содержимое шире страницы. Уменьшите число столбцов таблицы или сократите формулу.","fonts":"Не удалось загрузить шрифты отчёта. Повторите попытку.","resources":"Не удалось загрузить компонент отчёта. Обновите страницу."},"labels":{"image":"Изображение недоступно","diagram":"Диаграмма не отображена; исходный текст сохранён","math":"Формула не отображена; исходный текст сохранён","page":"Страница %d / %d","title":"Отчёт Markdown"},"print":"Выберите A4 и масштаб 100% и отключите колонтитулы браузера. На iPhone и iPad поделитесь PDF или сохраните его из системного просмотра печати.","importing":"Импорт Markdown…","selectedFile":"Импортированный файл: {name}"}</script>
   <script src="/script/markdown-report/tool.js" defer></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"OnePreview Markdown в PDF","url":"https://one-preview.luopeike.com/ru/tools/markdown-to-pdf/","applicationCategory":"UtilitiesApplication","operatingSystem":"Современный веб-браузер","inLanguage":"ru","browserRequirements":"Включены JavaScript и печать в браузере","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Бесплатно конвертируйте Markdown или MD в PDF A4 с Mermaid, KaTeX, таблицами и кодом. Без аккаунта, приложения и загрузки документов на сервер.","@id":"https://one-preview.luopeike.com/ru/tools/markdown-to-pdf/#application","isAccessibleForFree":true,"featureList":["Бесплатно без аккаунта","Локальная обработка без загрузки документов","Диаграммы Mermaid и формулы KaTeX","Страницы A4 с повторением заголовков таблиц","Перенос строк в блоках кода"]}</script>
   <script type="application/ld+json" data-seo="breadcrumbs">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://one-preview.luopeike.com/ru/"},{"@type":"ListItem","position":2,"name":"OnePreview Markdown в PDF","item":"https://one-preview.luopeike.com/ru/tools/markdown-to-pdf/"}]}</script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Перейти к содержимому</a>
   <div class="page"><div class="container">
     <header class="topbar">
       <a class="brand" href="/ru/"><img src="/favicon/apple-touch-icon.png" alt="" width="38" height="38"><span>OnePreview</span></a>
       <nav class="nav" aria-label="Основная навигация"><a href="/ru/">Главная</a><a class="active" href="/ru/tools/markdown-to-pdf/">Markdown в PDF</a><a href="/ru/help">Справка</a><label class="language-switch"><span>Язык</span><select aria-label="Язык" onchange="if (this.value) window.location.href=this.value"><option value="/tools/markdown-to-pdf/" >English</option><option value="/zh-Hans/tools/markdown-to-pdf/" >简体中文</option><option value="/zh-Hant/tools/markdown-to-pdf/" >繁體中文</option><option value="/ja/tools/markdown-to-pdf/" >日本語</option><option value="/ko/tools/markdown-to-pdf/" >한국어</option><option value="/de/tools/markdown-to-pdf/" >Deutsch</option><option value="/fr/tools/markdown-to-pdf/" >Français</option><option value="/hi/tools/markdown-to-pdf/" >हिन्दी</option><option value="/id/tools/markdown-to-pdf/" >Bahasa Indonesia</option><option value="/ru/tools/markdown-to-pdf/" selected>Русский</option><option value="/es-MX/tools/markdown-to-pdf/">Español (México)</option></select></label></nav>
     </header>
-    <main>
+    <main id="main-content" tabindex="-1">
       <section class="tool-heading">
         <p class="kicker">Бесплатно · В браузере · Без аккаунта</p>
         <h1>Из Markdown в PDF — готово к отправке.</h1>
@@ -58,8 +59,8 @@
         <label class="button ghost file-label" for="image-files">Выбрать изображения</label><input class="visually-hidden" id="image-files" type="file" multiple accept="image/png,image/jpeg,image/gif,image/webp,image/bmp">
         <button class="button ghost" id="load-sample" data-sample="example.md" type="button">Попробовать пример</button>
         <span class="toolbar-spacer"></span>
-        <button class="button primary" id="render-report" type="button">Обновить просмотр</button>
-        <button class="button" id="print-report" type="button" disabled>Печать / Сохранить PDF</button>
+        <button class="button" id="render-report" type="button">Обновить просмотр</button>
+        <button class="button primary" id="print-report" type="button" disabled>Печать / Сохранить PDF</button>
       </div>
       <section class="tool-editor" aria-label="Ввод Markdown">
         <label for="markdown-source">Ваш Markdown</label>

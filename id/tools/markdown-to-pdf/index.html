@@ -33,20 +33,21 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0A84FF">
   <link rel="icon" href="/favicon/favicon-32x32.png">
-  <link rel="stylesheet" href="/style/base.css">
-  <link rel="stylesheet" href="/style/markdown-report.css">
+  <link rel="stylesheet" href="/style/base.css?v=20261024">
+  <link rel="stylesheet" href="/style/markdown-report.css?v=20261024">
   <script type="application/json" id="tool-messages">{"ready":"Laporan siap · Halaman A4: {count}","changed":"Konten berubah. Perbarui pratinjau sebelum mencetak.","working":"Merender diagram, memuat font dan menyusun halaman…","images":"Gambar dipilih: {count}","duplicates":"Dua gambar memiliki nama berkas yang sama. Pilih nama yang berbeda.","imageSize":"Pilih hingga 16 gambar, maksimal 5 MB per gambar dan total 20 MB.","unsupported":"Pilih berkas teks .md atau .markdown hingga 500 KB.","read":"Berkas tidak dapat dibaca. Pilih kembali.","encoding":"Pengodean teks tidak dikenali. Simpan berkas sebagai UTF-8 lalu coba lagi.","errors":{"empty":"Dokumen Markdown ini kosong.","size":"Dokumen melebihi 500 KB. Coba laporan yang lebih kecil.","pages":"Laporan melebihi 100 halaman. Bagi menjadi laporan yang lebih kecil.","row":"Satu baris tabel melebihi satu halaman. Persingkat atau bagi baris tersebut.","block":"Ada elemen yang tidak muat dalam satu halaman. Bagi item daftar, rumus, atau gambar yang panjang.","width":"Konten melebihi lebar halaman. Kurangi kolom tabel atau persingkat rumus.","fonts":"Font laporan tidak berhasil dimuat. Coba lagi.","resources":"Komponen laporan tidak dapat dimuat. Muat ulang halaman ini."},"labels":{"image":"Gambar tidak tersedia","diagram":"Diagram tidak dapat dirender; sumber dipertahankan","math":"Rumus tidak dapat dirender; sumber dipertahankan","page":"Halaman %d / %d","title":"Laporan Markdown"},"print":"Pilih A4 dan skala 100%, lalu matikan header dan footer browser. Di iPhone atau iPad, bagikan atau simpan PDF dari pratinjau cetak sistem.","importing":"Mengimpor Markdown…","selectedFile":"File yang diimpor: {name}"}</script>
   <script src="/script/markdown-report/tool.js" defer></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"OnePreview Markdown ke PDF","url":"https://one-preview.luopeike.com/id/tools/markdown-to-pdf/","applicationCategory":"UtilitiesApplication","operatingSystem":"Browser web modern","inLanguage":"id","browserRequirements":"JavaScript dan pencetakan browser diaktifkan","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Ubah Markdown atau MD ke PDF A4 secara gratis. Mendukung Mermaid, KaTeX, tabel dan kode. Tanpa akun, aplikasi atau unggahan dokumen.","@id":"https://one-preview.luopeike.com/id/tools/markdown-to-pdf/#application","isAccessibleForFree":true,"featureList":["Gratis tanpa akun","Pemrosesan lokal tanpa unggahan dokumen","Diagram Mermaid dan rumus KaTeX","Halaman A4 dengan kepala tabel berulang","Blok kode yang dibungkus"]}</script>
   <script type="application/ld+json" data-seo="breadcrumbs">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Beranda","item":"https://one-preview.luopeike.com/id/"},{"@type":"ListItem","position":2,"name":"OnePreview Markdown ke PDF","item":"https://one-preview.luopeike.com/id/tools/markdown-to-pdf/"}]}</script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Lewati ke konten</a>
   <div class="page"><div class="container">
     <header class="topbar">
       <a class="brand" href="/id/"><img src="/favicon/apple-touch-icon.png" alt="" width="38" height="38"><span>OnePreview</span></a>
       <nav class="nav" aria-label="Navigasi utama"><a href="/id/">Beranda</a><a class="active" href="/id/tools/markdown-to-pdf/">Markdown ke PDF</a><a href="/id/help">Bantuan</a><label class="language-switch"><span>Bahasa</span><select aria-label="Bahasa" onchange="if (this.value) window.location.href=this.value"><option value="/tools/markdown-to-pdf/" >English</option><option value="/zh-Hans/tools/markdown-to-pdf/" >简体中文</option><option value="/zh-Hant/tools/markdown-to-pdf/" >繁體中文</option><option value="/ja/tools/markdown-to-pdf/" >日本語</option><option value="/ko/tools/markdown-to-pdf/" >한국어</option><option value="/de/tools/markdown-to-pdf/" >Deutsch</option><option value="/fr/tools/markdown-to-pdf/" >Français</option><option value="/hi/tools/markdown-to-pdf/" >हिन्दी</option><option value="/id/tools/markdown-to-pdf/" selected>Bahasa Indonesia</option><option value="/ru/tools/markdown-to-pdf/" >Русский</option><option value="/es-MX/tools/markdown-to-pdf/">Español (México)</option></select></label></nav>
     </header>
-    <main>
+    <main id="main-content" tabindex="-1">
       <section class="tool-heading">
         <p class="kicker">Gratis · Di browser · Tanpa akun</p>
         <h1>Markdown menjadi PDF, siap dibagikan.</h1>
@@ -58,8 +59,8 @@
         <label class="button ghost file-label" for="image-files">Pilih gambar</label><input class="visually-hidden" id="image-files" type="file" multiple accept="image/png,image/jpeg,image/gif,image/webp,image/bmp">
         <button class="button ghost" id="load-sample" data-sample="example.md" type="button">Coba contoh</button>
         <span class="toolbar-spacer"></span>
-        <button class="button primary" id="render-report" type="button">Perbarui pratinjau</button>
-        <button class="button" id="print-report" type="button" disabled>Cetak / Simpan sebagai PDF</button>
+        <button class="button" id="render-report" type="button">Perbarui pratinjau</button>
+        <button class="button primary" id="print-report" type="button" disabled>Cetak / Simpan sebagai PDF</button>
       </div>
       <section class="tool-editor" aria-label="Masukan Markdown">
         <label for="markdown-source">Markdown Anda</label>

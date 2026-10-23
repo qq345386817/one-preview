@@ -33,20 +33,21 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0A84FF">
   <link rel="icon" href="/favicon/favicon-32x32.png">
-  <link rel="stylesheet" href="/style/base.css">
-  <link rel="stylesheet" href="/style/markdown-report.css">
+  <link rel="stylesheet" href="/style/base.css?v=20261024">
+  <link rel="stylesheet" href="/style/markdown-report.css?v=20261024">
   <script type="application/json" id="tool-messages">{"ready":"Rapport prêt · Pages A4 : {count}","changed":"Contenu modifié. Actualisez l’aperçu avant d’imprimer.","working":"Rendu des diagrammes, chargement des polices et pagination…","images":"Images sélectionnées : {count}","duplicates":"Deux images ont le même nom. Choisissez des fichiers aux noms distincts.","imageSize":"Choisissez jusqu’à 16 images, de 5 Mo chacune et 20 Mo au total maximum.","unsupported":"Choisissez un fichier texte .md ou .markdown de 500 Ko maximum.","read":"Impossible de lire le fichier. Choisissez-le à nouveau.","encoding":"Encodage du texte non reconnu. Enregistrez le fichier en UTF-8 et réessayez.","errors":{"empty":"Ce document Markdown est vide.","size":"Ce document dépasse 500 Ko. Utilisez un rapport plus petit.","pages":"Ce rapport dépasse 100 pages. Divisez-le en rapports plus petits.","row":"Une ligne de tableau dépasse une page. Raccourcissez-la ou divisez-la.","block":"Un élément ne tient pas sur une page. Divisez les longues listes, formules ou images.","width":"Le contenu dépasse la largeur de la page. Réduisez les colonnes du tableau ou raccourcissez la formule.","fonts":"Les polices du rapport ne sont pas chargées. Réessayez.","resources":"Un composant du rapport n’a pas pu être chargé. Rechargez cette page."},"labels":{"image":"Image indisponible","diagram":"Diagramme non rendu ; source conservée","math":"Formule non rendue ; source conservée","page":"Page %d / %d","title":"Rapport Markdown"},"print":"Choisissez A4 et une échelle de 100 %, puis désactivez les en-têtes et pieds de page du navigateur. Sur iPhone et iPad, partagez ou enregistrez le PDF depuis l’aperçu d’impression du système.","importing":"Importation du Markdown…","selectedFile":"Fichier importé : {name}"}</script>
   <script src="/script/markdown-report/tool.js" defer></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"OnePreview Markdown en PDF","url":"https://one-preview.luopeike.com/fr/tools/markdown-to-pdf/","applicationCategory":"UtilitiesApplication","operatingSystem":"Navigateur web moderne","inLanguage":"fr","browserRequirements":"JavaScript et impression du navigateur activés","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convertissez gratuitement Markdown ou MD en PDF A4. Avec Mermaid, KaTeX, tableaux et code. Sans compte, application ni envoi de documents.","@id":"https://one-preview.luopeike.com/fr/tools/markdown-to-pdf/#application","isAccessibleForFree":true,"featureList":["Gratuit sans compte","Traitement local sans envoi de documents","Diagrammes Mermaid et formules KaTeX","Pagination A4 avec en-têtes de tableau répétés","Retour à la ligne des blocs de code"]}</script>
   <script type="application/ld+json" data-seo="breadcrumbs">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://one-preview.luopeike.com/fr/"},{"@type":"ListItem","position":2,"name":"OnePreview Markdown en PDF","item":"https://one-preview.luopeike.com/fr/tools/markdown-to-pdf/"}]}</script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
   <div class="page"><div class="container">
     <header class="topbar">
       <a class="brand" href="/fr/"><img src="/favicon/apple-touch-icon.png" alt="" width="38" height="38"><span>OnePreview</span></a>
       <nav class="nav" aria-label="Navigation principale"><a href="/fr/">Accueil</a><a class="active" href="/fr/tools/markdown-to-pdf/">Markdown en PDF</a><a href="/fr/help">Aide</a><label class="language-switch"><span>Langue</span><select aria-label="Langue" onchange="if (this.value) window.location.href=this.value"><option value="/tools/markdown-to-pdf/" >English</option><option value="/zh-Hans/tools/markdown-to-pdf/" >简体中文</option><option value="/zh-Hant/tools/markdown-to-pdf/" >繁體中文</option><option value="/ja/tools/markdown-to-pdf/" >日本語</option><option value="/ko/tools/markdown-to-pdf/" >한국어</option><option value="/de/tools/markdown-to-pdf/" >Deutsch</option><option value="/fr/tools/markdown-to-pdf/" selected>Français</option><option value="/hi/tools/markdown-to-pdf/" >हिन्दी</option><option value="/id/tools/markdown-to-pdf/" >Bahasa Indonesia</option><option value="/ru/tools/markdown-to-pdf/" >Русский</option><option value="/es-MX/tools/markdown-to-pdf/">Español (México)</option></select></label></nav>
     </header>
-    <main>
+    <main id="main-content" tabindex="-1">
       <section class="tool-heading">
         <p class="kicker">Gratuit · Dans le navigateur · Sans compte</p>
         <h1>Du Markdown au PDF, prêt à partager.</h1>
@@ -58,8 +59,8 @@
         <label class="button ghost file-label" for="image-files">Choisir les images</label><input class="visually-hidden" id="image-files" type="file" multiple accept="image/png,image/jpeg,image/gif,image/webp,image/bmp">
         <button class="button ghost" id="load-sample" data-sample="example.md" type="button">Essayer un exemple</button>
         <span class="toolbar-spacer"></span>
-        <button class="button primary" id="render-report" type="button">Actualiser l’aperçu</button>
-        <button class="button" id="print-report" type="button" disabled>Imprimer / Enregistrer en PDF</button>
+        <button class="button" id="render-report" type="button">Actualiser l’aperçu</button>
+        <button class="button primary" id="print-report" type="button" disabled>Imprimer / Enregistrer en PDF</button>
       </div>
       <section class="tool-editor" aria-label="Saisie Markdown">
         <label for="markdown-source">Votre Markdown</label>

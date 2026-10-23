@@ -33,20 +33,21 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0A84FF">
   <link rel="icon" href="/favicon/favicon-32x32.png">
-  <link rel="stylesheet" href="/style/base.css">
-  <link rel="stylesheet" href="/style/markdown-report.css">
+  <link rel="stylesheet" href="/style/base.css?v=20261024">
+  <link rel="stylesheet" href="/style/markdown-report.css?v=20261024">
   <script type="application/json" id="tool-messages">{"ready":"排版完成 · A4 頁數：{count}","changed":"內容已變更，請更新預覽。","working":"正在呈現圖表、載入字型並分頁…","images":"已選圖片：{count}","duplicates":"圖片檔名重複，請選擇名稱不同的檔案。","imageSize":"最多選擇 16 張圖片，每張不超過 5 MB，總大小不超過 20 MB。","unsupported":"請選擇 .md 或 .markdown 文字檔（不超過 500 KB）。","read":"無法讀取檔案，請重新選擇。","encoding":"無法辨識文字編碼，請儲存為 UTF-8 後重試。","errors":{"empty":"Markdown 文件為空。","size":"文件超過 500 KB，請縮小後重試。","pages":"報告超過 100 頁，請拆分為較小的報告。","row":"表格中有一列高於一頁，請縮短或拆分該列。","block":"有一個元素無法在一頁內完整顯示，請拆分長清單項目、公式或圖片後重試。","width":"內容超過頁面寬度，請減少表格欄數或縮短公式後重試。","fonts":"報告字型未能載入，請重試。","resources":"排版元件未能載入，請重新整理頁面。"},"labels":{"image":"圖片無法使用","diagram":"流程圖未能呈現，已保留原文","math":"公式未能呈現，已保留原文","page":"第 %d 頁 / 共 %d 頁","title":"Markdown 報告"},"print":"請選擇 A4、100% 縮放，並關閉瀏覽器附加的頁首和頁尾。iPhone / iPad 可在系統列印預覽分享或儲存 PDF。","importing":"正在匯入 Markdown…","selectedFile":"已匯入檔案：{name}"}</script>
   <script src="/script/markdown-report/tool.js" defer></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"OnePreview Markdown 轉 PDF","url":"https://one-preview.luopeike.com/zh-Hant/tools/markdown-to-pdf/","applicationCategory":"UtilitiesApplication","operatingSystem":"現代網頁瀏覽器","inLanguage":"zh-Hant","browserRequirements":"啟用 JavaScript 和瀏覽器列印","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"免費線上將 Markdown、MD 檔案排成 A4 PDF，支援 Mermaid 流程圖、KaTeX 數學公式、表格分頁和程式碼換行。不需帳號、安裝 App 或上傳文件。","@id":"https://one-preview.luopeike.com/zh-Hant/tools/markdown-to-pdf/#application","isAccessibleForFree":true,"featureList":["免費使用，不需帳號","瀏覽器本機處理，不需上傳文件","Mermaid 流程圖與 KaTeX 數學公式","A4 分頁與跨頁重複標題列","程式碼區塊自動換行"]}</script>
   <script type="application/ld+json" data-seo="breadcrumbs">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://one-preview.luopeike.com/zh-Hant/"},{"@type":"ListItem","position":2,"name":"OnePreview Markdown 轉 PDF","item":"https://one-preview.luopeike.com/zh-Hant/tools/markdown-to-pdf/"}]}</script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">跳至主要內容</a>
   <div class="page"><div class="container">
     <header class="topbar">
       <a class="brand" href="/zh-Hant/"><img src="/favicon/apple-touch-icon.png" alt="" width="38" height="38"><span>OnePreview</span></a>
       <nav class="nav" aria-label="主要導覽"><a href="/zh-Hant/">首頁</a><a class="active" href="/zh-Hant/tools/markdown-to-pdf/">Markdown 轉 PDF</a><a href="/zh-Hant/help">說明</a><label class="language-switch"><span>語言</span><select aria-label="語言" onchange="if (this.value) window.location.href=this.value"><option value="/tools/markdown-to-pdf/" >English</option><option value="/zh-Hans/tools/markdown-to-pdf/" >简体中文</option><option value="/zh-Hant/tools/markdown-to-pdf/" selected>繁體中文</option><option value="/ja/tools/markdown-to-pdf/" >日本語</option><option value="/ko/tools/markdown-to-pdf/" >한국어</option><option value="/de/tools/markdown-to-pdf/" >Deutsch</option><option value="/fr/tools/markdown-to-pdf/" >Français</option><option value="/hi/tools/markdown-to-pdf/" >हिन्दी</option><option value="/id/tools/markdown-to-pdf/" >Bahasa Indonesia</option><option value="/ru/tools/markdown-to-pdf/" >Русский</option><option value="/es-MX/tools/markdown-to-pdf/">Español (México)</option></select></label></nav>
     </header>
-    <main>
+    <main id="main-content" tabindex="-1">
       <section class="tool-heading">
         <p class="kicker">免費使用 · 瀏覽器本機處理 · 不需帳號</p>
         <h1>將 Markdown 排成可分享的 PDF。</h1>
@@ -58,8 +59,8 @@
         <label class="button ghost file-label" for="image-files">選擇報告圖片</label><input class="visually-hidden" id="image-files" type="file" multiple accept="image/png,image/jpeg,image/gif,image/webp,image/bmp">
         <button class="button ghost" id="load-sample" data-sample="example.md" type="button">試用範例</button>
         <span class="toolbar-spacer"></span>
-        <button class="button primary" id="render-report" type="button">更新預覽</button>
-        <button class="button" id="print-report" type="button" disabled>列印 / 儲存為 PDF</button>
+        <button class="button" id="render-report" type="button">更新預覽</button>
+        <button class="button primary" id="print-report" type="button" disabled>列印 / 儲存為 PDF</button>
       </div>
       <section class="tool-editor" aria-label="Markdown 輸入">
         <label for="markdown-source">Markdown 內容</label>
