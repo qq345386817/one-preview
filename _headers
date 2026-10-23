@@ -1,0 +1,7 @@
+# The isolated report contains user-rendered content and intentionally rejects
+# third-party scripts/networking. Do not inject an analytics beacon into it.
+/script/markdown-report/report
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
+
+/script/markdown-report/report.html
+  Cache-Control: public, max-age=0, must-revalidate, no-transform

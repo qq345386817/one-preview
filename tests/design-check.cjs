@@ -16,6 +16,14 @@ assert.ok(css.includes('prefers-reduced-motion: no-preference'));
 assert.ok(css.includes('overflow-wrap: anywhere'));
 assert.ok(!css.includes('color: var(--primary);'), 'Use the darker source blue for small text on tinted surfaces');
 assert.ok(!/@import|url\(["']?https?:/i.test(css), 'No remote style/font dependency');
+const headers = fs.readFileSync(path.join(root, '_headers'), 'utf8');
+for (const route of ['/script/markdown-report/report', '/script/markdown-report/report.html']) {
+  assert.ok(headers.includes(route + '\n  Cache-Control: public, max-age=0, must-revalidate, no-transform'));
+}
+assert.equal((headers.match(/^\//gm) || []).length, 2, 'Keep the no-transform rule scoped to the isolated renderer');
+const renderer = fs.readFileSync(path.join(root, 'script/markdown-report/report.html'), 'utf8');
+assert.ok(renderer.includes("script-src 'self'") && renderer.includes("connect-src 'none'"));
+assert.ok(!renderer.includes('cloudflareinsights.com'), 'Do not relax renderer CSP for injected analytics');
 for (const locale of locales) {
   const prefix = locale ? locale + '/' : '';
   const image = `images/previews/${locale || 'en'}.png`;
