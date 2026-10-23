@@ -7,8 +7,12 @@ then run `node tests/ui-smoke.cjs` with Playwright installed for development.
 outside the repository to `ONEPREVIEW_SITE_QA_DIR` (default `/tmp/onepreview-site-qa`).
 
 The suite checks all 44 localized landing/help/support/privacy pages in Chromium
-and WebKit, desktop and mobile viewports, light and dark themes, image loading,
-headline hierarchy, overflow, language selection, navigation and the PDF tool entry.
+and WebKit, 1440/768/390/320px viewports, light and dark themes, image loading,
+headline hierarchy, long-word overflow, keyboard skip links, 44px action targets,
+language selection, navigation and the PDF tool entry. All 11 languages, including
+es-MX, are required. Each landing page uses its original localized App screenshot;
+no mock native window is substituted. Use `ONEPREVIEW_SITE_BROWSERS=chromium`
+explicitly when the WebKit executable is unavailable; this is not a Safari pass.
 The PDF tool's document conversion regression remains in the native repository's
 `scripts/markdown_report_web_smoke.mjs`.
 
@@ -35,3 +39,10 @@ pages, canonical and language alternates, sitemap coverage, App/WebApplication
 separation, localized tool capabilities and FAQ, internal links and the concise
 `llms.txt` guide. This checks source consistency, not search-engine indexing or
 guaranteed AI citations. The existing crawler access policy is unchanged.
+
+Run `node tests/design-check.cjs` to verify the website's two-theme text contrast,
+all 11 full-window PNGs and their language mapping, format coverage, keyboard skip
+links, local dependencies and stylesheet cache version. This is a source regression
+test, not the separate `design_check` or `design_system_check` artifact validator.
+The redesign's canvas, tokens, reference manual and test outputs stay local; only
+the production HTML/CSS, original product images and reusable tests are published.
