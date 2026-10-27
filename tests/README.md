@@ -52,3 +52,8 @@ links, local dependencies and stylesheet cache version. This is a source regress
 test, not the separate `design_check` or `design_system_check` artifact validator.
 The redesign's canvas, tokens, reference manual and test outputs stay local; only
 the production HTML/CSS, original product images and reusable tests are published.
+
+The screenshot manifest records native macOS 1.4.7 (build 153) captures and SHA-256
+hashes. Design checks validate image bytes and versioned image URLs. Each homepage
+labels the UI preview version without promising that the same version is already
+available from the App Store. Raw captures and accessibility evidence stay local.

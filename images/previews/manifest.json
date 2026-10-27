@@ -1,0 +1,96 @@
+{
+  "version": "1.4.7",
+  "build": "153",
+  "capturedOn": "2026-10-27",
+  "source": "Native development-signed universal Release archive used for App Store export",
+  "images": [
+    {
+      "locale": "en",
+      "captureLocale": "en-US",
+      "file": "en.png",
+      "width": 1180,
+      "height": 820,
+      "sha256": "5c5f4139df24566101db21240ee3f0cb2572b8be6dd41f80520fbdae52c798d1"
+    },
+    {
+      "locale": "zh-Hans",
+      "captureLocale": "zh-Hans",
+      "file": "zh-Hans.png",
+      "width": 1180,
+      "height": 820,
+      "sha256": "47267dbe27b243a3c5312a1c6ce1cf7887135bffa47f751fd87be5b9680a08a2"
+    },
+    {
+      "locale": "zh-Hant",
+      "captureLocale": "zh-Hant",
+      "file": "zh-Hant.png",
+      "width": 1180,
+      "height": 820,
+      "sha256": "662644ef60cacce985ced6e63decb510c34483db2e99f9b6de4de2b9f34ab37b"
+    },
+    {
+      "locale": "ja",
+      "captureLocale": "ja",
+      "file": "ja.png",
+      "width": 1180,
+      "height": 820,
+      "sha256": "5160940c3a2b6b7d3d15356822a803acae698d18938a8410d26af2f645d681e3"
+    },
+    {
+      "locale": "ko",
+      "captureLocale": "ko",
+      "file": "ko.png",
+      "width": 1180,
+      "height": 820,
+      "sha256": "3c5336de6e9db14d2063248a5154753c18cecad848778e412e6a372edc297249"
+    },
+    {
+      "locale": "de",
+      "captureLocale": "de-DE",
+      "file": "de.png",
+      "width": 1180,
+      "height": 820,
+      "sha256": "7d6a2f0ad8a81c6562f06516c9fd96d3032d4122a79a6b43ddbe19707d7605d9"
+    },
+    {
+      "locale": "fr",
+      "captureLocale": "fr-FR",
+      "file": "fr.png",
+      "width": 1180,
+      "height": 820,
+      "sha256": "0dc648e656ef78eb9454423a7be329590971773b48c92180e085e0fb054d1a6d"
+    },
+    {
+      "locale": "hi",
+      "captureLocale": "hi",
+      "file": "hi.png",
+      "width": 1180,
+      "height": 820,
+      "sha256": "4cf066d8e4c6237e4503956ab5f9d1cd72861015d5f6780920a4dc8648446f46"
+    },
+    {
+      "locale": "id",
+      "captureLocale": "id",
+      "file": "id.png",
+      "width": 1180,
+      "height": 820,
+      "sha256": "2a48669161457a7837ea237e010d33d5a8cc56af2a577d3398691802be2c8254"
+    },
+    {
+      "locale": "ru",
+      "captureLocale": "ru",
+      "file": "ru.png",
+      "width": 1180,
+      "height": 820,
+      "sha256": "8180bc0cbe035aa8ce74ffa32f3291096b0368fc94fe7502d7dfb877d183c1c6"
+    },
+    {
+      "locale": "es-MX",
+      "captureLocale": "es-MX",
+      "file": "es-MX.png",
+      "width": 1180,
+      "height": 820,
+      "sha256": "982298591bfcbf6f5aca5e15ff85f8d5d27ccddf1086e5f06d44e2c487e49a40"
+    }
+  ]
+}

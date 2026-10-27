@@ -48,7 +48,8 @@ assert.ok(selectedBrowsers.every(name => ['chromium', 'webkit'].includes(name)),
             assert.ok(await page.locator('a[href="https://apps.apple.com/app/id6760284919"]').count());
             assert.equal(await page.locator('a[href*=".dmg"]').count(), 0);
             if (type === 'index') {
-              assert.equal(await page.locator('.app-screenshot').getAttribute('src'), `/images/previews/${locale || 'en'}.png`);
+              assert.equal(await page.locator('.app-screenshot').getAttribute('src'), `/images/previews/${locale || 'en'}.png?v=1.4.7-153`);
+              assert.ok((await page.locator('.preview-caption').innerText()).includes('1.4.7'));
               assert.ok((await page.locator('.app-screenshot').getAttribute('alt')).length > 10);
               assert.equal(await page.locator('.window-bar').count(), 0, 'Do not recreate native app chrome');
               assert.equal(await page.locator('.feature-mark').count(), 4);

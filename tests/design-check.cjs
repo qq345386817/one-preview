@@ -1,8 +1,14 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
+const crypto = require('node:crypto');
 const root = path.resolve(__dirname, '..');
 const locales = ['', 'zh-Hans', 'zh-Hant', 'ja', 'ko', 'de', 'fr', 'hi', 'id', 'ru', 'es-MX'];
+const previews = JSON.parse(fs.readFileSync(path.join(root, 'images/previews/manifest.json'), 'utf8'));
+assert.equal(previews.version, '1.4.7');
+assert.equal(previews.build, '153');
+assert.equal(previews.images.length, locales.length);
+assert.deepEqual(previews.images.map(item => item.locale).sort(), locales.map(locale => locale || 'en').sort());
 const css = fs.readFileSync(path.join(root, 'style/base.css'), 'utf8');
 const palette = css.replace(/#fff\b/g, '#ffffff');
 const rgb = hex => hex.replace('#', '').match(/../g).map(x => parseInt(x, 16) / 255).map(x => x <= .04045 ? x / 12.92 : ((x + .055) / 1.055) ** 2.4);
@@ -32,6 +38,10 @@ for (const locale of locales) {
   assert.equal(png.readUInt32BE(16), 1180);
   assert.equal(png.readUInt32BE(20), 820);
   assert.ok(png.length < 200000, image + ' should stay lightweight');
+  const record = previews.images.find(item => item.locale === (locale || 'en'));
+  assert.equal(record.sha256, crypto.createHash('sha256').update(png).digest('hex'));
+  assert.equal(record.width, png.readUInt32BE(16));
+  assert.equal(record.height, png.readUInt32BE(20));
   for (const file of ['index.html', 'help.html', 'support.html', 'privacy-policy.html', 'tools/markdown-to-pdf/index.html']) {
     const html = fs.readFileSync(path.join(root, prefix, file), 'utf8');
     assert.ok(html.includes('class="skip-link" href="#main-content"'));
@@ -39,7 +49,8 @@ for (const locale of locales) {
     assert.ok(html.includes('base.css?v=20261024'));
     assert.ok(html.includes(`href="/${prefix}tools/markdown-to-pdf/"`));
     if (file === 'index.html') {
-      assert.ok(html.includes(`src="/${image}"`));
+      assert.ok(html.includes(`src="/${image}?v=1.4.7-153"`));
+      assert.ok(html.includes('OnePreview · macOS · 1.4.7'));
       assert.ok(!html.includes('class="window-bar"'));
       for (const format of ['Markdown', 'MDX', 'TextBundle', 'TextPack', 'JSON', 'JSONL', 'YAML', 'XML', 'CSV', 'TSV', 'TOML', 'ENV', 'SQLite', 'TAR.GZ']) assert.ok(html.includes(format), `${locale}: ${format}`);
     }
