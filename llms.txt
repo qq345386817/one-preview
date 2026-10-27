@@ -4,6 +4,7 @@
 
 Product facts reviewed on 2026-10-27:
 
+- Localized homepage screenshots show the native macOS 1.4.7 interface (build 153). These are UI previews, not a statement that this version is already available on the App Store; consult the App Store for current availability.
 - On macOS, the app extends Finder Quick Look for supported files; users can select a file and press Space after enabling the extension.
 - On macOS, Open With can open the original file in an installed editor from the main app or Finder Quick Look. The main app can remember an editor for each filename extension; choices can be changed or removed in Settings > External Apps. Quick Look reads those saved choices and also supports temporary choices. These preferences affect only OnePreview, not macOS default file associations; this is not an iOS editor-preference feature.
 - On iPhone and iPad, users open supported files in OnePreview from Files using Open With. The app does not replace the built-in Files Quick Look preview for every normal tap.
