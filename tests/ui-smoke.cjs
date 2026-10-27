@@ -61,6 +61,10 @@ assert.ok(selectedBrowsers.every(name => ['chromium', 'webkit'].includes(name)),
         }
         console.log(`${name} ${variant}: 44 localized pages, layout and navigation checks passed`);
       }
+      await page.goto(base + '/');
+      await page.locator('[data-workflow="mac-editor"] a').click();
+      await page.waitForURL('**/help#mac-open-with');
+      assert.equal(await page.locator('#mac-open-with').isVisible(), true);
       await page.goto(base + '/help');
       await page.keyboard.press('Tab');
       assert.equal(await page.locator('.skip-link').evaluate(n => n === document.activeElement), true);

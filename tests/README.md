@@ -40,6 +40,12 @@ separation, localized tool capabilities and FAQ, internal links and the concise
 `llms.txt` guide. This checks source consistency, not search-engine indexing or
 guaranteed AI citations. The existing crawler access policy is unchanged.
 
+The macOS editor workflow links each localized homepage to `help#mac-open-with`.
+The UI suite exercises that link. SEO checks require the visible answer and
+FAQ structured data to match, scope saved editor choices to macOS, and retain
+the distinction from choosing OnePreview in Files on iPhone or iPad. The content
+guide documents original-file handoff without changing system associations.
+
 Run `node tests/design-check.cjs` to verify the website's two-theme text contrast,
 all 11 full-window PNGs and their language mapping, format coverage, keyboard skip
 links, local dependencies and stylesheet cache version. This is a source regression

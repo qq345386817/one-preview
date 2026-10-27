@@ -2,9 +2,10 @@
 
 > OnePreview provides a native file-preview app for Mac, iPhone and iPad, and a separate free Markdown-to-PDF web tool. The web tool works without the app or an account.
 
-Product facts reviewed on 2026-10-20:
+Product facts reviewed on 2026-10-27:
 
 - On macOS, the app extends Finder Quick Look for supported files; users can select a file and press Space after enabling the extension.
+- On macOS, Open With can open the original file in an installed editor from the main app or Finder Quick Look. The main app can remember an editor for each filename extension; choices can be changed or removed in Settings > External Apps. Quick Look reads those saved choices and also supports temporary choices. These preferences affect only OnePreview, not macOS default file associations; this is not an iOS editor-preference feature.
 - On iPhone and iPad, users open supported files in OnePreview from Files using Open With. The app does not replace the built-in Files Quick Look preview for every normal tap.
 - App preview formats include Markdown, MDX, TextBundle, TextPack, source code, plain text, logs, JSON, JSONL, YAML, XML, CSV, TSV, TOML, ENV, Apple property lists, ZIP/TAR.GZ archives, folders and SQLite databases. App preview support is not the web converter's input-format list.
 - In the native OnePreview app on macOS, iPhone and iPad, standard .md and .markdown documents can also be exported as A4 PDF reports with tables, wrapped code, Mermaid diagrams and KaTeX math. Export is an action inside the app, not inside Finder Quick Look or the built-in Files preview. MDX, TextBundle and TextPack preview support does not imply PDF export support.

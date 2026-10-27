@@ -27,6 +27,9 @@ assert.ok(llms.includes('Hindi/Devanagari'));
 assert.ok(llms.includes('standard .md and .markdown documents can also be exported as A4 PDF reports'));
 assert.ok(llms.includes('not inside Finder Quick Look or the built-in Files preview'));
 assert.ok(llms.includes('do not claim every file is cached, a fixed speedup'));
+assert.ok(llms.includes('Quick Look reads those saved choices and also supports temporary choices'));
+assert.ok(llms.includes('not macOS default file associations'));
+assert.ok(llms.includes('not an iOS editor-preference feature'));
 const guideLinks = [...llms.matchAll(/\[[^\]]+\]\((https:\/\/[^)]+)\)/g)].map(match => match[1]);
 for (const link of guideLinks.filter(link => link.startsWith(origin + '/'))) {
   assert.ok(fs.existsSync(localFile(new URL(link).pathname)), 'Missing llms.txt destination: ' + link);
@@ -57,7 +60,12 @@ for (const locale of locales) {
       assert.ok(alternates.some(m => m[1] === target && m[2] === origin + prefix(target === 'x-default' ? 'en' : target) + type));
     }
     const schemas = jsonScripts(html);
+    if (type === '' || type === 'help') {
+      assert.ok(schemas.find(s => s['@type'] === 'SoftwareApplication').featureList.includes('Preferred editors and Open With on macOS'));
+    }
     if (type === '') {
+      assert.equal((html.match(/data-workflow="mac-editor"/g) || []).length, 1);
+      assert.ok(html.includes(`href="${root}help#mac-open-with"`));
       assert.ok(html.includes('id="markdown-pdf"'));
       assert.ok(html.includes('class="feature-grid two"'));
       assert.ok(description.includes('PDF'));
@@ -68,6 +76,18 @@ for (const locale of locales) {
       assert.equal(website.description, description.replaceAll('&amp;', '&'));
       assert.equal(website.hasPart[0]['@type'], 'WebApplication');
       assert.equal(website.hasPart[0]['@id'], toolUrl + '#application');
+    }
+    if (type === 'help') {
+      const faq = schemas.find(s => s['@type'] === 'FAQPage');
+      assert.equal(faq.mainEntity.length, 7);
+      const editor = faq.mainEntity.at(-1);
+      const visible = html.match(/<article class="faq-item" id="mac-open-with"><h2>([\s\S]*?)<\/h2><p>([\s\S]*?)<\/p><\/article>/);
+      const unescape = text => text.replaceAll('&quot;', '"').replaceAll('&gt;', '>').replaceAll('&lt;', '<').replaceAll('&amp;', '&');
+      assert.ok(visible, locale + ': macOS editor help missing');
+      assert.equal(unescape(visible[1]), editor.name);
+      assert.equal(unescape(visible[2]), editor.acceptedAnswer.text);
+      assert.ok(editor.acceptedAnswer.text.includes('macOS'));
+      assert.ok(editor.acceptedAnswer.text.includes('iPhone'));
     }
     if (type === 'tools/markdown-to-pdf/') {
       assert.ok(title.includes('Markdown') && title.includes('PDF'));
