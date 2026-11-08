@@ -47,6 +47,13 @@ for (const locale of locales) {
     const description = html.match(/<meta name="description" content="([^"]+)"/)[1];
     assert.ok(title.includes('OnePreview'));
     assert.ok(description.length > 30);
+    assert.equal(html.match(/<meta property="og:description" content="([^"]+)"/)[1], description);
+    assert.equal(html.match(/<meta name="twitter:description" content="([^"]+)"/)[1], description);
+    if (locale === 'zh-Hans' && type === 'help') assert.ok([...description].length >= 150 && [...description].length <= 160, 'Keep the reported help-page snippet informative');
+    for (const image of html.matchAll(/<img\b[^>]*>/g)) {
+      assert.ok(/\balt="[^"]+"/.test(image[0]), route + ': missing descriptive image alt');
+      if (/app-store-icon\.svg|favicon\/apple-touch-icon\.png/.test(image[0])) assert.ok(image[0].includes('aria-hidden="true"'), 'Decorative brand icons must not duplicate the link label');
+    }
     assert.match(html, new RegExp(`<html lang="${locale}"`));
     assert.ok(html.includes(`rel="canonical" href="${origin + route}"`));
     assert.ok(urls.includes(origin + route));
