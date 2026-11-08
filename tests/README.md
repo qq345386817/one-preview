@@ -57,3 +57,29 @@ The screenshot manifest records native macOS 1.4.7 (build 153) captures and SHA-
 hashes. Design checks validate image bytes and versioned image URLs. Each homepage
 labels the UI preview version without promising that the same version is already
 available from the App Store. Raw captures and accessibility evidence stay local.
+
+## Bing And IndexNow
+
+`node --test tests/indexnow.test.cjs` checks the site-scoped notification helper,
+public verification file, canonical URL restrictions, offline default, live-key
+gate, response states and non-repeating error handling. The hexadecimal root text
+file is public ownership proof, not an account credential; do not add it to the
+sitemap or content guide. Its response is marked `noindex`, but crawling remains
+allowed so IndexNow can verify it. Never commit Cloudflare tokens or Bing sessions.
+
+After the existing Cloudflare Pages Git deployment is live, preview a submission:
+
+```bash
+node script/submit-indexnow.cjs --all
+node script/submit-indexnow.cjs --url https://one-preview.luopeike.com/zh-Hans/help
+# Initial setup or a reviewed whole-site change only:
+node script/submit-indexnow.cjs --all --submit
+# For later changes, notify just the affected canonical URLs:
+node script/submit-indexnow.cjs --url https://one-preview.luopeike.com/zh-Hans/help --submit
+```
+
+The helper verifies the published key before posting to the shared IndexNow
+endpoint, preserves the caller's proxy environment, and does not change system
+settings. HTTP 200 means received, not indexed; 202 still awaits key validation.
+Search reports and historic recommendations can lag behind live fixes. Review
+natural, relevant inbound links separately; do not buy or fabricate backlinks.

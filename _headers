@@ -5,3 +5,7 @@
 
 /script/markdown-report/report.html
   Cache-Control: public, max-age=0, must-revalidate, no-transform
+
+# Public IndexNow ownership proof is readable but not a search result.
+/17dda40cccb5b80e242d4700db1ddb58.txt
+  X-Robots-Tag: noindex
