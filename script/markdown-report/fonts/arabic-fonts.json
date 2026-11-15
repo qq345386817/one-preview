@@ -1,0 +1,25 @@
+{
+  "family": "OnePreview Arabic",
+  "upstream": "DejaVu Sans 2.37",
+  "source": "https://github.com/dejavu-fonts/dejavu-fonts/releases/download/version_2_37/dejavu-fonts-ttf-2.37.tar.bz2",
+  "source_sha256": "fa9ca4d13871dd122f61258a80d01751d603b4d3ee14095d65453b4e846e17d7",
+  "license": "../licenses/DejaVu-LICENSE.txt",
+  "unmodified": false,
+  "modifications": "Renamed faces; removed only Arabic combining-mark ligature substitutions; outlines, cmap and GPOS retained.",
+  "files": [
+    {
+      "file": "OnePreviewArabic-Regular.ttf",
+      "source_file": "DejaVuSans.ttf",
+      "source_sha256": "7da195a74c55bef988d0d48f9508bd5d849425c1770dba5d7bfc6ce9ed848954",
+      "sha256": "d67c9cd74c78a3a30b32c7719bb9c77ecbbd632551d22e15f1a6f76378fc8793",
+      "removed_mark_ligatures": 16
+    },
+    {
+      "file": "OnePreviewArabic-Bold.ttf",
+      "source_file": "DejaVuSans-Bold.ttf",
+      "source_sha256": "e6476c1b80502924294eed40894c5b18e06c181444ca953e5334262df9c27724",
+      "sha256": "69170d2dcdb291b65537a26784f585c300dd10b3605929128ff85e181abc776a",
+      "removed_mark_ligatures": 16
+    }
+  ]
+}

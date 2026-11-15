@@ -61,3 +61,10 @@ button:disabled { opacity: 0.45; cursor: default; }
   .tool-app { display: block; }
   .tool-app .actions { margin-top: 16px; }
 }
+
+html[dir="rtl"] .tool-heading { text-align: start; }
+html[dir="rtl"] .tool-editor { border-right: 0; border-inline-end: 1px solid var(--border); }
+html[dir="rtl"] #markdown-source { font-family: "Geeza Pro", Menlo, monospace; direction: ltr; unicode-bidi: plaintext; text-align: start; }
+/* Scaling uses physical page coordinates; the report sets its own content direction. */
+html[dir="rtl"] :is(#report-viewport, #report-frame) { direction: ltr; }
+@media (max-width: 800px) { html[dir="rtl"] .tool-editor { border-inline-end: 0; } }

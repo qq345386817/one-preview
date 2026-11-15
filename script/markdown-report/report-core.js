@@ -30,6 +30,17 @@
       try { global.hljs.highlightElement(block); } catch (_) { /* Plain code stays readable. */ }
     }
   }
+  const arabicScript = /[\u0600-\u06ff\u0750-\u077f\u0870-\u089f\u08a0-\u08ff\ufb50-\ufdff\ufe70-\ufeff]/;
+  function markArabicText(root) {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    const marked = new Set();
+    let text;
+    while ((text = walker.nextNode())) {
+      if (!arabicScript.test(text.textContent) || text.parentElement.closest("pre, code, svg, .katex, style")) continue;
+      const block = text.parentElement.closest("p,h1,h2,h3,h4,h5,h6,li,blockquote,th,td,.report-header span,.report-footer span,.report-warning");
+      if (block && !marked.has(block)) { block.classList.add("report-arabic-text"); marked.add(block); }
+    }
+  }
   async function prepare(source, options, labels, warnings) {
     if (!global.marked || !global.DOMPurify) fail("resources");
     const renderer = new global.marked.Renderer();
@@ -42,6 +53,7 @@
       ALLOW_DATA_ATTR: false, FORBID_ATTR: ["src", "srcset", "style", "id", "name"]
     });
     const root = element("div", "report-source");
+    root.dir = "auto";
     root.append(fragment);
     for (const child of [...root.childNodes]) {
       if (child.nodeType === Node.TEXT_NODE) {
@@ -62,6 +74,13 @@
     }
     options.mount.append(root);
     try {
+      markArabicText(root);
+      if (arabicScript.test(root.textContent + Object.values(labels).join(" ")) && document.fonts) {
+        for (const weight of [400, 700]) {
+          const fonts = await deadline(document.fonts.load(`${weight} 16px "OnePreview Arabic"`, "العربية"), 10000, "fonts");
+          if (!fonts.length) fail("fonts");
+        }
+      }
       for (const image of [...root.querySelectorAll("img")]) {
         const reference = image.getAttribute("data-report-src") || image.alt || "image";
         let normalized;
@@ -84,7 +103,7 @@
       const diagrams = [...root.querySelectorAll("pre code.language-mermaid")];
       if (diagrams.length && !global.mermaid) fail("resources");
       if (diagrams.length) global.mermaid.initialize({ startOnLoad: false, securityLevel: "strict", theme: "base", htmlLabels: false,
-        fontFamily: getComputedStyle(document.body).fontFamily,
+        fontFamily: (diagrams.some(block => arabicScript.test(block.textContent)) ? '"OnePreview Arabic", ' : '') + getComputedStyle(document.body).fontFamily,
         themeVariables: { primaryColor: "#eaf2fc", primaryBorderColor: "#75a5d7", primaryTextColor: "#182332", lineColor: "#52687c" },
         flowchart: { htmlLabels: false }, maxTextSize: 50000 });
       for (const block of diagrams) {
@@ -103,6 +122,7 @@
         }
       }
       highlight(root);
+      root.classList.toggle("report-rtl", getComputedStyle(root).direction === "rtl");
       if (global.renderMathInElement) global.renderMathInElement(root, {
         delimiters: [{ left: "$$", right: "$$", display: true }, { left: "\\[", right: "\\]", display: true }, { left: "\\(", right: "\\)", display: false }, { left: "$", right: "$", display: false }],
         trust: false, throwOnError: true, maxExpand: 1000, errorCallback: () => warnings.push(labels.math)
@@ -115,10 +135,13 @@
 
   function paginate(source, mount, title, labels) {
     const pages = [];
+    // dir=auto must be resolved before pagination moves the first strong text.
+    const direction = getComputedStyle(source).direction;
     let body;
     function newPage() {
       if (pages.length >= MAX_PAGES) fail("pages");
       const page = element("section", "report-page");
+      page.dir = direction;
       const header = element("header", "report-header");
       header.append(element("span", "", title), element("span", "", "A4"));
       body = element("article", "report-body");
@@ -227,6 +250,7 @@
       splitText(node);
     }
     for (let index = 0; index < pages.length; index++) pages[index].querySelector(".report-page-number").textContent = labels.page.replace("%d", index + 1).replace("%d", pages.length);
+    markArabicText(mount);
     return pages;
   }
 
