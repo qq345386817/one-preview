@@ -1,8 +1,8 @@
 {
-  "version": "1.4.7",
-  "build": "153",
-  "capturedOn": "2026-10-27",
-  "source": "Native development-signed universal Release archive used for App Store export",
+  "version": "1.4.8",
+  "build": "154",
+  "capturedOn": "2026-11-14",
+  "source": "Real native windows from local verification builds; the original eleven use a development-signed Release build and Arabic uses a Debug build. Not an App Store upload or release.",
   "images": [
     {
       "locale": "en",
@@ -10,7 +10,7 @@
       "file": "en.png",
       "width": 1180,
       "height": 820,
-      "sha256": "5c5f4139df24566101db21240ee3f0cb2572b8be6dd41f80520fbdae52c798d1"
+      "sha256": "df89083d739d28900f8b631bc50aa32fa46d3a88d8dcc7ef7729291e01c24aff"
     },
     {
       "locale": "zh-Hans",
@@ -18,7 +18,7 @@
       "file": "zh-Hans.png",
       "width": 1180,
       "height": 820,
-      "sha256": "47267dbe27b243a3c5312a1c6ce1cf7887135bffa47f751fd87be5b9680a08a2"
+      "sha256": "03ae0b994d5a78ddbb2fb3e49b1a4391c8def3777e021d7bd2a13b05abe7b475"
     },
     {
       "locale": "zh-Hant",
@@ -26,7 +26,7 @@
       "file": "zh-Hant.png",
       "width": 1180,
       "height": 820,
-      "sha256": "662644ef60cacce985ced6e63decb510c34483db2e99f9b6de4de2b9f34ab37b"
+      "sha256": "7496657d2affa97e21eeca1c2a465f465a85ab312389cd0e07c3d6544923472e"
     },
     {
       "locale": "ja",
@@ -34,7 +34,7 @@
       "file": "ja.png",
       "width": 1180,
       "height": 820,
-      "sha256": "5160940c3a2b6b7d3d15356822a803acae698d18938a8410d26af2f645d681e3"
+      "sha256": "d8f9fc55970ee86c12cfbac334b79b07ec88f8e9de22158e9783897e8c7806c5"
     },
     {
       "locale": "ko",
@@ -42,7 +42,7 @@
       "file": "ko.png",
       "width": 1180,
       "height": 820,
-      "sha256": "3c5336de6e9db14d2063248a5154753c18cecad848778e412e6a372edc297249"
+      "sha256": "4587494a7b8388c3e36e6ffeeb9fb11ce2c9176b2ae8cd573a9d16fc3f9d4378"
     },
     {
       "locale": "de",
@@ -50,7 +50,7 @@
       "file": "de.png",
       "width": 1180,
       "height": 820,
-      "sha256": "7d6a2f0ad8a81c6562f06516c9fd96d3032d4122a79a6b43ddbe19707d7605d9"
+      "sha256": "66a56d785ef85821a66a0f6a07a1c4c56721c1869b7c6fe7c572e1e6def798d4"
     },
     {
       "locale": "fr",
@@ -58,7 +58,7 @@
       "file": "fr.png",
       "width": 1180,
       "height": 820,
-      "sha256": "0dc648e656ef78eb9454423a7be329590971773b48c92180e085e0fb054d1a6d"
+      "sha256": "65dc4661d3d7c0d94d96e0c329c58be9dbe8f661ebe9de6da3f4e8cebd532215"
     },
     {
       "locale": "hi",
@@ -66,7 +66,7 @@
       "file": "hi.png",
       "width": 1180,
       "height": 820,
-      "sha256": "4cf066d8e4c6237e4503956ab5f9d1cd72861015d5f6780920a4dc8648446f46"
+      "sha256": "6f93259c3b667c4f57e032a2aaedf7efe3c0564ada12693b5fe300e435b56bbd"
     },
     {
       "locale": "id",
@@ -74,7 +74,7 @@
       "file": "id.png",
       "width": 1180,
       "height": 820,
-      "sha256": "2a48669161457a7837ea237e010d33d5a8cc56af2a577d3398691802be2c8254"
+      "sha256": "22afb38eac0a5b165d1debf3558cec04628581c6d344a71572aff8c4beca62c1"
     },
     {
       "locale": "ru",
@@ -82,7 +82,7 @@
       "file": "ru.png",
       "width": 1180,
       "height": 820,
-      "sha256": "8180bc0cbe035aa8ce74ffa32f3291096b0368fc94fe7502d7dfb877d183c1c6"
+      "sha256": "64af5cb983d57b52204e17e1df289808323f0eb9ef84862e97d40a1de86c5d43"
     },
     {
       "locale": "es-MX",
@@ -90,7 +90,20 @@
       "file": "es-MX.png",
       "width": 1180,
       "height": 820,
-      "sha256": "982298591bfcbf6f5aca5e15ff85f8d5d27ccddf1086e5f06d44e2c487e49a40"
+      "sha256": "23602961acbf0d85cb9d0222107e7012b4f6589cbb1ffc69b8176122e04732fb"
+    },
+    {
+      "locale": "ar",
+      "captureLocale": "ar-SA",
+      "file": "ar.png",
+      "width": 1180,
+      "height": 820,
+      "sha256": "0f2626f6c60e77febe9f0a7a6a08ecc5c8983e72e57d93959808e5557a4e3264",
+      "capturedOn": "2026-11-15",
+      "configuration": "Debug",
+      "captureExecutableSHA256": "9725da1d1ac8eb900f4c8324f1870f91ba6e2d0a9b13c067540aad33898a6d06"
     }
-  ]
+  ],
+  "revision": "20261114-dark",
+  "captureExecutableSHA256": "4a027f837ff6f115e29c937afed96a574cf115e915d5a5521d01e1d3e058fd95"
 }

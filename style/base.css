@@ -116,6 +116,8 @@ html[lang^="zh"] .hero h1, html[lang="ja"] .hero h1 { max-width: 9em; }
 .footer { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; margin-top: 32px; padding: 28px 0 8px; border-top: 1px solid var(--border); font-size: 13px; line-height: 1.8; }
 .footer a { display: inline-flex; align-items: center; min-height: 44px; color: var(--muted); }
 .footer a:hover { color: var(--primary-dark); }
+.footer-languages { display: flex; flex-basis: 100%; flex-wrap: wrap; align-items: center; gap: 4px 16px; }
+.footer-languages a[aria-current="page"] { color: var(--text); text-decoration: underline; text-underline-offset: 4px; }
 @media (prefers-reduced-motion: no-preference) {
   .hero-copy, .product-panel { animation: arrive 550ms ease both; }
   .product-panel { animation-delay: 80ms; }
@@ -187,3 +189,14 @@ html[lang^="zh"] .hero h1, html[lang="ja"] .hero h1 { max-width: 9em; }
   .brand img { width: 32px; height: 32px; }
   .language-switch select { max-width: 94px; }
 }
+
+/* Arabic UI mirrors navigation, not code, file extensions or native screenshots. */
+html[dir="rtl"] body { font-family: "Geeza Pro", "Noto Naskh Arabic", sans-serif; letter-spacing: 0; }
+html[dir="rtl"] .language-switch { margin-left: 0; padding-left: 0; border-left: 0; margin-inline-start: 12px; padding-inline-start: 16px; border-inline-start: 1px solid var(--border); }
+html[dir="rtl"] .hero .kicker { padding-left: 0; padding-inline-start: 16px; }
+html[dir="rtl"] .hero .kicker::before { left: auto; right: 0; }
+html[dir="rtl"] .trust-strip div { padding-left: 0; padding-inline-start: 24px; }
+html[dir="rtl"] .trust-strip div::before { left: auto; right: 0; }
+html[dir="rtl"] :is(h1, h2, h3, .kicker, .section-kicker, .button) { letter-spacing: 0; }
+html[dir="rtl"] :is(code, pre, .format-rail, .brand, .preview-caption span:first-child) { direction: ltr; unicode-bidi: isolate; }
+@media (max-width: 560px) { html[dir="rtl"] .language-switch { right: auto; left: 0; border: 0; margin: 0; padding: 0; } }

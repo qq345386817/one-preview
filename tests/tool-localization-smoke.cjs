@@ -4,7 +4,7 @@ const path = require('node:path');
 const { chromium, webkit } = require(process.env.ONEPREVIEW_PLAYWRIGHT_MODULE || 'playwright');
 const base = process.env.ONEPREVIEW_SITE_URL || 'http://127.0.0.1:8765';
 const output = process.env.ONEPREVIEW_SITE_QA_DIR || '/tmp/onepreview-site-qa';
-const locales = ['en', 'zh-Hans', 'zh-Hant', 'ja', 'ko', 'de', 'fr', 'hi', 'id', 'ru', 'es-MX'];
+const locales = ['en', 'zh-Hans', 'zh-Hant', 'ja', 'ko', 'de', 'fr', 'hi', 'id', 'ru', 'es-MX', 'ar'];
 const root = locale => locale === 'en' ? '/' : `/${locale}/`;
 const route = locale => root(locale) + 'tools/markdown-to-pdf/';
 const origin = 'https://one-preview.luopeike.com';
@@ -18,7 +18,7 @@ const statusIs = (page, text) => page.waitForFunction(text => document.querySele
   await fs.mkdir(output, { recursive: true });
   for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) {
     if (!selectedBrowsers.includes(name)) continue;
-    const browser = await engine.launch({ headless: true });
+    const browser = await engine.launch({ headless: true, ...(name === 'chromium' && process.env.ONEPREVIEW_SITE_CHROMIUM_CHANNEL ? { channel: process.env.ONEPREVIEW_SITE_CHROMIUM_CHANNEL } : {}) });
     try {
       const errors = [];
       const context = await browser.newContext({ reducedMotion: 'reduce' });
@@ -53,7 +53,7 @@ const statusIs = (page, text) => page.waitForFunction(text => document.querySele
           assert.equal(schema.inLanguage, locale);
           assert.equal(schema.url, origin + route(locale));
           assert.ok(schema.description.length > 30);
-          assert.equal(await page.locator('.language-switch option').count(), 11);
+          assert.equal(await page.locator('.language-switch option').count(), 12);
           assert.equal(await page.locator('.language-switch select').inputValue(), route(locale));
           for (const suffix of ['', 'help', 'support', 'privacy-policy']) {
             assert.ok(await page.locator(`a[href="${root(locale) + suffix}"]`).count());
@@ -125,7 +125,7 @@ const statusIs = (page, text) => page.waitForFunction(text => document.querySele
             assert.equal(await page.locator('#markdown-file-name').isVisible(), false);
           }
         }
-        console.log(`${name} ${variant}: all 11 tool languages passed`);
+        console.log(`${name} ${variant}: all 12 tool languages passed`);
       }
       // The selector must navigate to the same tool, not to the site's home page.
       for (const locale of locales) {

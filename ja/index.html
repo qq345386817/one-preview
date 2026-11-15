@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mac・iPhone・iPadでMarkdown、MDX、コード、JSON、ZIP/TAR.GZ、SQLiteをプレビュー。無料のオンラインMarkdown PDF変換で、図・表・数式を含むレポートも作れます。">
+  <meta name="description" content="Mac・iPhone・iPadでMarkdown、JSON/CSV、ZIP/TAR.GZの内容を確認。MacのFinder Quick Look、アプリ内のA4 PDF書き出し、無料のMarkdown PDF変換ツールに対応。">
   <meta name="robots" content="index,follow">
-  <meta property="og:title" content="OnePreview | Markdownプレビュー・無料PDF変換">
-  <meta property="og:description" content="Mac・iPhone・iPadでMarkdown、MDX、コード、JSON、ZIP/TAR.GZ、SQLiteをプレビュー。無料のオンラインMarkdown PDF変換で、図・表・数式を含むレポートも作れます。">
+  <meta property="og:title" content="OnePreview | ファイルビューアとMarkdown PDF変換">
+  <meta property="og:description" content="Mac・iPhone・iPadでMarkdown、JSON/CSV、ZIP/TAR.GZの内容を確認。MacのFinder Quick Look、アプリ内のA4 PDF書き出し、無料のMarkdown PDF変換ツールに対応。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://one-preview.luopeike.com/ja/">
   <meta property="og:site_name" content="OnePreview">
@@ -16,6 +16,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://one-preview.luopeike.com/images/social-preview.png">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:locale:alternate" content="ar_SA">
   <meta property="og:locale:alternate" content="es_MX">
   <meta property="og:locale:alternate" content="en_US">
   <meta property="og:locale:alternate" content="zh_CN">
@@ -26,8 +27,8 @@
   <meta property="og:locale:alternate" content="hi_IN">
   <meta property="og:locale:alternate" content="id_ID">
   <meta property="og:locale:alternate" content="ru_RU">
-  <meta name="twitter:title" content="OnePreview | Markdownプレビュー・無料PDF変換">
-  <meta name="twitter:description" content="Mac・iPhone・iPadでMarkdown、MDX、コード、JSON、ZIP/TAR.GZ、SQLiteをプレビュー。無料のオンラインMarkdown PDF変換で、図・表・数式を含むレポートも作れます。">
+  <meta name="twitter:title" content="OnePreview | ファイルビューアとMarkdown PDF変換">
+  <meta name="twitter:description" content="Mac・iPhone・iPadでMarkdown、JSON/CSV、ZIP/TAR.GZの内容を確認。MacのFinder Quick Look、アプリ内のA4 PDF書き出し、無料のMarkdown PDF変換ツールに対応。">
   <link rel="canonical" href="https://one-preview.luopeike.com/ja/">
   <link rel="alternate" hreflang="en" href="https://one-preview.luopeike.com/">
   <link rel="alternate" hreflang="zh-Hans" href="https://one-preview.luopeike.com/zh-Hans/">
@@ -40,6 +41,7 @@
   <link rel="alternate" hreflang="id" href="https://one-preview.luopeike.com/id/">
   <link rel="alternate" hreflang="ru" href="https://one-preview.luopeike.com/ru/">
   <link rel="alternate" hreflang="es-MX" href="https://one-preview.luopeike.com/es-MX/">
+  <link rel="alternate" hreflang="ar" href="https://one-preview.luopeike.com/ar/">
   <link rel="alternate" hreflang="x-default" href="https://one-preview.luopeike.com/">
   <link rel="describedby" type="text/plain" href="/llms.txt">
   <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
@@ -47,11 +49,11 @@
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
   <link rel="manifest" href="../favicon/site.webmanifest">
   <meta name="theme-color" content="#0A84FF">
-  <link rel="stylesheet" href="../style/base.css?v=20261024">
-  <script type="application/ld+json" data-seo="seo-1">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OnePreview","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS, iOS, iPadOS","description":"MacではFinder Quick LookでMarkdown、MDX、コード、JSON、ZIP/TAR.GZ、SQLiteを表示。iPhone／iPadではファイルAppからOnePreviewで開けます。","url":"https://one-preview.luopeike.com/ja/","downloadUrl":"https://apps.apple.com/app/id6760284919","image":"https://one-preview.luopeike.com/images/social-preview.png","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","url":"https://apps.apple.com/app/id6760284919"},"featureList":["Markdownプレビュー","MDXプレビュー","TextBundleとTextPackのプレビュー","ソースコードプレビュー","JSON、YAML、XML、CSV、TSV、TOML、ENVのプレビュー","ZIP/TAR.GZアーカイブプレビュー","SQLiteデータベースプレビュー","macOS向けFinder Quick Look拡張機能","Preferred editors and Open With on macOS"]}</script>
+  <link rel="stylesheet" href="../style/base.css?v=20261115">
+  <script type="application/ld+json" data-seo="seo-1">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OnePreview","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS, iOS, iPadOS","description":"受け取ったMarkdown文書を読み、JSONやCSVを確認し、アーカイブ内の階層を表示。iPhone・iPadではOnePreviewで開き、MacではFinderでスペースキーを押してプレビュー。アカウントは不要です。","url":"https://one-preview.luopeike.com/ja/","downloadUrl":"https://apps.apple.com/app/id6760284919","image":"https://one-preview.luopeike.com/images/social-preview.png","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","url":"https://apps.apple.com/app/id6760284919"},"featureList":["Markdownプレビュー","MDXプレビュー","TextBundleとTextPackのプレビュー","ソースコードプレビュー","JSON、YAML、XML、CSV、TSV、TOML、ENV, INI, propertiesのプレビュー","ZIP/TAR.GZ/TGZアーカイブプレビュー","SQLiteデータベースプレビュー","macOS向けFinder Quick Look拡張機能","Preferred editors and Open With on macOS","JSONL / NDJSON","INI / properties / plist","アプリでMarkdownを読み込み、レポートPDFに"],"inLanguage":"ja","isAccessibleForFree":true}</script>
   <script type="application/ld+json" data-seo="seo-2">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"OnePreview","item":"https://one-preview.luopeike.com/ja/"}]}</script>
-  <script type="application/ld+json" data-seo="seo-3">{"@context":"https://schema.org","@type":"WebSite","name":"OnePreview","url":"https://one-preview.luopeike.com/","inLanguage":"ja","description":"Mac・iPhone・iPadでMarkdown、MDX、コード、JSON、ZIP/TAR.GZ、SQLiteをプレビュー。無料のオンラインMarkdown PDF変換で、図・表・数式を含むレポートも作れます。","publisher":{"@type":"Organization","name":"OnePreview"},"@id":"https://one-preview.luopeike.com/#website","hasPart":[{"@type":"WebApplication","@id":"https://one-preview.luopeike.com/ja/tools/markdown-to-pdf/#application","url":"https://one-preview.luopeike.com/ja/tools/markdown-to-pdf/","name":"OnePreview Markdown → PDF"}]}</script>
-  <title>OnePreview | Markdownプレビュー・無料PDF変換</title>
+  <script type="application/ld+json" data-seo="seo-3">{"@context":"https://schema.org","@type":"WebSite","name":"OnePreview","url":"https://one-preview.luopeike.com/","inLanguage":"ja","description":"Mac・iPhone・iPadでMarkdown、JSON/CSV、ZIP/TAR.GZの内容を確認。MacのFinder Quick Look、アプリ内のA4 PDF書き出し、無料のMarkdown PDF変換ツールに対応。","publisher":{"@type":"Organization","name":"OnePreview"},"@id":"https://one-preview.luopeike.com/#website","hasPart":[{"@type":"WebApplication","@id":"https://one-preview.luopeike.com/ja/tools/markdown-to-pdf/#application","url":"https://one-preview.luopeike.com/ja/tools/markdown-to-pdf/","name":"OnePreview Markdown → PDF"}]}</script>
+  <title>OnePreview | ファイルビューアとMarkdown PDF変換</title>
 </head>
 <body>
   <a class="skip-link" href="#main-content">本文へスキップ</a>
@@ -59,7 +61,7 @@
     <div class="container">
       <header class="topbar">
       <a class="brand" href="/ja/" aria-label="OnePreview ホーム"><img src="../favicon/apple-touch-icon.png" alt="OnePreview" aria-hidden="true" width="38" height="38"><span>OnePreview</span></a>
-      <nav class="nav" aria-label="メインナビゲーション"><a class="active" href="/ja/">ホーム</a><a href="/ja/help">ヘルプ</a><a href="/ja/support">サポート</a><a href="/ja/privacy-policy">プライバシー</a><a href="/ja/tools/markdown-to-pdf/">PDFツール</a><label class="language-switch"><span>言語</span><select aria-label="言語" onchange="if (this.value) window.location.href=this.value"><option value="/" >English</option><option value="/zh-Hans/" >简体中文</option><option value="/zh-Hant/" >繁體中文</option><option value="/ja/" selected>日本語</option><option value="/ko/" >한국어</option><option value="/de/" >Deutsch</option><option value="/fr/" >Français</option><option value="/hi/" >हिन्दी</option><option value="/id/" >Bahasa Indonesia</option><option value="/ru/" >Русский</option><option value="/es-MX/">Español (México)</option></select></label></nav>
+      <nav class="nav" aria-label="メインナビゲーション"><a class="active" href="/ja/">ホーム</a><a href="/ja/help">ヘルプ</a><a href="/ja/support">サポート</a><a href="/ja/privacy-policy">プライバシー</a><a href="/ja/tools/markdown-to-pdf/">PDFツール</a><label class="language-switch"><span>言語</span><select aria-label="言語" onchange="if (this.value) window.location.href=this.value"><option value="/" >English</option><option value="/zh-Hans/" >简体中文</option><option value="/zh-Hant/" >繁體中文</option><option value="/ja/" selected>日本語</option><option value="/ko/" >한국어</option><option value="/de/" >Deutsch</option><option value="/fr/" >Français</option><option value="/hi/" >हिन्दी</option><option value="/id/" >Bahasa Indonesia</option><option value="/ru/" >Русский</option><option value="/es-MX/">Español (México)</option><option value="/ar/">العربية</option></select></label></nav>
     </header>
       <main id="main-content" tabindex="-1">
         <section class="hero">
@@ -67,26 +69,27 @@
             <p class="kicker">macOSのFinder Quick Look · iPhone／iPadのファイルビューア</p>
             <h1>ファイルの中身を、
 すぐに。</h1>
-            <p class="lead">Mac、iPhone、iPadでMarkdown、コード、データを読みやすく。MacではFinderでスペースキーを押し、iOSではOnePreviewでファイルを開くだけ。</p>
+            <p class="lead">受け取ったMarkdown文書を読み、JSONやCSVを確認し、アーカイブ内の階層を表示。iPhone・iPadではOnePreviewで開き、MacではFinderでスペースキーを押してプレビュー。アカウントは不要です。</p>
             <div class="actions">
       <a class="button primary" href="https://apps.apple.com/app/id6760284919"><img class="store-icon" src="../images/app-store-icon.svg" alt="App Store" aria-hidden="true">App Store でダウンロード</a>
       <a class="button ghost" href="/ja/help">設定ヘルプを読む</a>
       <a class="button ghost" href="/ja/tools/markdown-to-pdf/">MarkdownをPDFに</a>
     </div><div class="format-rail" aria-hidden="true"><span>.md</span><span>.json</span><span>.zip</span><span>.sqlite</span><span>.swift</span></div>
           </div>
-  <figure class="product-panel document-example"><img class="app-screenshot" src="/images/previews/ja.png?v=1.4.7-153" alt="Mac版OnePreviewで表示した図、表、数式を含むMarkdown文書" width="1180" height="820" fetchpriority="high" decoding="async"><figcaption class="preview-caption"><span>OnePreview · macOS · 1.4.7</span><span>画面プレビュー。App Store のバージョンと異なる場合があります。</span></figcaption></figure>
+  <figure class="product-panel document-example"><img class="app-screenshot" src="/images/previews/ja.png?v=1.4.8-154-20261114-dark" alt="Mac版OnePreviewで表示した図、表、数式を含むMarkdown文書" width="1180" height="820" fetchpriority="high" decoding="async"><figcaption class="preview-caption"><span>OnePreview · macOS · 1.4.8</span><span>画面プレビュー。App Store のバージョンと異なる場合があります。</span></figcaption></figure>
 </section>
-        <section class="section trust-strip" aria-label="OnePreview の特長"><div><strong>アカウント不要</strong><span>一度インストールすれば、ファイルをローカル表示できます。</span></div><div><strong>ローカルプレビュー</strong><span>ファイルは Apple のプレビュー機構内で扱われます。</span></div><div><strong>無料アプリ</strong><span>App Storeで利用できます。</span></div></section>
+        <section class="section trust-strip" aria-label="OnePreview の特長"><div><strong>アカウント不要</strong><span>一度インストールすれば、ファイルをローカル表示できます。</span></div><div><strong>ローカルプレビュー</strong><span>文書は読み取り専用で、端末内で処理します。</span></div><div><strong>無料アプリ</strong><span>App Storeで利用できます。</span></div></section>
         <section class="section focus-section"><p class="section-kicker">Markdown プレビュー</p><h2>Markdownを、
 読みやすい文書に。</h2><div class="feature-grid"><article class="feature"><strong>GitHub 風レンダリング</strong><p>見出し、表、タスクリスト、コードブロック、アラート、ドキュメント向け Markdown をフルエディタなしでプレビュー。</p></article><article class="feature"><strong>MDX、TextBundle、TextPack</strong><p>一般的な Markdown パッケージ形式を、フォルダやアーカイブではなく読みやすい文書として開きます。</p></article><article class="feature"><strong>Mermaid と KaTeX を内蔵</strong><p>同梱アセットで図表、チャート、数式を表示し、一般的な Markdown 文書をオフラインでも扱えます。</p></article><article class="feature"><strong>表示とソースを切り替え</strong><p>正確な記法を確認したい時は、HTML プレビューと元の Markdown ソースを切り替えられます。</p></article></div></section>
-        <section class="section"><p class="section-kicker">Markdown だけではありません</p><h2>毎日確認する開発者ファイルを 1 つの拡張機能で。</h2><div class="feature-grid"><article class="feature"><span class="feature-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 20"></path></svg></span><strong>ソースコード</strong><p>Swift、Python、JavaScript、TypeScript、C、C++、Objective-C、Rust、Go、Ruby、Java、Shell、Assembly など。</p></article><article class="feature"><span class="feature-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5v18h3m8-18h3v18h-3M10 8h4m-4 4h4m-4 4h4"></path></svg></span><strong>構造化データ</strong><p>JSON、JSONL、YAML、XML、CSV、TSV、TOML、ENV、Apple property list などのテキストデータ形式。</p></article><article class="feature"><span class="feature-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h7l2 2h9v11H3zM3 7V4h6l3 3"></path></svg></span><strong>アーカイブとフォルダ</strong><p>ZIP/TAR.GZ の内容やフォルダ一覧を、サイズ、更新日、見やすい構造で表示。</p></article><article class="feature"><span class="feature-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v7c0 4 16 4 16 0V5M4 12v7c0 4 16 4 16 0v-7"></path></svg></span><strong>SQLite データベース</strong><p>データベースツールを起動せずに、テーブル、ビュー、インデックス、列、サンプル行を確認。</p></article></div><p class="format-list"><strong>対応形式：</strong> Markdown、MDX、TextBundle、TextPack、JSON、JSONL、YAML、XML、CSV、TSV、TOML、ENV、SQLite、Swift、Python、JavaScript、TypeScript、C、C++、Objective-C、Rust、Go、Ruby、Java、Shell、Assembly、ソースコード、プレーンテキスト、ログ、フォルダ、ZIP/TAR.GZアーカイブ、Appleプロパティリスト（plist）。</p></section>
+        <section class="section"><p class="section-kicker">Markdown だけではありません</p><h2>文書を読む。データやアーカイブの内容を確認する。</h2><div class="feature-grid"><article class="feature"><span class="feature-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 20"></path></svg></span><strong>ソースコード</strong><p>Swift、Python、JavaScript、TypeScript、C、C++、Objective-C、Rust、Go、Ruby、Java、Shell、Assembly など。</p></article><article class="feature"><span class="feature-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5v18h3m8-18h3v18h-3M10 8h4m-4 4h4m-4 4h4"></path></svg></span><strong>構造化データ</strong><p>JSON、JSONL/NDJSON、YAML、XML、CSV、TSV、TOML、ENV, INI, properties、Apple property list などのテキストデータ形式。</p></article><article class="feature"><span class="feature-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h7l2 2h9v11H3zM3 7V4h6l3 3"></path></svg></span><strong>アーカイブとフォルダ</strong><p>ZIP/TAR.GZ/TGZ の内容やフォルダ一覧を、サイズ、更新日、見やすい構造で表示。</p></article><article class="feature"><span class="feature-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v7c0 4 16 4 16 0V5M4 12v7c0 4 16 4 16 0v-7"></path></svg></span><strong>SQLite データベース</strong><p>データベースツールを起動せずに、テーブル、ビュー、インデックス、列、サンプル行を確認。</p></article></div><p class="format-list"><strong>対応形式：</strong> Markdown、MDX、TextBundle、TextPack、JSON、JSONL/NDJSON、YAML、XML、CSV、TSV、TOML、ENV, INI, properties、SQLite、Swift、Python、JavaScript、TypeScript、C、C++、Objective-C、Rust、Go、Ruby、Java、Shell、Assembly、ソースコード、プレーンテキスト、ログ、フォルダ、ZIP/TAR.GZ/TGZアーカイブ、Appleプロパティリスト（plist）。</p></section>
 
+        <section class="section" id="native-markdown-pdf"><p class="section-kicker">OnePreview App · Markdown → PDF</p><h2>アプリでMarkdownを読み込み、レポートPDFに</h2><p>Mac・iPhone・iPadのOnePreviewで「ファイル &gt; ツール &gt; MarkdownをPDFに変換」から.mdまたは.markdownを読み込みます。実際のA4 PDFを確認してから保存できます。表、コードの折り返し、Mermaid図、KaTeX数式に対応。PDF書き出しはメインアプリの機能で、Finder Quick Look内では使えません。ファイルを編集する機能ではありません。</p><div class="actions"><a class="button compact" href="/ja/help#markdown-report-pdf">アプリのPDF操作手順を見る</a></div></section>
         <section class="section" id="markdown-pdf"><p class="section-kicker">Markdown → PDF</p><h2>ブラウザで無料のMarkdown PDF変換</h2><p>プロジェクトの週報、技術文書、引き継ぎ資料をA4のPDFに。このWeb変換ツールはOnePreviewアプリなしでも単独で使えます。</p><div class="feature-grid two"><article class="feature"><strong>インストールも文書のアップロードも不要</strong><p>.md・.markdownファイルを開くか、内容を貼り付けてください。文書と選択した画像は現在のブラウザセッション内で処理します。アカウントやアプリは不要です。</p></article><article class="feature"><strong>表、Mermaid図、数式を保持</strong><p>A4のページ分割、表の見出し、折り返したコード、Mermaid図、KaTeX数式を確認してから「印刷 / PDFとして保存」で出力できます。</p></article></div><div class="actions"><a class="button primary" href="/ja/tools/markdown-to-pdf/">Markdownを無料でPDFに変換</a></div></section>
         <section class="section split"><div><p class="section-kicker">ワークフロー</p><h2>実際の Quick Look 習慣のために設計。</h2><div class="feature-grid compact-grid"><article class="feature"><strong>Finder に留まる</strong><p>macOS でスペースバーを押すだけで、フルエディタを開かずに対応ファイルを確認。</p></article><article class="feature"><strong>iPhone と iPad でも利用</strong><p>ファイルAppで対応ファイルを長押しし、「このアプリで開く」からOnePreviewを選択します。通常のタップではAppleの内蔵プレビューが使われる場合があります。</p></article><article class="feature"><strong>設定ガイド付き</strong><p>MacではQuick Look拡張機能を有効にします。iPhone／iPadではファイルAppの「このアプリで開く」からOnePreviewを選びます。</p></article><article class="feature" data-workflow="mac-editor"><strong><a href="/ja/help#mac-open-with">Macで使うエディタを選択</a></strong><p>OnePreviewやFinderのQuick Lookから、元のファイルを好みのエディタで開けます。macOSのデフォルトを変えず、拡張子ごとに選択を記憶できます。</p></article></div></div><a class="button compact" href="/ja/help">設定ヘルプを読む</a></section>
         <section class="section"><h2>設定とファイルプレビューガイド</h2><div class="feature-grid two"><article class="feature"><strong><a href="/ja/help">Quick Look 拡張機能を有効にする</a></strong><p>インストール後に OnePreview を一度開き、システムの拡張機能設定で有効にします。</p></article><article class="feature"><strong><a href="/ja/privacy-policy">プライバシーとファイル処理を確認</a></strong><p>ファイルは Apple のシステムプレビュー機構を通じてローカルでプレビューされます。</p></article><article class="feature"><strong><a href="/ja/support">正しく表示されないファイルを報告</a></strong><p>ファイル種類、OS バージョン、短い再現メモを送ってください。</p></article></div></section>
 
       </main>
-      <footer class="footer">OnePreviewはmacOSのFinder Quick LookとiPhone／iPadのローカルファイル表示に対応します。</footer>
+      <footer class="footer">OnePreviewはmacOSのFinder Quick LookとiPhone／iPadのローカルファイル表示に対応します。<nav class="footer-languages" aria-label="言語"><span class="language-label">言語</span><a href="/" lang="en" hreflang="en">English</a><a href="/zh-Hans/" lang="zh-Hans" hreflang="zh-Hans">简体中文</a><a href="/zh-Hant/" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a><a href="/ja/" lang="ja" hreflang="ja" aria-current="page">日本語</a><a href="/ko/" lang="ko" hreflang="ko">한국어</a><a href="/de/" lang="de" hreflang="de">Deutsch</a><a href="/fr/" lang="fr" hreflang="fr">Français</a><a href="/hi/" lang="hi" hreflang="hi">हिन्दी</a><a href="/id/" lang="id" hreflang="id">Bahasa Indonesia</a><a href="/ru/" lang="ru" hreflang="ru">Русский</a><a href="/es-MX/" lang="es-MX" hreflang="es-MX">Español (México)</a><a href="/ar/" lang="ar" hreflang="ar">العربية</a></nav></footer>
     </div>
   </div>
 </body>

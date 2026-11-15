@@ -6,7 +6,7 @@ const base=process.env.ONEPREVIEW_SITE_URL || 'http://127.0.0.1:8765';
 const output=process.env.ONEPREVIEW_SITE_QA_DIR || '/tmp/onepreview-site-qa';
 fs.mkdirSync(output,{recursive:true});
 (async()=>{
- const browser=await chromium.launch({headless:true});
+ const browser=await chromium.launch({headless:true,...(process.env.ONEPREVIEW_SITE_CHROMIUM_CHANNEL?{channel:process.env.ONEPREVIEW_SITE_CHROMIUM_CHANNEL}:{})});
  try {
  const page=await browser.newPage({viewport:{width:1280,height:900}});const errors=[];
  page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});

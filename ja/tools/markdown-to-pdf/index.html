@@ -17,6 +17,7 @@
   <link rel="alternate" hreflang="id" href="https://one-preview.luopeike.com/id/tools/markdown-to-pdf/">
   <link rel="alternate" hreflang="ru" href="https://one-preview.luopeike.com/ru/tools/markdown-to-pdf/">
   <link rel="alternate" hreflang="es-MX" href="https://one-preview.luopeike.com/es-MX/tools/markdown-to-pdf/">
+  <link rel="alternate" hreflang="ar" href="https://one-preview.luopeike.com/ar/tools/markdown-to-pdf/">
   <link rel="alternate" hreflang="x-default" href="https://one-preview.luopeike.com/tools/markdown-to-pdf/">
   <link rel="describedby" type="text/plain" href="/llms.txt">
   <meta property="og:type" content="website">
@@ -26,6 +27,7 @@
   <meta property="og:image" content="https://one-preview.luopeike.com/images/social-preview.png">
   <meta property="og:site_name" content="OnePreview">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:locale:alternate" content="ar_SA">
   <meta property="og:locale:alternate" content="es_MX">
   <meta name="twitter:title" content="無料オンラインMarkdown PDF変換：Mermaidと表 | OnePreview">
   <meta name="twitter:description" content="Markdown・MDファイルを無料でA4のPDFに変換。Mermaid図、KaTeX数式、表のページ分割、コードの折り返しに対応。アカウント、アプリ、文書のアップロード不要。">
@@ -33,8 +35,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0A84FF">
   <link rel="icon" href="/favicon/favicon-32x32.png">
-  <link rel="stylesheet" href="/style/base.css?v=20261024">
-  <link rel="stylesheet" href="/style/markdown-report.css?v=20261024">
+  <link rel="stylesheet" href="/style/base.css?v=20261115">
+  <link rel="stylesheet" href="/style/markdown-report.css?v=20261115">
   <script type="application/json" id="tool-messages">{"ready":"レポート完成 · A4 {count}ページ","changed":"内容が変更されました。印刷前にプレビューを更新してください。","working":"図の描画、フォントの読み込み、ページ分割を実行中…","images":"選択した画像：{count}枚","duplicates":"同じファイル名の画像があります。異なる名前のファイルを選択してください。","imageSize":"画像は16枚まで、1枚5 MB、合計20 MBまで選択できます。","unsupported":"500 KBまでの.mdまたは.markdownテキストファイルを選択してください。","read":"ファイルを読み込めませんでした。もう一度選択してください。","encoding":"文字コードを認識できませんでした。UTF-8で保存して再度お試しください。","errors":{"empty":"Markdown文書が空です。","size":"文書が500 KBを超えています。小さいレポートでお試しください。","pages":"レポートが100ページを超えています。分割してください。","row":"表の1行が1ページより高くなっています。短くするか分割してください。","block":"1ページに収まらない要素があります。長いリスト項目、数式、画像を分割してください。","width":"内容がページ幅を超えています。表の列数を減らすか数式を短くしてください。","fonts":"レポートのフォントを読み込めませんでした。再度お試しください。","resources":"レポートの構成要素を読み込めませんでした。ページを再読み込みしてください。"},"labels":{"image":"画像を使用できません","diagram":"図を描画できませんでした。原文を表示しています","math":"数式を描画できませんでした。原文を表示しています","page":"%d / %d ページ","title":"Markdownレポート"},"print":"用紙はA4、倍率は100%に設定し、ブラウザのヘッダーとフッターをオフにしてください。iPhoneやiPadではシステムの印刷プレビューからPDFを共有・保存できます。","importing":"Markdownを読み込み中…","selectedFile":"読み込んだファイル：{name}"}</script>
   <script src="/script/markdown-report/tool.js" defer></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"OnePreview MarkdownをPDFに","url":"https://one-preview.luopeike.com/ja/tools/markdown-to-pdf/","applicationCategory":"UtilitiesApplication","operatingSystem":"最新のWebブラウザ","inLanguage":"ja","browserRequirements":"JavaScriptとブラウザの印刷機能を有効にする","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Markdown・MDファイルを無料でA4のPDFに変換。Mermaid図、KaTeX数式、表のページ分割、コードの折り返しに対応。アカウント、アプリ、文書のアップロード不要。","@id":"https://one-preview.luopeike.com/ja/tools/markdown-to-pdf/#application","isAccessibleForFree":true,"featureList":["無料、アカウント不要","文書をアップロードせずブラウザ内で処理","Mermaid図とKaTeX数式","A4ページ分割と表の見出しの繰り返し","コードブロックの折り返し"]}</script>
@@ -45,7 +47,7 @@
   <div class="page"><div class="container">
     <header class="topbar">
       <a class="brand" href="/ja/"><img src="/favicon/apple-touch-icon.png" alt="OnePreview" aria-hidden="true" width="38" height="38"><span>OnePreview</span></a>
-      <nav class="nav" aria-label="メインナビゲーション"><a href="/ja/">ホーム</a><a class="active" href="/ja/tools/markdown-to-pdf/">MarkdownをPDFに</a><a href="/ja/help">ヘルプ</a><label class="language-switch"><span>言語</span><select aria-label="言語" onchange="if (this.value) window.location.href=this.value"><option value="/tools/markdown-to-pdf/" >English</option><option value="/zh-Hans/tools/markdown-to-pdf/" >简体中文</option><option value="/zh-Hant/tools/markdown-to-pdf/" >繁體中文</option><option value="/ja/tools/markdown-to-pdf/" selected>日本語</option><option value="/ko/tools/markdown-to-pdf/" >한국어</option><option value="/de/tools/markdown-to-pdf/" >Deutsch</option><option value="/fr/tools/markdown-to-pdf/" >Français</option><option value="/hi/tools/markdown-to-pdf/" >हिन्दी</option><option value="/id/tools/markdown-to-pdf/" >Bahasa Indonesia</option><option value="/ru/tools/markdown-to-pdf/" >Русский</option><option value="/es-MX/tools/markdown-to-pdf/">Español (México)</option></select></label></nav>
+      <nav class="nav" aria-label="メインナビゲーション"><a href="/ja/">ホーム</a><a class="active" href="/ja/tools/markdown-to-pdf/">MarkdownをPDFに</a><a href="/ja/help">ヘルプ</a><label class="language-switch"><span>言語</span><select aria-label="言語" onchange="if (this.value) window.location.href=this.value"><option value="/tools/markdown-to-pdf/" >English</option><option value="/zh-Hans/tools/markdown-to-pdf/" >简体中文</option><option value="/zh-Hant/tools/markdown-to-pdf/" >繁體中文</option><option value="/ja/tools/markdown-to-pdf/" selected>日本語</option><option value="/ko/tools/markdown-to-pdf/" >한국어</option><option value="/de/tools/markdown-to-pdf/" >Deutsch</option><option value="/fr/tools/markdown-to-pdf/" >Français</option><option value="/hi/tools/markdown-to-pdf/" >हिन्दी</option><option value="/id/tools/markdown-to-pdf/" >Bahasa Indonesia</option><option value="/ru/tools/markdown-to-pdf/" >Русский</option><option value="/es-MX/tools/markdown-to-pdf/">Español (México)</option><option value="/ar/tools/markdown-to-pdf/">العربية</option></select></label></nav>
     </header>
     <main id="main-content" tabindex="-1">
       <section class="tool-heading">
@@ -92,7 +94,7 @@
           <div class="actions"><a class="button ghost" href="https://apps.apple.com/app/id6760284919"><img class="store-icon" src="/images/app-store-icon.svg" alt="App Store" aria-hidden="true">App StoreでOnePreviewをダウンロード</a></div></div>
       </section>
     </main>
-    <footer class="footer"><span>OnePreview</span><nav aria-label="フッター"><a href="/ja/privacy-policy">プライバシー</a> · <a href="/ja/support">サポート</a></nav></footer>
+    <footer class="footer"><span>OnePreview</span><nav aria-label="フッター"><a href="/ja/privacy-policy">プライバシー</a> · <a href="/ja/support">サポート</a></nav><nav class="footer-languages" aria-label="言語"><span class="language-label">言語</span><a href="/tools/markdown-to-pdf/" lang="en" hreflang="en">English</a><a href="/zh-Hans/tools/markdown-to-pdf/" lang="zh-Hans" hreflang="zh-Hans">简体中文</a><a href="/zh-Hant/tools/markdown-to-pdf/" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a><a href="/ja/tools/markdown-to-pdf/" lang="ja" hreflang="ja" aria-current="page">日本語</a><a href="/ko/tools/markdown-to-pdf/" lang="ko" hreflang="ko">한국어</a><a href="/de/tools/markdown-to-pdf/" lang="de" hreflang="de">Deutsch</a><a href="/fr/tools/markdown-to-pdf/" lang="fr" hreflang="fr">Français</a><a href="/hi/tools/markdown-to-pdf/" lang="hi" hreflang="hi">हिन्दी</a><a href="/id/tools/markdown-to-pdf/" lang="id" hreflang="id">Bahasa Indonesia</a><a href="/ru/tools/markdown-to-pdf/" lang="ru" hreflang="ru">Русский</a><a href="/es-MX/tools/markdown-to-pdf/" lang="es-MX" hreflang="es-MX">Español (México)</a><a href="/ar/tools/markdown-to-pdf/" lang="ar" hreflang="ar">العربية</a></nav></footer>
   </div></div>
 </body>
 </html>

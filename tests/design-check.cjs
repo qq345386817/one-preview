@@ -3,10 +3,11 @@ const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
 const root = path.resolve(__dirname, '..');
-const locales = ['', 'zh-Hans', 'zh-Hant', 'ja', 'ko', 'de', 'fr', 'hi', 'id', 'ru', 'es-MX'];
+const locales = ['', 'zh-Hans', 'zh-Hant', 'ja', 'ko', 'de', 'fr', 'hi', 'id', 'ru', 'es-MX', 'ar'];
 const previews = JSON.parse(fs.readFileSync(path.join(root, 'images/previews/manifest.json'), 'utf8'));
-assert.equal(previews.version, '1.4.7');
-assert.equal(previews.build, '153');
+assert.match(previews.version, /^\d+\.\d+\.\d+$/);
+assert.match(previews.build, /^\d+$/);
+const previewRevision = [previews.version, previews.build, previews.revision].filter(Boolean).join('-');
 assert.equal(previews.images.length, locales.length);
 assert.deepEqual(previews.images.map(item => item.locale).sort(), locales.map(locale => locale || 'en').sort());
 const css = fs.readFileSync(path.join(root, 'style/base.css'), 'utf8');
@@ -46,14 +47,14 @@ for (const locale of locales) {
     const html = fs.readFileSync(path.join(root, prefix, file), 'utf8');
     assert.ok(html.includes('class="skip-link" href="#main-content"'));
     assert.equal((html.match(/id="main-content"/g) || []).length, 1);
-    assert.ok(html.includes('base.css?v=20261024'));
+    assert.ok(html.includes('base.css?v=20261115'));
     assert.ok(html.includes(`href="/${prefix}tools/markdown-to-pdf/"`));
     if (file === 'index.html') {
-      assert.ok(html.includes(`src="/${image}?v=1.4.7-153"`));
-      assert.ok(html.includes('OnePreview · macOS · 1.4.7'));
+      assert.ok(html.includes(`src="/${image}?v=${previewRevision}"`));
+      assert.ok(html.includes(`OnePreview · macOS · ${previews.version}`));
       assert.ok(!html.includes('class="window-bar"'));
       for (const format of ['Markdown', 'MDX', 'TextBundle', 'TextPack', 'JSON', 'JSONL', 'YAML', 'XML', 'CSV', 'TSV', 'TOML', 'ENV', 'SQLite', 'TAR.GZ']) assert.ok(html.includes(format), `${locale}: ${format}`);
     }
   }
 }
-console.log('Design source checks passed: 55 pages, 11 authentic localized screenshots, full format coverage, keyboard entry, theme contrast and local assets. This is not the unavailable design/design-system artifact validator.');
+console.log('Design source checks passed: 60 pages, 12 authentic localized screenshots, full format coverage, keyboard entry, theme contrast and local assets. This is not the unavailable design/design-system artifact validator.');

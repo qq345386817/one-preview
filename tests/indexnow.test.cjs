@@ -17,10 +17,10 @@ function fixture(run) {
   } finally { fs.rmSync(site, { recursive: true, force: true }); }
 }
 
-test('repository verification file and canonical sitemap cover exactly 55 public pages', () => {
+test('repository verification file and canonical sitemap cover exactly 60 public pages', () => {
   const plan = buildPlan({ all: true });
   assert.equal(plan.host, 'one-preview.luopeike.com');
-  assert.equal(plan.urlList.length, 55);
+  assert.equal(plan.urlList.length, 60);
   assert.ok(plan.urlList.every(url => !url.includes(plan.key)));
   const headers = fs.readFileSync(path.join(__dirname, '../_headers'), 'utf8');
   assert.ok(headers.includes('/' + plan.key + '.txt\n  X-Robots-Tag: noindex'));
@@ -91,7 +91,7 @@ test('successful submission sends only the canonical plan, with 200 and 202 kept
     assert.deepEqual(calls[1].options,{method:'POST',body:plan});
     assert.equal(result.statusCode,status);
     assert.equal(result.result,status===200?'received':'received-key-validation-pending');
-    assert.equal(result.urlCount,55);
+    assert.equal(result.urlCount,60);
   }
 });
 
