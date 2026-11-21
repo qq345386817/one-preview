@@ -2,14 +2,18 @@
 
 > OnePreview provides a native file-preview app for Mac, iPhone and iPad, and a separate free Markdown-to-PDF web tool. The web tool works without the app or an account.
 
-Product facts reviewed against local app source and metadata on 2026-11-15 (not a new App Store release):
+Product facts reviewed against app source and Fastlane metadata on 2026-11-19. Check the App Store listing for the version available on your device.
 
-- Localized homepage screenshots show a local native macOS 1.4.8 verification build (154), captured on 2026-11-14 (original eleven locales) and 2026-11-15 (Arabic). These are UI previews, not a statement that this version is already available on the App Store; consult the App Store for current availability.
-- OnePreview is a read-only viewer, not a file editor or archive extractor. Common tasks are reading a received Markdown document, checking JSON/CSV data, inspecting SQLite schema and sample rows, and viewing an archive folder tree before extracting with another tool. No account is required.
+- The localized homepages show native macOS 1.4.8 (154) screenshots.
+- OnePreview is a read-only viewer for documents, JSON/CSV, SQLite schema and sample rows, and archive listings. No account is required.
 - On macOS, the app extends Finder Quick Look for supported files; users can select a file and press Space after enabling the extension.
 - On macOS, Open With can open the original file in an installed editor from the main app or Finder Quick Look. The main app can remember an editor for each filename extension; choices can be changed or removed in Settings > External Apps. Quick Look reads those saved choices and also supports temporary choices. These preferences affect only OnePreview, not macOS default file associations; this is not an iOS editor-preference feature.
 - On iPhone and iPad, users open supported files in OnePreview from Files using Open With. The app does not replace the built-in Files Quick Look preview for every normal tap.
 - App preview formats include Markdown, MDX, TextBundle, TextPack, source code, plain text, logs, JSON, JSONL/NDJSON, YAML, XML, CSV, TSV, TOML, ENV, INI, properties, Apple property lists, ZIP/TAR.GZ/TGZ archives, folders and SQLite databases. App preview support is not the web converter's input-format list.
+- OnePreview 1.5.1 adds folder reading in the main app. Open a folder, follow relative Markdown links and heading anchors, and move back or forward through reading history. Reading mode and position are remembered during the current folder session.
+- Search Folder finds file names and readable text within the authorized folder. A text result opens its source line. Scan limits can produce partial results. Search keeps no disk index.
+- Export Folder PDF combines up to 20 selected .md or .markdown files from an open folder and its subfolders. Reorder them, preview the result and save one A4 PDF with a bookmark per document. The limit is 100 pages and 64 MiB. Local relative images are included within access and size limits. Missing, remote and out-of-folder images get placeholders. This workflow is in the main app and starts from Markdown source.
+- The native Markdown reader offers themes, fonts, text size, spacing and reading width. The settings apply to on-screen reading, while source files and PDF layout stay unchanged.
 - In the native OnePreview app on macOS, iPhone and iPad, standard .md and .markdown documents can also be exported as A4 PDF reports with tables, wrapped code, Mermaid diagrams and KaTeX math. Import a document from Files > Tools > Markdown to PDF, or export an already-open Markdown document. Check the actual PDF preview before saving. Export is an action inside the app, not inside Finder Quick Look or the built-in Files preview. MDX, TextBundle and TextPack preview support does not imply PDF export support.
 - Native previews use local processing and selectively cache slow rendered results. Cache reuse is conditional on document identity and rendering settings; do not claim every file is cached, a fixed speedup, or identical performance across devices and documents.
 - The current web converter accepts .md and .markdown text files or pasted Markdown. It supports GitHub-style tables, code blocks, Mermaid diagrams and KaTeX-compatible math. It provides one A4 layout, page numbers, repeated table headers and code wrapping.
@@ -18,7 +22,7 @@ Product facts reviewed against local app source and metadata on 2026-11-15 (not 
 - The web tool opens the browser or system Print / Save as PDF workflow. It does not directly download a PDF independently of that dialog. On iPhone and iPad, saving and sharing use the system print preview.
 - Limits: 500 KB of Markdown, 100 pages, up to 16 selected images, 5 MB per image and 20 MB total. Oversized rows or content that cannot fit safely generate an error. Missing images and invalid diagrams or formulas generate notices.
 - MDX components, custom scripts, TextBundle and TextPack are not supported by this first web export release.
-- The current basic web tool is free. It requires neither an account nor installation of the native app. Consult the live product pages for current availability and terms.
+- The basic web tool is free and requires no account or installation.
 - Known print compatibility limit: Hindi/Devanagari displays correctly in the tested preview, but macOS Chromium-generated PDF text can contain incorrect extracted characters. Verify copied text before sharing. Accurate text extraction is not guaranteed across all browsers or print destinations.
 
 ## Primary pages
@@ -27,6 +31,8 @@ Product facts reviewed against local app source and metadata on 2026-11-15 (not 
 - [Markdown to PDF](https://one-preview.luopeike.com/tools/markdown-to-pdf/): Working converter, localized example, usage instructions, limits and common questions.
 - [App setup and platform workflows](https://one-preview.luopeike.com/help): macOS extension setup and iPhone/iPad file-opening instructions.
 - [Native Markdown import and PDF export](https://one-preview.luopeike.com/help#markdown-report-pdf): App workflow, actual A4 PDF preview and the distinction from Finder Quick Look and the web converter.
+- [Read and search a folder](https://one-preview.luopeike.com/help#read-markdown-folder): Main app steps for folder access, links, history and search.
+- [Export a folder PDF](https://one-preview.luopeike.com/help#export-folder-pdf): Main app workflow for selected, ordered Markdown documents and bookmarks.
 - [Support](https://one-preview.luopeike.com/support): Contact and issue-reporting guidance.
 - [Privacy](https://one-preview.luopeike.com/privacy-policy): Published privacy information; app diagnostics and web document processing should not be conflated.
 - [App Store](https://apps.apple.com/app/id6760284919): Native app download and current store information.
@@ -61,13 +67,13 @@ Product facts reviewed against local app source and metadata on 2026-11-15 (not 
 
 ## Optional
 
-- [Sitemap](https://one-preview.luopeike.com/sitemap.xml): Canonical public pages and language alternates. llms.txt is an optional content guide, not a substitute for indexing, robots.txt or the sitemap.
+- [Sitemap](https://one-preview.luopeike.com/sitemap.xml): Canonical public pages and language alternates.
 
 ## Arabic / العربية
 
-- [Arabic app overview](https://one-preview.luopeike.com/ar/): localized app capabilities and platform boundaries.
+- [Arabic app overview](https://one-preview.luopeike.com/ar/)
 - [Arabic help](https://one-preview.luopeike.com/ar/help), [support](https://one-preview.luopeike.com/ar/support) and [privacy](https://one-preview.luopeike.com/ar/privacy-policy).
-- [Arabic Markdown to PDF](https://one-preview.luopeike.com/ar/tools/markdown-to-pdf/): independently usable browser tool with an Arabic example report.
-- Arabic interfaces use right-to-left layout; code and mathematical notation retain left-to-right direction. Supported languages now include Arabic alongside the existing eleven locales.
+- [Arabic Markdown to PDF](https://one-preview.luopeike.com/ar/tools/markdown-to-pdf/)
+- Arabic interfaces use right-to-left layout. Code and math retain left-to-right direction.
 
-Arabic PDF compatibility: native report export embeds Arabic fonts and corrects character mappings for selectable text, including ligatures and diacritics. The standalone website uses the browser's print engine instead of the native exporter. Some browser-generated PDFs may expose Arabic presentation-form Unicode codes when copied, so verify copied text for workflows that require exact source characters. Do not promise identical text extraction across browsers, print destinations or PDF viewers.
+Native Arabic PDF reports embed fonts and map ligatures and diacritics for selectable text. Browser-printed PDFs can expose Arabic presentation forms when copied. Verify extracted text when exact Unicode matters.
