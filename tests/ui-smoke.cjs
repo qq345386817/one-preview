@@ -67,6 +67,8 @@ assert.ok(selectedBrowsers.every(name => ['chromium', 'webkit'].includes(name)),
             assert.ok(await page.locator('a[href="https://apps.apple.com/app/id6760284919"]').count());
             assert.equal(await page.locator('a[href*=".dmg"]').count(), 0);
             if (type === 'index') {
+              const studio = await page.locator('.hero-art img').evaluate(img => new URL(img.currentSrc).pathname);
+              assert.equal(studio.includes('folder-studio-dark'), colorScheme === 'dark', route + ' should match the system appearance');
               assert.equal(await page.locator('.app-screenshot').getAttribute('src'), `/images/previews/${locale || 'en'}.png?v=${previewRevision}`);
               assert.ok((await page.locator('.preview-caption').innerText()).includes(previews.version));
               assert.ok((await page.locator('.app-screenshot').getAttribute('alt')).length > 10);
@@ -81,6 +83,44 @@ assert.ok(selectedBrowsers.every(name => ['chromium', 'webkit'].includes(name)),
         }
         console.log(`${name} ${variant}: 48 localized pages, layout and navigation checks passed`);
       }
+      for (const locale of locales) {
+        const root = locale ? '/' + locale + '/' : '/';
+        await page.goto(base + root);
+        await page.locator('.demo-jump').click();
+        await page.waitForURL(base + root + '#file-demo');
+        const desk = page.locator('.sample-desk');
+        for (const sample of ['json', 'csv', 'md']) {
+          await desk.locator('.sample-files label').filter({ has: page.locator('input[value="' + sample + '"]') }).click();
+          const selected = desk.locator('.sample-page:visible');
+          assert.equal(await selected.count(), 1);
+          assert.equal(await selected.getAttribute('data-file'), sample);
+          const preview = selected.locator('.rendered');
+          assert.ok(await preview.isVisible());
+          if (sample === 'csv') assert.equal(await preview.locator('tbody tr').count(), 3);
+          if (sample === 'md') assert.equal(await preview.locator('.trail li').count(), 3);
+          await desk.locator('.view-switch label').last().click();
+          const raw = selected.locator('.source');
+          assert.ok(await raw.isVisible());
+          assert.ok((await raw.innerText()).includes({ md: 'flowchart LR', json: '"river-trail"', csv: '11.8' }[sample]));
+          await desk.locator('.sample-paper').focus();
+          await page.keyboard.press('Space');
+          assert.ok(await preview.isVisible());
+        }
+        const detail = page.locator('#folder-reading details').first();
+        await detail.locator('summary').click();
+        assert.ok(await detail.locator('p').isVisible());
+      }
+      console.log(name + ': all 12 interactive home demos, keyboard shortcuts and chapter disclosures passed');
+      await page.goto(base + '/');
+      for (const locale of ['', 'zh-Hans', 'ar']) {
+        const root = locale ? `/${locale}/` : '/';
+        for (const id of ['read-markdown-folder', 'export-folder-pdf']) {
+          await page.goto(base + root);
+          await page.locator(`#folder-reading a[href="${root}help#${id}"]`).click();
+          await page.waitForURL(base + root + 'help#' + id);
+          assert.equal(await page.locator(`article#${id}`).isVisible(), true);
+        }
+      }
       await page.goto(base + '/');
       await page.locator('#native-markdown-pdf a').click();
       await page.waitForURL('**/help#markdown-report-pdf');
@@ -90,7 +130,8 @@ assert.ok(selectedBrowsers.every(name => ['chromium', 'webkit'].includes(name)),
       await page.waitForURL('**/help#mac-open-with');
       assert.equal(await page.locator('#mac-open-with').isVisible(), true);
       await page.goto(base + '/help');
-      await page.keyboard.press('Tab');
+      // macOS WebKit uses Option-Tab to include links with the default keyboard settings.
+      await page.keyboard.press(name === 'webkit' && process.platform === 'darwin' ? 'Alt+Tab' : 'Tab');
       assert.equal(await page.locator('.skip-link').evaluate(n => n === document.activeElement), true);
       await page.keyboard.press('Enter');
       assert.equal(await page.locator('main').evaluate(n => n === document.activeElement), true);
@@ -101,7 +142,8 @@ assert.ok(selectedBrowsers.every(name => ['chromium', 'webkit'].includes(name)),
       await page.waitForURL('**/zh-Hans/');
       assert.equal(await page.locator('.document-example').count(), 1);
       await page.locator('.hero a[href="/zh-Hans/tools/markdown-to-pdf/"]').click();
-      await page.waitForFunction(() => !document.querySelector('#print-report').disabled);
+      await page.waitForURL('**/zh-Hans/tools/markdown-to-pdf/');
+      await page.locator('#print-report:enabled').waitFor();
       assert.ok((await page.locator('#report-status').innerText()).includes('A4'));
       assert.deepEqual(errors, []);
       if (knownWarnings.size) console.log(`${name}: known renderer sandbox warnings: ${JSON.stringify([...knownWarnings])}`);
@@ -113,6 +155,10 @@ assert.ok(selectedBrowsers.every(name => ['chromium', 'webkit'].includes(name)),
         await staticPage.locator('.footer-languages a[hreflang="zh-Hans"]').click();
         await staticPage.waitForURL('**/zh-Hans/');
         assert.equal(await staticPage.locator('html').getAttribute('lang'), 'zh-Hans');
+        await staticPage.locator('.sample-files label').last().click();
+        assert.equal(await staticPage.locator('[data-file="csv"] table:visible tbody tr').count(), 3);
+        await staticPage.locator('.view-switch label').last().click();
+        assert.ok((await staticPage.locator('[data-file="csv"] .source:visible').innerText()).includes('11.8'));
         await staticPage.goto(base + '/zh-Hans/help');
         await staticPage.locator('.footer-languages a[hreflang="en"]').click();
         await staticPage.waitForURL('**/help');

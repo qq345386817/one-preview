@@ -9,6 +9,8 @@ const prefix = locale => locale === 'en' ? '/' : `/${locale}/`;
 const pageTypes = ['', 'help', 'support', 'privacy-policy', 'tools/markdown-to-pdf/'];
 const sitemap = fs.readFileSync(path.join(site, 'sitemap.xml'), 'utf8');
 const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
+const sitemapEntries = new Map([...sitemap.matchAll(/<url>\s*<loc>(.*?)<\/loc>([\s\S]*?)<\/url>/g)]
+  .map(([, url, body]) => [url, body]));
 const llms = fs.readFileSync(path.join(site, 'llms.txt'), 'utf8');
 const localFile = route => {
   const location = path.join(site, route);
@@ -16,6 +18,17 @@ const localFile = route => {
   return fs.existsSync(location) ? location : location + '.html';
 };
 const jsonScripts = html => [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/g)].map(match => JSON.parse(match[1]));
+const decode = text => text.replaceAll('&quot;', '"').replaceAll('&#x27;', "'")
+  .replaceAll('&gt;', '>').replaceAll('&lt;', '<').replaceAll('&amp;', '&');
+
+function verifyVisibleAnswer(html, faq, id) {
+  const visible = html.match(new RegExp(`<article class="faq-item" id="${id}"><h2>(.*?)</h2><p>(.*?)</p></article>`));
+  assert.ok(visible, `Help article missing: ${id}`);
+  const question = faq.mainEntity.find(item => item.name === decode(visible[1]));
+  assert.ok(question, `FAQ question missing: ${id}`);
+  assert.equal(decode(visible[2]), question.acceptedAnswer.text);
+  return question.acceptedAnswer.text;
+}
 
 assert.equal(urls.length, 60);
 assert.equal(new Set(urls).size, 60);
@@ -30,6 +43,9 @@ assert.ok(llms.includes('do not claim every file is cached, a fixed speedup'));
 assert.ok(llms.includes('Quick Look reads those saved choices and also supports temporary choices'));
 assert.ok(llms.includes('not macOS default file associations'));
 assert.ok(llms.includes('not an iOS editor-preference feature'));
+for (const term of ['authorized folder', 'current folder session', 'up to 20 selected .md or .markdown', '100 pages and 64 MiB']) {
+  assert.ok(llms.includes(term), `Missing folder workflow detail: ${term}`);
+}
 const guideLinks = [...llms.matchAll(/\[[^\]]+\]\((https:\/\/[^)]+)\)/g)].map(match => match[1]);
 for (const link of guideLinks.filter(link => link.startsWith(origin + '/'))) {
   assert.ok(fs.existsSync(localFile(new URL(link).pathname)), 'Missing llms.txt destination: ' + link);
@@ -49,6 +65,10 @@ for (const locale of locales) {
     assert.ok(description.length > 30);
     assert.equal(html.match(/<meta property="og:description" content="([^"]+)"/)[1], description);
     assert.equal(html.match(/<meta name="twitter:description" content="([^"]+)"/)[1], description);
+    if (type === '' || type === 'help') {
+      assert.equal(html.match(/<meta property="og:title" content="([^"]+)"/)[1], title);
+      assert.equal(html.match(/<meta name="twitter:title" content="([^"]+)"/)[1], title);
+    }
     if (locale === 'zh-Hans' && type === 'help') assert.ok([...description].length >= 150 && [...description].length <= 160, 'Keep the reported help-page snippet informative');
     for (const image of html.matchAll(/<img\b[^>]*>/g)) {
       assert.ok(/\balt="[^"]+"/.test(image[0]), route + ': missing descriptive image alt');
@@ -67,9 +87,14 @@ for (const locale of locales) {
     assert.ok(!html.includes('name="keywords"'), 'Do not add ineffective meta keyword lists');
     assert.ok(!/<meta name="robots" content="[^"]*noindex/.test(html));
     const alternates = [...html.matchAll(/<link rel="alternate" hreflang="([^"]+)" href="([^"]+)"/g)];
+    const sitemapAlternates = [...sitemapEntries.get(origin + route)
+      .matchAll(/<xhtml:link rel="alternate" hreflang="([^"]+)" href="([^"]+)"/g)];
     assert.equal(alternates.length, locales.length + 1);
+    assert.equal(sitemapAlternates.length, alternates.length, `${route}: incomplete sitemap alternates`);
     for (const target of [...locales, 'x-default']) {
-      assert.ok(alternates.some(m => m[1] === target && m[2] === origin + prefix(target === 'x-default' ? 'en' : target) + type));
+      const expected = origin + prefix(target === 'x-default' ? 'en' : target) + type;
+      assert.ok(alternates.some(m => m[1] === target && m[2] === expected));
+      assert.ok(sitemapAlternates.some(m => m[1] === target && m[2] === expected), `${route}: missing ${target} in sitemap`);
     }
     const schemas = jsonScripts(html);
     if (type === '' || type === 'help') {
@@ -85,9 +110,21 @@ for (const locale of locales) {
       assert.ok(html.includes('id="markdown-pdf"'));
       assert.ok(html.includes('id="native-markdown-pdf"'));
       assert.ok(html.includes(`href="${root}help#markdown-report-pdf"`));
+      const folder = html.match(/<section class="section" id="folder-reading">([\s\S]*?)<\/section>/)?.[1];
+      assert.ok(folder, `${route}: folder-reading section missing`);
+      for (const id of ['read-markdown-folder', 'export-folder-pdf']) {
+        assert.ok(folder.includes(`href="${root}help#${id}"`), `${route}: missing ${id} guide link`);
+      }
+      const cards = [...folder.matchAll(/<details class="feature"><summary>(.*?)<\/summary><p>(.*?)<\/p><\/details>/g)];
+      assert.equal(cards.length, 3);
+      assert.ok(cards.some(([, , copy]) => ['20', '.md', '.markdown'].every(term => copy.includes(term))));
       assert.ok(html.includes('class="feature-grid two"'));
       assert.ok(description.includes('PDF'));
       const native = schemas.find(s => s['@type'] === 'SoftwareApplication');
+      assert.equal(native.description, decode(html.match(/<p class="lead">(.*?)<\/p>/)[1]));
+      for (const [, heading] of cards) {
+        assert.ok(native.featureList.includes(decode(heading)), `${route}: feature differs from visible copy`);
+      }
       assert.equal(native.operatingSystem, 'macOS, iOS, iPadOS');
       assert.equal(native.downloadUrl, 'https://apps.apple.com/app/id6760284919');
       const website = schemas.find(s => s['@type'] === 'WebSite');
@@ -97,22 +134,13 @@ for (const locale of locales) {
     }
     if (type === 'help') {
       const faq = schemas.find(s => s['@type'] === 'FAQPage');
-      assert.equal(faq.mainEntity.length, 8);
-      const pdf = faq.mainEntity.find(item => item.acceptedAnswer.text.includes('.markdown'));
-      assert.ok(pdf, locale + ': native Markdown import/export answer missing');
-      const pdfVisible = html.match(/<article class="faq-item" id="markdown-report-pdf"><h2>([\s\S]*?)<\/h2><p>([\s\S]*?)<\/p><\/article>/);
-      const decode = text => text.replaceAll('&quot;', '"').replaceAll('&gt;', '>').replaceAll('&lt;', '<').replaceAll('&amp;', '&');
-      assert.ok(pdfVisible);
-      assert.equal(decode(pdfVisible[1]), pdf.name);
-      assert.equal(decode(pdfVisible[2]), pdf.acceptedAnswer.text);
-      const editor = faq.mainEntity.at(-1);
-      const visible = html.match(/<article class="faq-item" id="mac-open-with"><h2>([\s\S]*?)<\/h2><p>([\s\S]*?)<\/p><\/article>/);
-      const unescape = text => text.replaceAll('&quot;', '"').replaceAll('&gt;', '>').replaceAll('&lt;', '<').replaceAll('&amp;', '&');
-      assert.ok(visible, locale + ': macOS editor help missing');
-      assert.equal(unescape(visible[1]), editor.name);
-      assert.equal(unescape(visible[2]), editor.acceptedAnswer.text);
-      assert.ok(editor.acceptedAnswer.text.includes('macOS'));
-      assert.ok(editor.acceptedAnswer.text.includes('iPhone'));
+      assert.equal(faq.mainEntity.length, 10);
+      assert.ok(verifyVisibleAnswer(html, faq, 'markdown-report-pdf').includes('.markdown'));
+      const editor = verifyVisibleAnswer(html, faq, 'mac-open-with');
+      assert.ok(editor.includes('macOS') && editor.includes('iPhone'));
+      verifyVisibleAnswer(html, faq, 'read-markdown-folder');
+      const folderPDF = verifyVisibleAnswer(html, faq, 'export-folder-pdf');
+      for (const term of ['20', '.md', '.markdown', 'A4', '100', '64 MiB']) assert.ok(folderPDF.includes(term));
     }
     if (type === 'tools/markdown-to-pdf/') {
       assert.ok(title.includes('Markdown') && title.includes('PDF'));
