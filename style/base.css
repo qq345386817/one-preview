@@ -39,7 +39,7 @@ button, input, select, textarea { font: inherit; }
 .nav > a:hover { color: var(--text); background: var(--surface); }
 .nav > a.active { color: var(--primary-dark); background: var(--primary-soft); }
 .language-switch { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; margin-left: 12px; padding-left: 16px; border-left: 1px solid var(--border); color: var(--muted); font-size: 12px; }
-.language-switch select { max-width: 142px; min-height: 44px; padding: 8px 6px; border: 0; border-radius: var(--radius-control); background: transparent; color: var(--text); font-size: 13px; cursor: pointer; }
+.language-switch select { max-width: 142px; height: 44px; min-height: 44px; padding: 8px 6px; border: 0; border-radius: var(--radius-control); background: transparent; color: var(--text); font-size: 13px; cursor: pointer; }
 .language-switch option { color: var(--text); background: var(--surface); }
 .hero { display: grid; grid-template-columns: minmax(0,.95fr) minmax(0,1.3fr); align-items: center; gap: 48px; padding: 64px 0 48px; isolation: isolate; }
 .hero-copy { min-width: 0; }

@@ -47,7 +47,7 @@ for (const locale of locales) {
     const html = fs.readFileSync(path.join(root, prefix, file), 'utf8');
     assert.ok(html.includes('class="skip-link" href="#main-content"'));
     assert.equal((html.match(/id="main-content"/g) || []).length, 1);
-    assert.ok(html.includes('base.css?v=20261115'));
+    assert.ok(html.includes('base.css?v=20261121'));
     assert.ok(html.includes(`href="/${prefix}tools/markdown-to-pdf/"`));
     if (file === 'index.html') {
       assert.ok(html.includes(`src="/${image}?v=${previewRevision}"`));
